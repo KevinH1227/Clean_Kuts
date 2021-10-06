@@ -1,7 +1,7 @@
 class CreateServices < ActiveRecord::Migration[6.0]
   def change
     create_table :services do |t|
-      t.references :barber, null: false, foreign_key: true
+      t.references :barber, null: false, foreign_key: { to_table: :users }
       t.string :service_type
       t.integer :price
       t.integer :duration
