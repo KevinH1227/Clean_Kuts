@@ -7,20 +7,30 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# 10.times do
-#     User.client.create!(first_name: Faker::Name.male_first_name,
-#                         last_name: Faker::Name.last_name,
-#                         email: Faker::Internet.email,
-#                         addres: Faker::Address.full_address,
-#                         phone_number: Faker::PhoneNumber.cell_phone,
-#                         )
-# end
+def create_client
+    new_user = User.create!(
+        role: "client",
+        first_name: Faker::Name.male_first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.email,
+        address: Faker::Address.full_address,
+        phone_number: Faker::PhoneNumber.cell_phone,
+        )
+    p new_user.first_name
+end
 
-# 10.times do
-#     User.barber.create!(first_name: Faker::Name.male_first_name,
-#                         last_name: Faker::Name.last_name,
-#                         email: Faker::Internet.email,
-#                         addres: Faker::Address.full_address,
-#                         phone_number: Faker::PhoneNumber.cell_phone,
-#                         )
-# end
+def create_barber
+    User.create!(
+        role: "barber",
+        first_name: Faker::Name.male_first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.email,
+        address: Faker::Address.full_address,
+        phone_number: Faker::PhoneNumber.cell_phone,
+        )
+end
+
+10.times do
+    create_client
+    create_barber
+end

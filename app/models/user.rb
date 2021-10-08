@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
-        enum role: [:client, :barber]
+        enum role: %i[client barber]
 
         has_many :sent_messages, foreign_key: :sender_id, class_name: "Message"
         has_many :received_messages, foreign_key: :recipient_id, class_name: "Message"
