@@ -13,6 +13,7 @@ def create_client
         first_name: Faker::Name.male_first_name,
         last_name: Faker::Name.last_name,
         email: Faker::Internet.email,
+        password: 123456,
         address: Faker::Address.full_address,
         phone_number: Faker::PhoneNumber.cell_phone,
         )
@@ -25,6 +26,7 @@ def create_barber
         first_name: Faker::Name.male_first_name,
         last_name: Faker::Name.last_name,
         email: Faker::Internet.email,
+        password: 123456,
         address: Faker::Address.full_address,
         phone_number: Faker::PhoneNumber.cell_phone,
         )
