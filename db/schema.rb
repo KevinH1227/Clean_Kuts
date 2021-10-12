@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_09_150453) do
+ActiveRecord::Schema.define(version: 2021_10_12_232213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2021_10_09_150453) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "barber_id", null: false
+    t.bigint "client_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["barber_id"], name: "index_favorites_on_barber_id"
+    t.index ["client_id"], name: "index_favorites_on_client_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -90,6 +99,8 @@ ActiveRecord::Schema.define(version: 2021_10_09_150453) do
   add_foreign_key "appointments", "services"
   add_foreign_key "appointments", "users", column: "barber_id"
   add_foreign_key "appointments", "users", column: "client_id"
+  add_foreign_key "favorites", "users", column: "barber_id"
+  add_foreign_key "favorites", "users", column: "client_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users", column: "recipient_id"
   add_foreign_key "messages", "users", column: "sender_id"
