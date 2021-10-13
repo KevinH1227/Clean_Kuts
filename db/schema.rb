@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_13_000713) do
+
+ActiveRecord::Schema.define(version: 2021_10_13_002150) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +26,11 @@ ActiveRecord::Schema.define(version: 2021_10_13_000713) do
     t.time "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "time_slot_id", null: false
     t.index ["barber_id"], name: "index_appointments_on_barber_id"
     t.index ["client_id"], name: "index_appointments_on_client_id"
     t.index ["service_id"], name: "index_appointments_on_service_id"
+    t.index ["time_slot_id"], name: "index_appointments_on_time_slot_id"
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -106,6 +110,7 @@ ActiveRecord::Schema.define(version: 2021_10_13_000713) do
   end
 
   add_foreign_key "appointments", "services"
+  add_foreign_key "appointments", "time_slots"
   add_foreign_key "appointments", "users", column: "barber_id"
   add_foreign_key "appointments", "users", column: "client_id"
   add_foreign_key "favorites", "users", column: "barber_id"
