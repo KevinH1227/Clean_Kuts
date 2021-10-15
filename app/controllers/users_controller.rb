@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
+
   def index
-    @users.barbers = User.barber.all
+    @users = User.all
   end
 
   def show
-    @user.barber = User.barber.find(params[:id])
+    @user = User.find(params[:id])
     render :show
   end
 
   private
 
   def user_params
-    params.require(:require).permit()
+    params.require(:user).permit(:first_name, :last_name, :address, :phone_number, :role, :email)
   end
 end
