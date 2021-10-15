@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :user, only: [ :index, :show, :create, :new, :edit ] do
     resources :services, :time_slots, :appointments, :favorites, :reviews
   end
-  resources :chatroom, only: [ :index, :show ]
-  resources :messages, only: [ :index, :create ]
+  resources :chatroom, only: [ :index, :show ] do
+  resources :messages, only: [ :create ]
+  end
   resources :services, only: [ :index, :show ]
   resources :time_slots, only: [ :index, :show ]
   resources :reviews, only: [ :index, :show ]
