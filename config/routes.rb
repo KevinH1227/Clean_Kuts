@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  resources :user, only: [ :create, :new, :edit ] do
+  resources :users, only: [ :create, :new, :edit ] do
     resources :services, :time_slots, :appointments, :favorites, :reviews
   end
-  resources :user, only: [ :index, :show ]
+  resources :users, only: [ :index, :show ]
   resources :chatroom, only: [ :index, :show ]
   resources :messages, only: [ :index, :create ]
 
