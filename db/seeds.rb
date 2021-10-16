@@ -14,31 +14,31 @@ User.destroy_all
 puts "Creating new Clients and Barbers"
 
 def create_client
-    new_user = User.create!(
-        role: "client",
-        first_name: Faker::Name.male_first_name,
-        last_name: Faker::Name.last_name,
-        email: Faker::Internet.email,
-        password: 123456,
-        address: Faker::Address.full_address,
-        phone_number: Faker::PhoneNumber.cell_phone,
-        )
-    p new_user.first_name
+  new_user = User.create!(
+    role: "client",
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: 123456,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.cell_phone,
+  )
+  p new_user.first_name
 end
 
 def create_barber
-    User.create!(
-        role: "barber",
-        first_name: Faker::Name.male_first_name,
-        last_name: Faker::Name.last_name,
-        email: Faker::Internet.email,
-        password: 123456,
-        address: Faker::Address.full_address,
-        phone_number: Faker::PhoneNumber.cell_phone,
-        )
+  User.create!(
+    role: "barber",
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: 123456,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.cell_phone,
+  )
 end
 
 10.times do
-    create_client
-    create_barber
+  create_client
+  create_barber
 end
