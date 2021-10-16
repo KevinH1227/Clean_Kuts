@@ -1,17 +1,21 @@
 class UsersController < ApplicationController
-
   def index
-    @users = User.all
+    @barbers = User.where(role: "barber")
   end
 
   def show
+    @barber = User.find(params[:id])
+  end
+
+  def edit
     @user = User.find(params[:id])
-    render :show
   end
+  
 
-  private
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :address, :phone_number, :role, :email)
-  end
+  # private
+
+  # def user_params
+  #   params.require(:user).permit(:first_name, :last_name, :address, :phone_number, :role, :email)
+  # end
 end
