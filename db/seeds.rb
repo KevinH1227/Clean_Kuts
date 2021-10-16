@@ -10,6 +10,7 @@ User.destroy_all
 puts "Creating new Clients and Barbers"
 
 
+
 def create_services(barber)
   Service.cut_types.each do |service_type|
     service = Service.create!(
@@ -58,10 +59,32 @@ def create_user(role, f_name=Faker::Name.unique.male_first_name, l_name=Faker::N
     first_name: f_name,
     last_name: l_name,
     email: "#{f_name.to_s.gsub(/\s+/, "")}@email.com",
+
+def create_client
+  new_user = User.create!(
+    role: "client",
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
     password: 123456,
     address: Faker::Address.full_address,
     phone_number: Faker::PhoneNumber.cell_phone,
   )
+  p new_user.first_name
+end
+
+def create_barber
+  User.create!(
+    role: "barber",
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+
+    password: 123456,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.cell_phone,
+  )
+
   puts "Added #{user.first_name} the #{user.role}"
   return user
 end
@@ -71,6 +94,7 @@ def create_random_barber
 
     create_services(barber)
     create_time_slots(barber, 18, 5)
+
 end
 
 def create_random_client
@@ -82,6 +106,7 @@ end
 
 
 10.times do
+
     create_random_barber
     create_random_client
 end
@@ -92,3 +117,7 @@ bob_client = create_user('client', 'bob', 'client')
 
 
 
+
+  create_client
+  create_barber
+end
