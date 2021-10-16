@@ -1,0 +1,14 @@
+<div class="info">
+<div class="message">
+    <h2><MESSAGES></MESSAGES></h2>
+</div>
+
+    <div class="d-flex flexor">
+    <div class="owner-section">
+        <h2>Your Appointment(s)</h2>
+        <%= @my_client_appointments.count %>
+        <% @my_client_appointments.each do |appointment| %>
+        <li>With:<%= appointment.barber.full_name %></li>
+        From: <%= appointment.start_time %> to: <%= appointment.end_time %>
+        <% end %>
+</div>

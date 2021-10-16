@@ -7,6 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+puts "Destroying Users"
+
+User.destroy_all
+
+puts "Creating new Clients and Barbers"
+
 def create_client
   new_user = User.create!(
     role: "client",
