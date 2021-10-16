@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_13_002150) do
+ActiveRecord::Schema.define(version: 2021_10_16_195753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2021_10_13_002150) do
     t.bigint "barber_id", null: false
     t.bigint "service_id", null: false
     t.boolean "status", default: true
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "time_slot_id", null: false
@@ -73,18 +73,18 @@ ActiveRecord::Schema.define(version: 2021_10_13_002150) do
 
   create_table "services", force: :cascade do |t|
     t.bigint "barber_id", null: false
-    t.string "service_type"
     t.integer "price"
     t.integer "duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cut_type"
     t.index ["barber_id"], name: "index_services_on_barber_id"
   end
 
   create_table "time_slots", force: :cascade do |t|
     t.bigint "barber_id", null: false
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["barber_id"], name: "index_time_slots_on_barber_id"

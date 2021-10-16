@@ -8,7 +8,7 @@
         <h2>Your Appointment(s)</h2>
         <%= @my_client_appointments.count %>
         <% @my_client_appointments.each do |appointment| %>
-        <li>With:<%= appointment.barber.full_name %></li>
+        <li>With:<%= appointment.barber.full_name() %></li>
         From: <%= appointment.start_time %> to: <%= appointment.end_time %>
         <% end %>
 </div>
