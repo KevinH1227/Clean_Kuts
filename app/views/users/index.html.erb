@@ -2,10 +2,6 @@
   <h1>Barbers</h1>
 
 <% @barbers.each do |barber|%>
-      <li><%= barber.first_name %></li>
-      <li><%= barber.last_name %></li>
-      <li><%= barber.email %></li>
-      <li><%= barber.phone_number %></li>
-      <%= link_to barber.first_name, barber %>
+  <li><%= link_to barber.full_name, barber %></li>
 <% end %>
 </div>
