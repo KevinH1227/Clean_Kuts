@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
-
   def index
-    @users = User.all
+    @barbers = User.where(role: "barber")
   end
-  # def barbers
-  #   @barbers = Barber.all
-  # end
 
-  # def barber
-  #   @barber = Barber.find(params[:id])
-  #   render :barber
-  # end
+  def show
+    @barber = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+
 
   # private
 
