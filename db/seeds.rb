@@ -70,7 +70,7 @@ def create_client
     address: Faker::Address.full_address,
     phone_number: Faker::PhoneNumber.cell_phone,
   )
-  p new_user.first_name
+  puts "Added #{user.first_name} the #{user.role}"
 end
 
 def create_barber
