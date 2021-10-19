@@ -1,5 +1,91 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/navbar' %>
+<!-- <h1>This is where it all begins</h1> -->
+<!-- <p>Find me in app/views/pages/home.html.erb</p> -->
+
+<!-- part 1 = banner-->
+<!-- image of clean Kut's in background https://unsplash.com/photos/sS3qRFsKZlg -->
+
+<!-- container with 2 divs(one is the logo of clean Kut's, one is the avatar of the client) -->
+<!-- title -->
+<!-- search bar as 2 forms 1 form is Enter your location
+the other form is Filter your research-->
+
+<div class="banner">
+  <div class=container>
+      <div class="logo"></div>
+      <div class="client-avatar"></div>
+  </div>
+  <div>
+    <h1>CLEAN KUT'S</h1>
+  </div>
+  <!-- search bar -->
+  <div class=search-bars>
+  <!-- search-bar-1 -->
+    <div class="container">
+      <div class="location">enter your location</div>
+      <div class="filter">Filter your research</div>
+    </div>
+    <div class="location_search"><i class="fas fa-search-location"></i></div>
+
+
+  <!--end search-bar-1 -->
+  <!-- search-bar-2 -->
+
+
+
+    <div class="filter_search">
+      <div>by popularity</div>
+      <div>style
+      <i class="fas fa-chevron-down"></i>
+      </div>
+      <div>price
+      <i class="fas fa-search-location"></i>
+      </div>
+      <div>in the area
+      icon: <i class="fas fa-search-location"></i>
+      </div>
+      <!--  end search-bar-2-->
+    </div>
+  </div>
+</div>
+<!--  -->
+<!-- PART2 -->
+<!-- h2 with the globe next to it on the other side of the screen link to map with 5 barbers -->
+<div class = "container">
+  <div>
+  <h2> TOP 5 BARBERS</br>
+  NEAR YOUR LOCATION </h2>
+  </div>
+  <div>
+    <!-- icone of globe <i class="fas fa-globe-americas"></i> -->
+  </div>
+</div>
+<!-- 5 cards should use iteration of barbers
+on the left: side: image picture of the barber
+
+in the middle:
+info to put in the card are:
+barber name
+barber.description
+barber.rating
+
+on the right as a column:
+heart for add as a favourite  <i class="fas fa-heart"></i>
+bubble for chat with the barber <i class="far fa-comment"></i>
+marker for loacate the barber on a map  <i class="fas fa-map-marker-alt"></i> -->
+<div>
+
+</div>
+
+<!--  -->
+
+<!-- footer -->
+<!-- footer is alzays at the bottom of the screen not at the bottom of the page
+maybe use a position stick-->
+<!-- on left Hone, on Right Back -->
+<!-- icons are from font awesome -->
+<!-- home: <i class="fas fa-home"></i> -->
+<!-- back: <i class="fas fa-chevron-left"></i>-->
 
 <%# if user is current user and the role is client, then show all the barber(users.barber.all) %>
 <%# else redirect to user's dashboard %>
