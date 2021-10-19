@@ -83,6 +83,7 @@ def create_barber
     password: 123456,
     address: Faker::Address.full_address,
     phone_number: Faker::PhoneNumber.cell_phone,
+    description: ""
   )
 
   puts "Added #{user.first_name} the #{user.role}"
