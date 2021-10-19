@@ -19,27 +19,33 @@ the other form is Filter your research-->
     <h1>CLEAN KUT'S</h1>
   </div>
   <!-- search bar -->
-  <div class=search-bar>
-  <!-- form1 -->
-
-<div class="location">enter your location</div>
-<%= simple_form_for @users do |f| %>
-  <%= f.input :address, label: 'postal code' %>
-  <%= f.submit %><i class="fas fa-search-location"></i>
-<% end %>
-
+  <div class=search-bars>
+  <!-- search-bar-1 -->
+    <div class="container">
+      <div class="location">enter your location</div>
+      <div class="filter">Filter your research</div>
+    </div>
+    <div class="location_search"><i class="fas fa-search-location"></i></div>
 
 
-  <!-- end of form1 -->
+  <!--end search-bar-1 -->
+  <!-- search-bar-2 -->
 
-  <!--  form2-->
-  Filter your research
-  by popularity
-  style <i class="fas fa-chevron-down"></i>
-  price icon: <i class="fas fa-search-location"></i> -->
-  in the area
-  icon: <i class="fas fa-search-location"></i>
-  <!--  end of form2-->
+
+
+    <div class="filter_search">
+      <div>by popularity</div>
+      <div>style
+      <i class="fas fa-chevron-down"></i>
+      </div>
+      <div>price
+      <i class="fas fa-search-location"></i>
+      </div>
+      <div>in the area
+      icon: <i class="fas fa-search-location"></i>
+      </div>
+      <!--  end search-bar-2-->
+    </div>
   </div>
 </div>
 <!--  -->
