@@ -21,25 +21,24 @@ the other form is Filter your research-->
   <!-- search bar -->
   <div class=search-bars>
   <!-- search-bar-1 -->
-    <div class="container">
-      <div class="location">enter your location</div>
-      <div class="filter">Filter your research</div>
+    <div class="container" id="searcher">
+      <div class="location" id="location">Enter Your Location</div>
+      <div class="filter" id="filter">Filter Your Research</div>
     </div>
-    <div class="location_search"><i class="fas fa-search-location"></i></div>
+    <div class="location_search" id="location_search"><i class="fas fa-search-location search_icon"></i></div>
 
 
   <!--end search-bar-1 -->
   <!-- search-bar-2 -->
 
 
-
-    <div class="filter_search">
+    <div class="filter_search container" id="filter_search" >
       <div>by popularity</div>
       <div>style
       <i class="fas fa-chevron-down"></i>
       </div>
       <div>price
-      <i class="fas fa-search-location"></i>
+      <i class="fas fa-dollar-sign"></i>
       </div>
       <div>in the area
       icon: <i class="fas fa-search-location"></i>
@@ -57,35 +56,39 @@ the other form is Filter your research-->
   NEAR YOUR LOCATION </h2>
   </div>
   <div>
-    <!-- icone of globe <i class="fas fa-globe-americas"></i> -->
+    <i class="fas fa-globe-americas"></i>
   </div>
 </div>
-<!-- 5 cards should use iteration of barbers
-on the left: side: image picture of the barber
 
-in the middle:
-info to put in the card are:
-barber name
-barber.description
-barber.rating
+  <!-- 5 cards should use iteration of barbers -->
+<div class="cards">
+  <%= %>
+    <div>
+      <!-- on the left: side: image picture of the barber   -->
+      <img src="#" alt="">
+    </div>
+    <div>
+      <!-- in the middle: info to put in the card are: barber name barber.description barber.rating -->
+    </div>
+    <div>
+      <!-- on the right as a column: -->
+      <!-- heart for add as a favourite   -->
+      <i class="fas fa-heart"></i>
+      <!-- bubble for chat with the barber -->
+      <i class="far fa-comment"></i>
+      <!-- marker for loacate the barber on a map   -->
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
 
-on the right as a column:
-heart for add as a favourite  <i class="fas fa-heart"></i>
-bubble for chat with the barber <i class="far fa-comment"></i>
-marker for loacate the barber on a map  <i class="fas fa-map-marker-alt"></i> -->
+</div>
 <div>
 
 </div>
 
-<!--  -->
+<div class="footer">
+  <div>Home</div>
+  <i class="fas fa-home"></i>
+  <div>Back</div>
+ <i class="fas fa-chevron-left"></i>
+</div>
 
-<!-- footer -->
-<!-- footer is alzays at the bottom of the screen not at the bottom of the page
-maybe use a position stick-->
-<!-- on left Hone, on Right Back -->
-<!-- icons are from font awesome -->
-<!-- home: <i class="fas fa-home"></i> -->
-<!-- back: <i class="fas fa-chevron-left"></i>-->
-
-<%# if user is current user and the role is client, then show all the barber(users.barber.all) %>
-<%# else redirect to user's dashboard %>

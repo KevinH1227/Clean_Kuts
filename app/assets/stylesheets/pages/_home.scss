@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 body {
-    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
 }
 .banner {
 background-image: url("https://images.unsplash.com/photo-1606333259737-6da197890fa2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
@@ -20,7 +21,6 @@ h1{
   background-color: $secondary;
   border-radius: 4px;
   width:10%;
-
 }
 
 .filter{
@@ -28,19 +28,48 @@ h1{
   border-radius: 4px;
   width:10%;
 }
+
 .location_search{
   border-radius:4px;
   background-color:$basic-white;
   width: 22%;
+  display:block;
+  .search_icon{
+  right:0px;
+  }
 }
+
 .filter_search{
-  display:none;
+  display: none;
+  border-radius:4px;
+  background-color: $basic-white;
 }
+
+.change {
+  display: none;
+}
+
+.appear {
+  display: block;
+}
+
+.active {
+  background-color:$secondary;
+}
+
+.passive {
+  background-color:$light-gray;
+}
+
+
 .search-bars{
-  align-content: center;
-  box-sizing: border-box;
-  padding:0px;
-  margin:0px;
-  text-align: center;
+  width: 100%;
+  position:absolute;
+  margin-left: 32%;
+  margin-right: 32%;
+}
+
+.searcher{
+  cursor: pointer;
 }
 }
