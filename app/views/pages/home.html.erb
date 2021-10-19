@@ -21,9 +21,15 @@ the other form is Filter your research-->
   <!-- search bar -->
   <div class=search-bar>
   <!-- form1 -->
-  <!-- enter your location
-  placeholder: postal code
-  icon: <i class="fas fa-search-location"></i> -->
+
+<div class="location">enter your location</div>
+<%= simple_form_for @users do |f| %>
+  <%= f.input :address, label: 'postal code' %>
+  <%= f.submit %><i class="fas fa-search-location"></i>
+<% end %>
+
+
+
   <!-- end of form1 -->
 
   <!--  form2-->
