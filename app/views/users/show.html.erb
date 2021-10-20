@@ -6,6 +6,6 @@
       <li><%= @barber.phone_number %></li>
 </div>
 
-  <%= link_to 'Barbers', users_path %>
-    <%= link_to 'Schedule', new_appointment_path(@barber) %>
-      <%= link_to 'Services', user_services_path(@barber) %>
+  <%= link_to 'Schedule', new_appointment_path(@barber) %>
+  <%= link_to 'Services', user_services_path(@barber) %>
+  <%= link_to 'Edit Profile', edit_user_path %>
