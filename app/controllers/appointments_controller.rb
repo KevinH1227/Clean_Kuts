@@ -9,9 +9,13 @@ class AppointmentsController < ApplicationController
     end
 
     def index
-        @my_client_appointments = Appointment.where(client: current_user)
+        # @my_client_appointments = current_user.appointments
         # raise
-        # @my_client_appointments = my_appointments.where(client: current_user)
+        if current_user.barber? 
+            @my_appointments =  Appointment.where(barber: current_user)
+        else
+            @my_appointments =  Appointment.where(client: current_user)
+        end
     end
 
     def show
@@ -33,8 +37,6 @@ class AppointmentsController < ApplicationController
         if @appointment.save
             redirect_to my_appointments_path
         else
-
-
             @barber = User.find(appointment_params[:barber_id])
             render :new
         end

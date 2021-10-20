@@ -6,9 +6,12 @@
     <div class="d-flex flexor">
     <div class="owner-section">
         <h2>Your Appointment(s)</h2>
-        <%= @my_client_appointments.count %>
-        <% @my_client_appointments.each do |appointment| %>
-        <li>With:<%= appointment.barber.full_name() %></li>
+        <%= @current_user.barber? ? "Your appointments:" : "Your next appointment:" %>
+
+        <%= @my_appointments.count %>
+        <% @my_appointments.each do |appointment| %>
+        <% barber = appointment.other_user(current_user) %>
+        <li>With:<%= barber.full_name() %></li>
         From: <%= appointment.start_time %> to: <%= appointment.end_time %>
         <% end %>
 </div>
