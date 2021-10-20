@@ -2,7 +2,7 @@ class ServicesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @services = Service.all
+    @services = Service.where(role: "barber")
   end
 
   def show

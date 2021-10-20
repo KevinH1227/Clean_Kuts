@@ -34,7 +34,7 @@ class AppointmentsController < ApplicationController
             redirect_to my_appointments_path
         else
 
-            raise
+
             @barber = User.find(appointment_params[:barber_id])
             render :new
         end
