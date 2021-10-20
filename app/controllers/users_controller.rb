@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
     @barbers = User.where(role: "barber")
   end
-
+ 
   def show
     @barber = User.find(params[:id])
   end
