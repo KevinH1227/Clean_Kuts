@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
 body {
     margin:0px;
     padding:0px;
@@ -11,7 +16,9 @@ body {
   width: 100%;
   border-radius:4px;
   box-shadow:0.5px 2px 3px $black-primary;
+  text-align:center;
 }
+
 
 .image{
   background-color:white;
