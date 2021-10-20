@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @users = User.all
+    @barbers = User.where(role: "barber")
   end
 end
