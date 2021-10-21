@@ -49,7 +49,9 @@
 
 
        <div class="card-product">
-<div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
+         <% if barber.photo.attached? %>
+          <div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
+        <% end %>
 
        <div class="card-product-infos">
 

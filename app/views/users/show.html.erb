@@ -1,6 +1,8 @@
 
 <div class="photos-container">
+  <% if @barber.photo.attached? %>
       <%= cl_image_tag @barber.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 </div>
 <div class="container" id="barber-signup">
 
