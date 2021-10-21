@@ -1,9 +1,9 @@
 <div class="card">
   <div class="container d-flex" id="barber-signup">
-    <div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo"  %>
+
     </div>
     <div>
-
+<div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
       <div class="full-name"><%= @barber.full_name %>
 
       </div>
@@ -30,7 +30,7 @@
 
   <%= link_to 'Schedule', new_appointment_path(@barber) %>
   <%= link_to 'Services', user_services_path(@barber) %>
-  <% if @current_user == @barber %>
-  <%= link_to 'Edit Profile', edit_user_path %>
-  <% end %>
+  <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
+
+
 </div>
