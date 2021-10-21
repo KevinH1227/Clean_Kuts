@@ -1,6 +1,6 @@
 
 <div class="container" id="barber-signup">
-      <%= cl_image_tag @barber.photo.key %>
+      <%= cl_image_tag barber.photo.key %>
 <ul>
       <li>First name: <%= @barber.first_name %></li>
       <li>Last name: <%= @barber.last_name %></li>
@@ -14,4 +14,6 @@
 
   <%= link_to 'Schedule', new_appointment_path(@barber) %>
   <%= link_to 'Services', user_services_path(@barber) %>
+    <% if @current_user == @barber %>
   <%= link_to 'Edit Profile', edit_user_path %>
+  <% end %>
