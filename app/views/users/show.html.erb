@@ -1,9 +1,15 @@
 
-<div class="container">
-      <li><%= @barber.first_name %></li>
-      <li><%= @barber.last_name %></li>
-      <li><%= @barber.email %></li>
-      <li><%= @barber.phone_number %></li>
+<div class="container" id="barber-signup">
+      <%= cl_image_tag @barber.photo.key %>
+<ul>
+      <li>First name: <%= @barber.first_name %></li>
+      <li>Last name: <%= @barber.last_name %></li>
+      <li>Email: <%= @barber.email %></li>
+      <li>Phone number: <%= @barber.phone_number %></li>
+      <li>Address: <%= @barber.address %></li>
+      <li>Postal code: <%= @barber.post_code %></li>
+      <li>Description: <%= @barber.description %></li>
+      </ul>
 </div>
 
   <%= link_to 'Schedule', new_appointment_path(@barber) %>
