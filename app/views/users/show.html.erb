@@ -1,72 +1,57 @@
-<<<<<<< HEAD
+
 <div class="photos-container">
       <%= cl_image_tag @barber.photo.key, height: 300, width: 400, crop: :fill %>
 </div>
 <div class="container" id="barber-signup">
-<<<<<<< HEAD
-      <%= cl_image_tag barber.photo.key %>
-=======
->>>>>>> a179182d8c8482715d1b558bb9322ced23b8d39c
-<ul>
-      <li>First name: <%= @barber.first_name %></li>
-      <li>Last name: <%= @barber.last_name %></li>
-      <li>Email: <%= @barber.email %></li>
-      <li>Phone number: <%= @barber.phone_number %></li>
-      <li>Address: <%= @barber.address %></li>
-      <li>Postal code: <%= @barber.post_code %></li>
-      <li>Description: <%= @barber.description %></li>
-      </ul>
+
+  <ul>
+    <li>First name: <%= @barber.first_name %></li>
+    <li>Last name: <%= @barber.last_name %></li>
+    <li>Email: <%= @barber.email %></li>
+    <li>Phone number: <%= @barber.phone_number %></li>
+    <li>Address: <%= @barber.address %></li>
+    <li>Postal code: <%= @barber.post_code %></li>
+    <li>Description: <%= @barber.description %></li>
+  </ul>
 </div>
-=======
+
 <div class="card">
-  <div class="container d-flex" id="barber-signup">
+  <%# <div class="container d-flex" id="barber-signup">
 
-    </div>
-    <div>
-<div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
-      <div class="full-name"><%= @barber.full_name %>
+    </div> %>
+  <% if @barber.photo.attached? %>
+    <div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
+  <% end %>
+  <div class="full-name"><%= @barber.full_name %>
 
-      </div>
-      <div class="phone"><i class="fas fa-phone-alt"></i> <%= @barber.phone_number %>
-      </div>
-      <div class="address"><i class="fas fa-city"></i> <%= @barber.address %>
-      </div>
-      <div class="email"><i class="fab fa-instagram"></i> <%= @barber.email %>
-      </div>
-
-      <div class="book-banner"> Book Now <i class="far fa-calendar-alt"></i>
-      </div>
-
-      <%= render 'shared/schedule' %>
-      <%= render 'shared/reviews' %>
-      <%= render'shared/services' %>
-
-      <div class="description1">About me
-      </div>
-      <div class="description"><%= @barber.description %>
-      </div>
-    </div>
   </div>
->>>>>>> 9d59fa7da215eec96f864e1642e0ee8a8bcec2c6
+  <div class="phone"><i class="fas fa-phone-alt"></i> <%= @barber.phone_number %>
+  </div>
+  <div class="address"><i class="fas fa-city"></i> <%= @barber.address %>
+  </div>
+  <div class="email"><i class="fab fa-instagram"></i> <%= @barber.email %>
+  </div>
+  <div class="book-banner"> Book Now <i class="far fa-calendar-alt"></i>
+  </div>
+
+  <%= render 'shared/schedule' %>
+  <%= render 'shared/reviews' %>
+  <%= render'shared/services' %>
+
+  <div class="description1">About me
+  </div>
+  <div class="description"><%= @barber.description %>
+  </div>
+</div>
 
   <%= link_to 'Schedule', new_appointment_path(@barber) %>
   <%= link_to 'Services', user_services_path(@barber) %>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <% if @current_user == @barber %>
-  <%= link_to 'Edit Profile', edit_user_path %>
-<<<<<<< HEAD
-  <% end %>
-=======
-=======
+
   <% if @current_user == @barber %>
-  <%= link_to 'Edit Profile', edit_user_path %>
+    <%= link_to 'Edit Profile', edit_user_path %>
   <% end %>
->>>>>>> 290488ff4f1b68cecdcdf05ec914fb2e2033f6f4
-=======
+
   <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
 
-
->>>>>>> 83fa4e4b2863de6b57ac5e7f19c8fc090d8d2f45
 </div>
->>>>>>> 9d59fa7da215eec96f864e1642e0ee8a8bcec2c6
+
