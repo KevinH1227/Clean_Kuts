@@ -1,6 +1,7 @@
-
+<div class="photos-container">
+      <%= cl_image_tag @barber.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
 <div class="container" id="barber-signup">
-      <%= cl_image_tag @barber.photo.key %>
 <ul>
       <li>First name: <%= @barber.first_name %></li>
       <li>Last name: <%= @barber.last_name %></li>
