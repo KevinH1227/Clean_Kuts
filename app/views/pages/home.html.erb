@@ -5,8 +5,13 @@
     </div>
   </div>
 </div>
-
-<div class="image"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 nomargin">
+      <img src="https://source.unsplash.com/sS3qRFsKZlg/1600x900" class="image center">
+    </div>
+    </div>
+  </div>
 <!-- IMPLEMENT A SEARCH BAR -->
 <!-- search bar -->
 <div class="container location">
@@ -15,7 +20,7 @@
       <div class=search-bars>
       <!-- search-bar -->
         <div  id="location">
-        <p>SEARCH
+        <p class="search">Search
           <i class="fas fa-search-location search_icon"></i>
         </p></div>
         <!--end search-bar -->
@@ -40,22 +45,18 @@
       <!-- on the left: side: image picture of the barber   -->
 
 
-
-    <div class="card">
-      <div class="row">
-        <div class="col-1">
-        </div>
+<!-- here -->
 
 
-        <div class="col-4 image">
-          <div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
-        </div>
-        <div class="col-4">
-          <div class="container ">
-            <p><%= link_to barber.full_name, barber %></p>
-            <div class="description2"<p><%= barber.description %></p>
+       <div class="card-product">
+<div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
+
+       <div class="card-product-infos">
+
+            <h2><%= link_to barber.full_name, barber %></h2>
+            <div class="description2"><p><%= barber.description %></p>
             </div>
-          </div>
+
       <!-- in the middle: info to put in the card are: barber name barber.description barber.rating no rating so far -->
       </div>
     <div class="col-3">
@@ -81,7 +82,7 @@
 
 <!-- IMPLEMENT A MAP with the list of the barbers on the page -->
  <div id="map"
-    style="width: 100%; height: 600px; border-radius: 8px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);"
+    style="margin-left: 25%; margin-right: 25%; margin-top: 10%; width: 50%; height: 100px; border-radius: 8px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
