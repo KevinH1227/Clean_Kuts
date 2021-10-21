@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="photos-container">
       <%= cl_image_tag @barber.photo.key, height: 300, width: 400, crop: :fill %>
 </div>
@@ -16,9 +17,44 @@
       <li>Description: <%= @barber.description %></li>
       </ul>
 </div>
+=======
+<div class="card">
+  <div class="container d-flex" id="barber-signup">
+    <div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo"  %>
+    </div>
+    <div>
+
+      <div class="full-name"><%= @barber.full_name %>
+
+      </div>
+      <div class="phone"><i class="fas fa-phone-alt"></i> <%= @barber.phone_number %>
+      </div>
+      <div class="address"><i class="fas fa-city"></i> <%= @barber.address %>
+      </div>
+      <div class="email"><i class="fab fa-instagram"></i> <%= @barber.email %>
+      </div>
+
+      <div class="book-banner"> Book Now <i class="far fa-calendar-alt"></i>
+      </div>
+
+      <%= render 'shared/schedule' %>
+      <%= render 'shared/reviews' %>
+      <%= render'shared/services' %>
+
+      <div class="description1">About me
+      </div>
+      <div class="description"><%= @barber.description %>
+      </div>
+    </div>
+  </div>
+>>>>>>> 9d59fa7da215eec96f864e1642e0ee8a8bcec2c6
 
   <%= link_to 'Schedule', new_appointment_path(@barber) %>
   <%= link_to 'Services', user_services_path(@barber) %>
     <% if @current_user == @barber %>
   <%= link_to 'Edit Profile', edit_user_path %>
+<<<<<<< HEAD
   <% end %>
+=======
+</div>
+>>>>>>> 9d59fa7da215eec96f864e1642e0ee8a8bcec2c6

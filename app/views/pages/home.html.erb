@@ -39,7 +39,7 @@
 
       <!-- on the left: side: image picture of the barber   -->
 
-        <img src="#" alt="">
+
 
     <div class="card">
       <div class="row">
@@ -48,11 +48,11 @@
 
 
         <div class="col-4 image">
-
+          <div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
         </div>
         <div class="col-4">
           <div class="container ">
-            <p><%= link_to barber.full_name, barber %></p>                    
+            <p><%= link_to barber.full_name, barber %></p>
             <p><%= barber.description %></p>
           </div>
       <!-- in the middle: info to put in the card are: barber name barber.description barber.rating no rating so far -->
@@ -79,5 +79,5 @@
 <!--  end Deck of 5 cards-->
 
 <!-- IMPLEMENT A MAP with the list of the barbers on the page -->
-<div class="map"></div>
+<div class="map">MAAAAAAAAAAAAP</div>
 </div>
