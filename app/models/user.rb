@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+has_one_attached :photo
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
@@ -7,7 +7,7 @@ class User < ApplicationRecord
     client: 0,
     barber: 1
   }
-  has_one_attached :photo
+
   has_many :sent_messages, foreign_key: :sender_id, class_name: "Message"
   has_many :received_messages, foreign_key: :recipient_id, class_name: "Message"
 
