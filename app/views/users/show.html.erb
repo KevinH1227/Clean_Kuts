@@ -30,5 +30,7 @@
 
   <%= link_to 'Schedule', new_appointment_path(@barber) %>
   <%= link_to 'Services', user_services_path(@barber) %>
+  <% if @current_user == @barber %>
   <%= link_to 'Edit Profile', edit_user_path %>
+  <% end %>
 </div>
