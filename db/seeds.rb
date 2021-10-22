@@ -62,7 +62,7 @@ def create_user(role, f_name=Faker::Name.unique.male_first_name, l_name=Faker::N
     address: Faker::Address.full_address,
     post_code: "",
     description: "",
-    photo: "",
+    # photo: "",
     phone_number: Faker::PhoneNumber.cell_phone,
   )
   puts "Added #{user.first_name} the #{user.role}"
