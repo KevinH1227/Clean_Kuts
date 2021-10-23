@@ -4,7 +4,7 @@
 <h1><%= @barber.full_name %></h1>
   <% @barber.services.each do |service| %>
   <p><%= service.cut_type %></p>
-  <p><%= service.price %></p>
-  <p><%= service.duration %></p>
+  <p>$<%= service.price %>.00</p>
+  <p><%= service.duration/60 %> minutes</p>
   <% end %>
 </div>
