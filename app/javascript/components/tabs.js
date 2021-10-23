@@ -7,30 +7,30 @@
 
 // addEventlistener
 // trigger is click or tap
-function search() {
-// variables
-//   const searcher = document.getElementById("searcher");
-//   const location_search = document.getElementById("location_search");
-//   const filter_search = document.getElementById("filter_search");
-//   const filter = document.getElementById("filter");
-//   const location = document.getElementById("location");
+function tabs() {
+variables
+  // const searcher = document.getElementById("searcher");
+  const reviews_section = document.getElementById("reviews_section");
+  const services_section = document.getElementById("services_section");
+  const services = document.getElementById("services");
+  const reviews = document.getElementById("reviews");
 
-//   if(searcher) {
-//     searcher.addEventListener("click", (event)=> {
-// // always needed no matter what
-//       event.preventDefault();
-//       console.log(event.currentTarget);
+  if(searcher) {
+    searcher.addEventListener("click", (event)=> {
+// always needed no matter what
+      event.preventDefault();
+      console.log(event.currentTarget);
 
-//       // action is change or toggle to css class change
-//       location_search.classList.toggle("change");
-//       filter_search.classList.toggle("appear");
-//       filter.classList.toggle("active");
-//       location.classList.toggle("passive");
-//     });
-//   }
+      // action is change or toggle to css class change
+      reviews_section.classList.toggle("change");
+      services_section.classList.toggle("appear");
+      services.classList.toggle("active");
+      reviews.classList.toggle("passive");
+    });
+  }
 
 };
 
 
 
-export { search };
+export { tabs };
