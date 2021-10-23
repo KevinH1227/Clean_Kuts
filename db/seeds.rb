@@ -13,12 +13,12 @@ puts "Creating new Clients and Barbers"
 def create_services(barber)
   Service.cut_types.each do |service_type|
     service = Service.create!(
-        barber: barber,
-        cut_type: service_type.first,
-        price: rand(30..60),
-        duration: 3600,
-      )
-      puts "   #{barber.first_name} can give a #{service.cut_type} for #{service.price}$"
+      barber: barber,
+      cut_type: service_type.first,
+      price: rand(30..60),
+      duration: 3600,
+    )
+    puts "   #{barber.first_name} can give a #{service.cut_type} for #{service.price}$"
   end
 end
 
@@ -92,6 +92,3 @@ end
 
 john_barber = create_user('barber', 'john', 'barber')
 bob_client = create_user('client', 'bob', 'client')
-
-
-

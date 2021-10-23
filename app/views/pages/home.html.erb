@@ -1,17 +1,10 @@
-<div class="container nav1">
+<div class="container banner">
   <div class="row justify-content-center">
     <div class="col-12">
-      <h1>CLEAN KUT'S</h1>
+      <h1>Clean Kut's</h1>
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 nomargin">
-      <img src="https://source.unsplash.com/sS3qRFsKZlg/1600x900" class="image center">
-    </div>
-    </div>
-  </div>
 <!-- IMPLEMENT A SEARCH BAR -->
 <!-- search bar -->
 <div class="container location">
@@ -46,34 +39,30 @@
 
 
 <!-- here -->
+    <div class="card-product">
+      <% if barber.photo.attached? %>
+        <div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
+      <% end %>
 
-
-       <div class="card-product">
-         <% if barber.photo.attached? %>
-          <div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
-        <% end %>
-
-       <div class="card-product-infos">
-
-            <h2><%= link_to barber.full_name, barber %></h2>
-            <div class="description2"><p><%= barber.description %></p>
-            </div>
+    <div class="card-product-infos">
+      <h2><%= link_to barber.full_name, barber %></h2>
+      <div class="description2"><p><%= barber.description %></p></div>
+    </div>
 
       <!-- in the middle: info to put in the card are: barber name barber.description barber.rating no rating so far -->
-      </div>
     <div class="col-3">
-       <div class="row heart">
+      <div class="row heart">
         <i class="fas fa-heart"></i>
         <!-- bubble for chat with the barber -->
-        </div>
-        <div class="row bubble">
+      </div>
+      <div class="row bubble">
         <i class="far fa-comment"></i>
         <!-- marker to locate the barber on a map   -->
-        </div>
-        <div class="row marker">
-        <i class="fas fa-map-marker-alt"></i>
-        </div>
       </div>
+      <div class="row marker">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+    </div>
       <div class="col-1">
       </div>
     </div>
