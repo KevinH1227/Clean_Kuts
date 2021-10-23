@@ -10,6 +10,9 @@ class User < ApplicationRecord
     barber: 1
   }
 
+  has_many :reviews, foreign_key: :client_id, class_name: "Review"
+  has_many :reviews, foreign_key: :barber_id, class_name: "Review"
+
   has_many :sent_messages, foreign_key: :sender_id, class_name: "Message"
   has_many :received_messages, foreign_key: :recipient_id, class_name: "Message"
 
