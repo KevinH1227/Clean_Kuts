@@ -10,8 +10,9 @@
 
         <%= @my_appointments.count %>
         <% @my_appointments.each do |appointment| %>
-        <% barber = appointment.other_user(current_user) %>
-        <li>With:<%= barber.full_name() %></li>
-        From: <%= appointment.start_time %> to: <%= appointment.end_time %>
+        <% other_user = appointment.other_user(current_user) %>
+        <li>With:<%= other_user.full_name() %></li>
+        On <%= appointment.day %>
+        This service will take <%= appointment.durations %>
         <% end %>
 </div>
