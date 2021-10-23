@@ -8,7 +8,6 @@
         <h2>Your Appointment(s)</h2>
         <%= @current_user.barber? ? "Your appointments:" : "Your next appointment:" %>
 
-        <%= @my_appointments.count %>
         <% @my_appointments.each do |appointment| %>
         <% other_user = appointment.other_user(current_user) %>
         <li>With:<%= other_user.full_name() %></li>
