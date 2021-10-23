@@ -29,7 +29,7 @@ gem 'faker'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
-gem "simple_calendar", "~> 1.1.0"
+gem "simple_calendar", "~> 2.4"
 gem 'cloudinary', '~> 1.16.0'
 
 gem 'autoprefixer-rails', '10.2.5'

@@ -4,6 +4,14 @@ class Appointment < ApplicationRecord
   belongs_to :service
   belongs_to :time_slot
 
+  validates :start_time, :end_time, presence: true
+
+  default_scope -> { order(:start_time) }  # Our meetings will be ordered by their start_time by default
+
+  def time
+    "#{start_time.strftime('%I:%M %p')} - #{end_time.strftime('%I:%M %p')}"
+  end
+
   def other_user(current_user)
     if current_user.barber?
       return self.client
@@ -12,6 +20,9 @@ class Appointment < ApplicationRecord
     end
   end
 
+  def multi_days?
+    (end_time.to_date - start_time.to_date).to_i >= 1
+  end
   # def start_hour
   #   return self.start_time.strftime('%H:%M')
   # end
