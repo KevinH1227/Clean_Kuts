@@ -4,29 +4,48 @@
   zoom: 1.0 ;
 }
 
-.banner h1 {
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-weight: bold;
-  text-align: center;
-  padding: 100px;
-}
-
-body {
-  background-image: url(background.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+// background image + filter
+.img-filter {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("background.jpg");
   background-position: center;
   background-size: cover;
+  z-index: -1000;
+}
+
+// banner title styling
+.banner-title h1, p{
+  color: white;
+  text-shadow: 4px 4px 16px rgba(0,0,0,0.2);
+  font-weight: bold;
+  text-align: center;
+}
+.banner-title h1 {
+  padding: 100px 100px 0px 100px;
+}
+.banner-title p {
+  padding: 0px 100px 100px 100px;
+}
+
+.part2 h2 {
+  color: white;
+  text-align: center;
+  text-shadow: 4px 4px 16px $black-secondary;
 }
 
 .nav1, .location{
   background-color: $button-primary;
-  color:$basic-white;
+  color: $basic-white;
   width: 100%;
-  border-radius:4px 4px 0px 0px;
-  box-shadow:0.5px 2px 3px $black-primary;
-  text-align:center;
+  border-radius: 4px;
+  box-shadow: 4px 4px 16px $black-primary;
+  text-align: center;
 }
 
 .location {
@@ -62,34 +81,11 @@ body {
   z-index:0;
 }
 
-.footer{
-  background-color:$basic-white;
-  position:sticky;
-  bottom:0px;
-  height: 50px;
-
-  .home{
-    text-align: right;
-  }
-  .back{
-    text-align: left;
-  }
-}
-
 .card{
   background-color: white;
   margin: 5%;
   border-radius:4px;
-  box-shadow: 0.5px 2px 3px $black-secondary;
-}
-
-h2{
-  color:$black-secondary;
-  margin: 5% 10% 5% 10%;
-  padding-left:2%;
-  width: 70%;
-  text-align:center;
-  text-shadow: 0.5px 2px 3px $black-secondary;
+  box-shadow: 4px 4px 16px $black-secondary;
 }
 
 .heart, .bubble, .marker {
@@ -113,46 +109,4 @@ p{
 
 .map{
   font-size:45px;
-}
-
-
-
-
-// -----
-.card-product {
-  overflow: hidden;
-  width: 73%;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  border-radius:4px 4px 0px 0px;
-  box-shadow:0.5px 2px 3px $black-primary;
-  text-align:center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 a {
-  font-size: 16px;
-  font-weight: bold;
-  color: $black-primary;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
 }
