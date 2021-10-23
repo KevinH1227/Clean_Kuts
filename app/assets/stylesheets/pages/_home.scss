@@ -5,11 +5,11 @@
 }
 
 .banner h1 {
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
   font-weight: bold;
+  text-align: center;
+  padding: 100px;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .nav1, .location{
