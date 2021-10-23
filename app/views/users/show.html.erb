@@ -24,7 +24,16 @@
   </div>
   <div class="description"><%= @barber.description %>
   </div>
+
+  <% if @current_user == @barber %>
+    <%= render 'shared/tabs_barber_dashboard' %>
+
+  <% elsif @current_user == @client %>
+    <%= render 'shared/tabs_barber_profile'%>
+  <% end %>
 </div>
+
+
 
   <% if @current_user == @barber %>
     <%= link_to 'Edit Profile', edit_user_path %>
