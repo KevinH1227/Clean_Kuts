@@ -1,3 +1,4 @@
+<!-- This is the BARBER PROFILE -->
 <div class="card">
   <%# <div class="container d-flex" id="barber-signup">
 
@@ -15,14 +16,24 @@
   <div class="email"><i class="fab fa-instagram"></i> <%= @barber.email %>
   </div>
 
-  <%= link_to 'Schedule', new_appointment_path(@barber) %>
-  <%= link_to 'Services', user_services_path(@barber) %>
 
-  <div class="description1">About me
+  <!-- <div class="review">  </div> --> -->
+  <div class="services"> <%= link_to 'Services', user_services_path(@barber) %> </div>
+
+  <div class="description1">About me:
   </div>
   <div class="description"><%= @barber.description %>
   </div>
+
+  <% if @current_user == @barber %>
+    <%= render 'shared/tabs_barber_dashboard' %>
+
+  <% elsif @current_user == @client %>
+    <%= render 'shared/tabs_barber_profile'%>
+  <% end %>
 </div>
+
+
 
   <% if @current_user == @barber %>
     <%= link_to 'Edit Profile', edit_user_path %>
