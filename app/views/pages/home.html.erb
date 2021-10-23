@@ -1,36 +1,28 @@
-<div class="banner">
+<div class="banner-title">
   <h1>Clean Kut's</h1>
+  <p>Your barber around the corner</p>
 </div>
 
 <div class="search-bar">
   <!-- search-bar -->
-    <%# <div id="location">
-      <p class="search">Search
-        <i class="fas fa-search-location search_icon"></i>
-      </p>
-    </div> %>
-
     <div class="container">
       <input type="text" placeholder="Search...">
       <div class="search"></div>
     </div>
   <!--end search-bar -->
-  </div>
 </div>
 
 
 <!-- part2 -->
 <div class="part2">
-  <h2> TOP 5 BARBERS NEAR YOU</h2>
+  <h2>TOP 5 BARBERS NEAR YOU</h2>
 </div>
 
 <div >
   <% @barbers.first(5).each do |barber| %>
 
-      <!-- on the left: side: image picture of the barber   -->
-
-
-<!-- here -->
+    <!-- on the left: side: image picture of the barber   -->
+    <!-- here -->
     <div class="card-product">
       <% if barber.photo.attached? %>
         <div class="picture"><%= cl_image_tag barber.photo.key, :class => "photo" %></div>
@@ -40,9 +32,8 @@
       <h2><%= link_to barber.full_name, barber %></h2>
       <div class="description2"><p><%= barber.description %></p></div>
     </div>
-
-      <!-- in the middle: info to put in the card are: barber name barber.description barber.rating no rating so far -->
-    <div class="col-3">
+    <!-- in the middle: info to put in the card are: barber name barber.description barber.rating no rating so far -->
+    <div class="icons col-3">
       <div class="row heart">
         <i class="fas fa-heart"></i>
         <!-- bubble for chat with the barber -->
