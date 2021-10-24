@@ -1,3 +1,60 @@
 // <!-- When I click on a tab button, a section appears -->
 // <!-- Name the class of those tabs buttom class="reviews", class="services"-->
 // <!-- Name the class of those sections class="reviews_section", class="services_section"-->
+.reviews-services{
+  cursor:pointer;
+  display:flexbox;
+  p{color:black;
+  }
+
+.active {
+background-color:$light-gray;
+box-shadow: 4px 0 4px -2px $black-primary;
+}
+
+.passive {
+background-color:transparent;
+}
+
+
+.change{
+  display: none;
+}
+
+.reviews {
+display: block;
+width:50%;
+padding:8px;
+border-radius:4px;
+}
+
+.services {
+display: block;
+width:50%;
+padding:8px;
+border-radius:4px;
+
+}
+
+.services_section {
+display: none;
+width:100%;
+height:100px;
+
+}
+
+.appear{
+display: block;
+width:100%;
+box-shadow: 4px 0 4px -2px $black-primary;
+background-color:$light-gray;
+}
+
+.reviews_section {
+width:100%;
+height:100px;
+background-color:$light-gray;
+}
+
+
+}
