@@ -25,9 +25,11 @@
   <div class="description"><%= @barber.description %>
   </div>
 
+<!-- Case in which I look at my dashboard as a barber -->
   <% if @current_user == @barber %>
     <%= render 'shared/tabs_barber_dashboard' %>
 
+<!-- Case in which I want to look at barbers profiles as a client -->
   <% elsif @current_user == @client %>
     <%= render 'shared/tabs_barber_profile'%>
   <% end %>
