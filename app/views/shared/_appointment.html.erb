@@ -1,0 +1,21 @@
+<!-- This is where I can look at appointments if I am a client and or if I am a barber -->
+<!-- create the dashboard profile with appointment section as the core of the page  -->
+<!-- appointment section -->
+<div class="info">
+  <div class="message">
+    <h2><MESSAGES></MESSAGES></h2>
+  </div>
+  <div class="d-flex flexor">
+    <div class="owner-section">
+      <h2>Your Appointment(s)</h2>
+      <%= @current_user.barber? ? "Your appointments:" : "Your next appointment:" %>
+      <% @my_appointments.each do |appointment| %>
+        <% other_user = appointment.other_user(current_user) %>
+        <li>With:<%= other_user.full_name() %></li>
+        On <%= appointment.day %>
+        This service will take <%= appointment.durations %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- end of appointment section -->
