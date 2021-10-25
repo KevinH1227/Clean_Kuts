@@ -1,14 +1,52 @@
+.barber-card {
+  overflow: hidden;
+  width: 90%;
+  height: 120px;
+  background: $basic-white;
+  display: flex;
+  border-radius: 4px;
+  box-shadow: 4px 4px 16px $black-primary;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 16px;
+}
+
+.barber-avatar img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.barber-card h2 a {
+  font-size: 16px;
+  font-weight: bold;
+  color: $black-primary;
+}
+
+.barber-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.barber-card .barber-infos {
+  padding: 16px;
+}
+
+
 .description1{
   font-size: 32px;
   font-weight: bold;
   width: 70%;
   margin-top: 0px;
-  padding-top:0px;
+  padding-top: 0px;
 }
 .description{
-  display:scroll;
+  display: scroll;
   width: 50%;
   height: 100px;
   margin-top: 0px;
-  padding-top:0px;
+  padding-top: 0px;
 }

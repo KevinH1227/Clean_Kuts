@@ -4,7 +4,9 @@
   zoom: 1.0 ;
 }
 
-// background image + filter
+
+
+// background image with filter
 .img-filter {
   width: 100%;
   height: 100vh;
@@ -19,24 +21,34 @@
   z-index: -1000;
 }
 
+
+
 // banner title styling
 .banner-title h1, p{
   color: white;
   text-shadow: 4px 4px 16px rgba(0,0,0,0.2);
-  font-weight: bold;
   text-align: center;
 }
 .banner-title h1 {
-  padding: 100px 100px 0px 100px;
+  font-family: 'Pacifico', cursive;
+  padding-top: 100px;
+  margin: 0;
+  font-size: 64px;
 }
 .banner-title p {
-  padding: 0px 100px 100px 100px;
+  padding-bottom: 100px;
+  margin: 0px;
+  font-family: 'Dosis';
 }
 
-.part2 h2 {
+
+
+// Barber cards section
+.barbers-container h2 {
   color: white;
   text-align: center;
   text-shadow: 4px 4px 16px $black-secondary;
+  font-family: 'Dosis';
 }
 
 .nav1, .location{
@@ -72,19 +84,19 @@
   width: 100%;
 }
 
-.image{
+.image {
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%;
-  object-fit:cover;
-  box-shadow:0.5px 2px 3px $black-primary;
+  object-fit: cover;
+  box-shadow: 4px 4px 16px $black-primary;
   z-index:0;
 }
 
-.card{
+.card {
   background-color: white;
   margin: 5%;
-  border-radius:4px;
+  border-radius: 4px;
   box-shadow: 4px 4px 16px $black-secondary;
 }
 
@@ -92,21 +104,20 @@
   margin: 5% 10% 5% 75%;
 }
 
-.photo{
-  width:200px;
-  height:200px;
-  border-radius:50%;
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .description2 {
 height: 72px;
 width: 90%;
-overflow:scroll;
-p{
-
+overflow: scroll;
+  p {
+  }
 }
-}
 
-.map{
+.map {
   font-size:45px;
 }
