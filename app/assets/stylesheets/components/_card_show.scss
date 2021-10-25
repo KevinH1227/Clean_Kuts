@@ -1,23 +1,31 @@
+.barbers-container {
+  width: 90%;
+  margin: auto;
+}
+
 .barber-card {
   overflow: hidden;
-  width: 90%;
   height: 120px;
-  background: $basic-white;
+  background: #D7D7D7;
   display: flex;
   border-radius: 4px;
   box-shadow: 4px 4px 16px $black-primary;
-  text-align: center;
-  margin: auto;
   margin-bottom: 16px;
 }
 
 .barber-avatar img {
+  object-fit: cover;
   height: 100%;
   width: 120px;
-  object-fit: cover;
+  opacity: 50%;
 }
 
-.barber-card h2 a {
+.barber-infos {
+  width: 61%;
+  padding: 0px 8px;
+}
+
+.barber-card h3 a {
   font-size: 16px;
   font-weight: bold;
   color: $black-primary;
@@ -30,11 +38,6 @@
   margin-bottom: 0;
   margin-top: 8px;
 }
-
-.barber-card .barber-infos {
-  padding: 16px;
-}
-
 
 .description1{
   font-size: 32px;
@@ -49,4 +52,10 @@
   height: 100px;
   margin-top: 0px;
   padding-top: 0px;
+}
+
+.icons {
+  display: grid;
+  align-content: space-evenly;
+  justify-items: center;
 }

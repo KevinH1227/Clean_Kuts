@@ -25,7 +25,7 @@
 
 // banner title styling
 .banner-title h1, p{
-  color: white;
+  color: #D7D7D7;
   text-shadow: 4px 4px 16px rgba(0,0,0,0.2);
   text-align: center;
 }
@@ -45,7 +45,7 @@
 
 // Barber cards section
 .barbers-container h2 {
-  color: white;
+  color: #D7D7D7;
   text-align: center;
   text-shadow: 4px 4px 16px $black-secondary;
   font-family: 'Dosis';
@@ -71,33 +71,12 @@
   }
 }
 
-.nomargin {
-  margin:0px;
-  padding:0px;
-}
-
 .center {
   display: block;
   margin-left: 0;
   margin-right: 0;
   padding:0px;
   width: 100%;
-}
-
-.image {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  box-shadow: 4px 4px 16px $black-primary;
-  z-index:0;
-}
-
-.card {
-  background-color: white;
-  margin: 5%;
-  border-radius: 4px;
-  box-shadow: 4px 4px 16px $black-secondary;
 }
 
 .heart, .bubble, .marker {

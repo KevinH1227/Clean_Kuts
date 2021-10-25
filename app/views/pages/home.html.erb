@@ -1,4 +1,4 @@
-<!-- Top titles -->
+<!-- Top Banner Titles -->
 <div class="banner-title">
   <h1>Clean Kut's</h1>
   <p>Your barber around the corner</p>
@@ -13,9 +13,8 @@
 
 
 <!-- Barber section -->
-<div class="container barbers-container">
+<div class="barbers-container">
   <h2>Top 5 barbers near you</h2>
-
   <div class="barber-cards">
     <% @barbers.first(5).each do |barber| %>
       <div class="barber-card">
@@ -23,39 +22,21 @@
           <% if barber.photo.attached? %>
             <%= cl_image_tag barber.photo.key, :class => "photo" %>
           <% else %>
-            <%# <%= img src="missing.png" %> %>
+            <%= image_tag "missing.png" %>
           <% end %>
         </div>
-
         <div class="barber-infos">
           <h3><%= link_to barber.full_name, barber %></h3>
-          <div class="description2"><p><%= barber.description %></p></div>
+          <p><%= barber.description %></p>
         </div>
-
         <div class="icons">
-          <div class="row heart">
-            <i class="fas fa-heart"></i>
-          </div>
-          <div class="row bubble">
-            <i class="far fa-comment"></i>
-          </div>
-          <div class="row marker">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
+          <i class="fas fa-heart"></i>
+          <i class="far fa-comment"></i>
+          <i class="fas fa-map-marker-alt"></i>
         </div>
-
       </div>
     <% end %>
-
-    <%# <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div> %>
   </div>
-  <!--  end Deck of 5 cards-->
 </div>
 
 
