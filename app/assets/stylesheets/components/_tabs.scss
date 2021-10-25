@@ -3,7 +3,85 @@
 // <!-- Name the class of those sections class="reviews_section", class="services_section"-->
 
 
+// start of barber dashboard css
+.schedule-appointment-reviews-services {
+  p {
+    color:black;
+  }
 
+  .active {
+    background-color:$light-gray;
+    box-shadow: 4px 0 4px -2px $black-primary;
+  }
+
+  .passive {
+    background-color:transparent;
+  }
+
+
+    .schedule {
+    display:block;
+    width:25%;
+    height:100px;
+    padding:8px;
+    border-radius:4px;
+  }
+
+      .appointments {
+    display:block;
+    width:25%;
+    height:100px;
+    padding:8px;
+    border-radius:4px;
+  }
+      .reviews {
+    display:block;
+    width:25%;
+    height:100px;
+    padding:8px;
+    border-radius:4px;
+  }
+      .services {
+    display:block;
+    width:25%;
+    height:100px;
+    padding:8px;
+    border-radius:4px;
+  }
+
+  .change {
+    display:none;
+  }
+
+  .appear {
+    display: block;
+    width:100%;
+    box-shadow: 4px 0 4px -2px $black-primary;
+    background-color:$light-gray;
+  }
+
+  .schedule_section{
+      width:100%;
+      height:100px;
+      background-color:$light-gray;
+    }
+
+  .appointment_section{
+
+      width:100%;
+      height:100px;
+  }
+  .reviews_section{
+
+      width:100%;
+      height:100px;
+  }
+  .services_section{
+
+      width:100%;
+      height:100px;
+  }
+}
 // start of client profile css
 .appointments-reviews-favourites {
   cursor:pointer;
