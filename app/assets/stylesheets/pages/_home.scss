@@ -5,7 +5,6 @@
 }
 
 
-
 // background image with filter
 .img-filter {
   width: 100%;
@@ -22,34 +21,39 @@
 }
 
 
-
 // banner title styling
 .banner-title h1, p{
-  color: #D7D7D7;
+  color: #e7e7e7;
   text-shadow: 4px 4px 16px rgba(0,0,0,0.2);
   text-align: center;
+  margin: 0;
 }
 .banner-title h1 {
   font-family: 'Pacifico', cursive;
   padding-top: 100px;
-  margin: 0;
   font-size: 64px;
 }
 .banner-title p {
   padding-bottom: 100px;
-  margin: 0px;
   font-family: 'Dosis';
 }
 
 
+// Barber section
+.barbers-container {
+  width: 90%;
+  margin: auto;
+}
 
-// Barber cards section
 .barbers-container h2 {
-  color: #D7D7D7;
+  color: #e7e7e7;
   text-align: center;
   text-shadow: 4px 4px 16px $black-secondary;
   font-family: 'Dosis';
+  margin-bottom: 12px;
 }
+
+
 
 .nav1, .location{
   background-color: $button-primary;
@@ -63,37 +67,11 @@
 .location {
   p {
     vertical-align: center;
-    margin-top:10%;
-    margin-bottom:10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
   }
   .search {
-    font-weight:bold;
-  }
-}
-
-.center {
-  display: block;
-  margin-left: 0;
-  margin-right: 0;
-  padding:0px;
-  width: 100%;
-}
-
-.heart, .bubble, .marker {
-  margin: 5% 10% 5% 75%;
-}
-
-.photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-.description2 {
-height: 72px;
-width: 90%;
-overflow: scroll;
-  p {
+    font-weight: bold;
   }
 }
 

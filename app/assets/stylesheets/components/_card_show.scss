@@ -1,12 +1,7 @@
-.barbers-container {
-  width: 90%;
-  margin: auto;
-}
-
 .barber-card {
   overflow: hidden;
   height: 120px;
-  background: #D7D7D7;
+  background: #e7e7e7;
   display: flex;
   border-radius: 4px;
   box-shadow: 4px 4px 16px $black-primary;
@@ -23,6 +18,12 @@
 .barber-infos {
   width: 61%;
   padding: 0px 8px;
+}
+
+.barber-infos p {
+  color: $black-primary;
+  text-align: left;
+  overflow: scroll;
 }
 
 .barber-card h3 a {

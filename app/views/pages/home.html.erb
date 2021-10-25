@@ -6,7 +6,7 @@
 
 
 <!-- Search bar -->
-<div class="container">
+<div class="search-container">
   <input type="text" placeholder="Enter your postal code">
   <div class="search"></div>
 </div>
@@ -20,14 +20,14 @@
       <div class="barber-card">
         <div class="barber-avatar">
           <% if barber.photo.attached? %>
-            <%= cl_image_tag barber.photo.key, :class => "photo" %>
+            <%= cl_image_tag barber.photo.key %>
           <% else %>
             <%= image_tag "missing.png" %>
           <% end %>
         </div>
         <div class="barber-infos">
           <h3><%= link_to barber.full_name, barber %></h3>
-          <p><%= barber.description %></p>
+          <p>About the barber: <%= barber.description %></p>
         </div>
         <div class="icons">
           <i class="fas fa-heart"></i>
