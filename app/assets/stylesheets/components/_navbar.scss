@@ -44,21 +44,25 @@
 .navbar-nav {
   display: flex;
   flex-direction: column;
-  padding: 4px;
+  padding: 2px;
   margin-bottom: 0;
   list-style: none;
   align-items: end;
-  background-color: #E7E7E7;
   width: fit-content;
   float: right;
 }
 
 .dropdown {
-  text-align: center;
+  text-align: right;
+  position: fixed;
 }
 
 .navbar-nav .dropdown-menu {
   position: static;
   float: none;
   text-align: center;
+}
+
+.navbar-collapse {
+  flex-basis: 0;
 }
