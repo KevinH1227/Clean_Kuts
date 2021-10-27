@@ -1,48 +1,35 @@
 <!-- This is the BARBER PROFILE -->
 <div class="card">
   <%# <div class="container d-flex" id="barber-signup">
-
     </div> %>
+
   <% if @barber.photo.attached? %>
     <div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
   <% end %>
-  <div class="full-name"><%= @barber.full_name %>
-
+  <div class="full-name">
+    <%= @barber.full_name %>
   </div>
-  <div class="phone"><i class="fas fa-phone-alt"></i> <%= @barber.phone_number %>
+  <div class="phone"><i class="fas fa-phone-alt"></i>
+    <%= @barber.phone_number %>
   </div>
-  <div class="address"><i class="fas fa-city"></i> <%= @barber.address %>
+  <div class="address"><i class="fas fa-city"></i>
+    <%= @barber.address %>
   </div>
-  <div class="email"><i class="fab fa-instagram"></i> <%= @barber.email %>
+  <div class="email"><i class="fab fa-instagram"></i>
+    <%= @barber.email %>
   </div>
-
-
-  <!-- <div class="review">  </div> --> -->
-  <div class="services"> <%= link_to 'Services', user_services_path(@barber) %> </div>
-
-  <div class="description1">About me:
-  </div>
-  <div class="description"><%= @barber.description %>
-  </div>
-
-<!-- Case in which I look at my dashboard as a barber -->
-  <% if @current_user == @barber %>
-    <%= render 'shared/tabs_barber_dashboard' %>
-
-<!-- Case in which I want to look at barbers profiles as a client -->
-  <% elsif @current_user == @client %>
-    <%= render 'shared/tabs_client_profile' %>
-
-  <!-- 'shared/tabs_barber_profile -->
-  <% end %>
-</div>
-
-
-
-  <% if @current_user == @barber %>
-    <%= link_to 'Edit Profile', edit_user_path %>
-  <% end %>
-
   <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
-
+  <div class="description1">
+    About me:
+  </div>
+  <div class="description">
+    <%= @barber.description %>
+  </div>
+    <%= render 'shared/tabs_barber_profile' %>
 </div>
+
+
+
+
+
+
