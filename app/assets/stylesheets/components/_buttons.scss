@@ -11,10 +11,46 @@
 }
 
 .window-popup{
-  width: 500px;
-  height:500px;
-  background:red;
-}
+    width: 100%;
+    height:100%;
+    background:$background;
+    opacity:.9;
+    position:absolute;
+    // top: 202px;
+    z-index:2;
+
+    .window-content{
+      background-color:$basic-white;
+      position: absolute;
+      top: 202px;
+      width:100%;
+      height:281px;
+      border-radius:9px;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+    }
+    h1{
+      text-align:center;
+    }
+    p{
+      color:$black-primary;
+    }
+   .window-in{
+    background:$light-gray;
+
+    z-index:2;
+    .cancel, .confirm{
+      color: $basic-white;
+      background-color:$button-primary;
+      text-align: center;
+      margin-top:10px;
+      padding:5px;
+      border-radius: 4px;
+
+    }
+
+    }
+  }
+// }
 
 .change{
   display:none;
