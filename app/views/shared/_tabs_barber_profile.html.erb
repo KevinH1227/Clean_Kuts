@@ -1,22 +1,25 @@
-<!--
+
 <div class="reviews-services" id="reviews-services">
-<div class="part1 d-flex">
+  <div class="part1 d-flex">
     <div class="reviews active" id="reviews">
       <p>reviews</p>
     </div>
     <div class="services" id="services">
       <p>services</p>
     </div>
-</div>
-<div class="part2">
+  </div>
+  <div class="part2">
     <div class="reviews_section appear" id="spot">
       <p>These are my clients' reviews</p>
     </div>
     <div class="services_section" id="spot-service">
-      <p>These are the services I offer</p>
+      <div class="container">
+        <% @barber.services.each do |service| %>
+          <p><%= service.cut_type %></p>
+          <p>$<%= service.price %>.00</p>
+          <p><%= service.duration/60 %> minutes</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-
- -->
