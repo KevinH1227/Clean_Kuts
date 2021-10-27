@@ -1,0 +1,25 @@
+.booking-button{
+  background-color:$button-primary;
+  border-radius: 4px;
+  // width:20%;
+  text-align: center;
+  padding: 4px;
+  margin:8px;
+  a, i{
+    color: $basic-white;
+  }
+}
+
+.window-popup{
+  width: 500px;
+  height:500px;
+  background:red;
+}
+
+.change{
+  display:none;
+}
+
+.appear{
+  display: block;
+}
