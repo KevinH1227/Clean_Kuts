@@ -12,10 +12,5 @@
       <%# <%= f.collection_radio_buttons :cut_type, haircut:, beard:, both: %>
       <%= f.input :photo, as: :file %>
       <%= f.button :submit, class:"btn btn-primary" %>
-        <% if @current_user == @barber %>
-      <%= render 'shared/tabs_barber_dashboard' %>
-
-      <% if @current_user == @client %>
-      <%= render 'shared/tabs_client_profile' %>
   <% end %>
 </div>

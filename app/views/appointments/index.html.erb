@@ -1,48 +1,22 @@
+<!-- APPOINTMENTS#INDEX -->
 <!-- This goes in the CLIENT DASHBOARD -->
 
-<!-- <ul class="nav nav-tabs" id="myTab" role="tablist"> -->
-  <!-- <li class="nav-item" role="presentation"> -->
-<!-- so the client can go to the barber's schedule and book if he likes it or go somewhere else for another barber need a link to booking-->
-    <!-- <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Appointments</button> -->
-  <!-- </li> -->
-  <!-- <li class="nav-item" role="presentation"> -->
-    <!-- <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Reviews</button> -->
-  <!-- </li> -->
-<!-- <li class="nav-item" role="presentation"> -->
-    <!-- <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Favourite</button> -->
-  <!-- </li> -->
-<!-- </ul> -->
-<!-- <div class="tab-content" id="myTabContent"> -->
-  <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div> -->
-  <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div> -->
-  <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div> -->
-<!-- </div> -->
+<!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation"> -->
+ <!-- so the client can go to the barber's schedule and book if he likes it or go somewhere else for another barber need a link to booking -->
+<!--     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Appointments</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Reviews</button>
+  </li>
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Favourite</button>
+  </li>
+</ul> -->
+<!-- <div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div> -->
 
-<div class="appointments-reviews-favourites" onclick="tabs()" id="appointments-reviews-favourites">
-  <div class="part1 d-flex">
-    <div class="appointments active" id="appointments">
-      <p>My Appointments</p>
-
-    </div>
-    <div class="reviews" id="reviews">
-      <p>My Reviews</p>
-    </div>
-    <div class="favourites" id="favourites">
-      <p>My Favourites</p>
-    </div>
-  </div>
-  <div class="part2">
-    <div class="appointments_section appear" id="spot2">
-      <%= render 'shared/appointment' %>
-    </div>
-    <div class="reviews_section appear" id="spot3">
-      <p>This is my reviews section you can see how picky I am</p>
-    </div>
-    <div class="favourites_section" id="spot4">
-      <p>These are my favourite barbers</p>
-    </div>
-  </div>
-</div>
-
-
-
+<%= render 'shared/appointment' %>
