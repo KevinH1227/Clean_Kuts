@@ -4,15 +4,16 @@
   <% @chatroom.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
       <i class="author">
-        <span><%= message.user.nickname %></span>
+        <span><%= message.sender.full_name %></span>
         <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </i>
       <p><%= message.content %></p>
     </div>
   <% end %>
 
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+  <%= simple_form_for [ @chatroom, @message ] do |f| %>
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+    <%= f.submit %>
   <% end %>
 
 </div>

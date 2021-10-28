@@ -8,12 +8,12 @@ class MessagesController < ApplicationController
     # in ONE chatroom
     @message.chatroom = @chatroom
     # only current users
-    @message.user = current_user
+    @message.sender = current_user
 
     # if it works save it and show it on the page (redirect to the same page)
     # otherwise render the error on the same pag
     if @message.save
-      redirect_to chatroom_path(@chatroom, anchor: "message -#{message.id}")
+      redirect_to chatroom_path(@chatroom, anchor: "message -#{@message.id}")
     else
       render "chatroom/show"
     end
