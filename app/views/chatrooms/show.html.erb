@@ -13,6 +13,6 @@
 </div>
 
 <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%#= f.hidden_field :recipient, value: "some value" %>
+  <%= f.hidden_field :recipient_id, value: @recipient_id %>
   <%= f.input :content, label: false, placeholder: "Say what?" %>
 <% end %>

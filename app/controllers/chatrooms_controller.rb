@@ -1,12 +1,12 @@
 class ChatroomsController < ApplicationController
   def show
+    @recipient_id = params[:recipient_id]
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
   end
 
-  def create
+  def new
     @chatroom = Chatroom.create
-    # raise
-    redirect_to chatroom_path(@chatroom)
+    redirect_to chatroom_path(@chatroom, recipient_id: params[:recipient_id])
   end
 end

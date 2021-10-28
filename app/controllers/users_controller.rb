@@ -40,11 +40,10 @@ class UsersController < ApplicationController
 
   def previous_chat?
     @messages = Message.where(
-      "sender_id = ? AND recipient_id = ?
-      OR sender_id = ? AND recipient_id = ?",
+      "(sender_id = ? AND recipient_id = ?)
+      OR (sender_id = ? AND recipient_id = ?)",
       current_user.id, @barber.id, @barber.id, current_user.id
     )
-
     @messages.any?
   end
 

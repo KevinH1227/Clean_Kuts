@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     # only current users
     @message.sender = current_user
-    @message.recipient = User.find(params[:id])
+
     # if it works save it and show it on the page (redirect to the same page)
     # otherwise render the error on the same pag
     if @message.save
@@ -24,6 +24,6 @@ class MessagesController < ApplicationController
   end
 
   def params_message
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, :recipient_id)
   end
 end
