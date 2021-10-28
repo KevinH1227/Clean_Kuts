@@ -1,14 +1,16 @@
 <div class="container">
   <h1>Edit Your Profile</h1>
 
-<%= simple_form_for @user do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :email %>
-    <%= f.input :address %>
-    <%= f.input :phone_number %>
-    <%= f.button :submit, class:"btn btn-primary" %>
-
-    <%# <p><%= link_to ????, root_path %>
-<% end %>
+  <%= simple_form_for @user do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :email %>
+      <%= f.input :address %>
+      <%= f.input :post_code %>
+      <%= f.input :phone_number %>
+      <%= f.input :description %>
+      <%# <%= f.collection_radio_buttons :cut_type, haircut:, beard:, both: %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, class:"btn btn-primary" %>
+  <% end %>
 </div>

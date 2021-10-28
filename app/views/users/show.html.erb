@@ -1,10 +1,35 @@
+<!-- This is the BARBER PROFILE -->
+<div class="card">
+  <%# <div class="container d-flex" id="barber-signup">
+    </div> %>
 
-<div class="container">
-  <h1><%= @barber.first_name %>
-  <%= @barber.last_name %> </h1>
-
-  <p><%= @barber.email %></p>
-    <p><%= @barber.phone_number %></p>
+  <% if @barber.photo.attached? %>
+    <div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
+  <% end %>
+  <div class="full-name">
+    <%= @barber.full_name %>
+  </div>
+  <div class="phone"><i class="fas fa-phone-alt"></i>
+    <%= @barber.phone_number %>
+  </div>
+  <div class="address"><i class="fas fa-city"></i>
+    <%= @barber.address %>
+  </div>
+  <div class="email"><i class="fab fa-instagram"></i>
+    <%= @barber.email %>
+  </div>
+  <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
+  <div class="description1">
+    About me:
+  </div>
+  <div class="description">
+    <%= @barber.description %>
+  </div>
+    <%= render 'shared/tabs_barber_profile' %>
 </div>
 
-  <%= link_to 'Barbers', users_path %>
+
+
+
+
+

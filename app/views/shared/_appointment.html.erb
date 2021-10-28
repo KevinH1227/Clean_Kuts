@@ -1,0 +1,103 @@
+<!-- This is where I can look at appointments if I am a client and or if I am a barber -->
+<!-- create the dashboard profile with appointment section as the core of the page  -->
+<!-- appointment section -->
+
+
+<!-- user AS A BARBER -->
+<% if current_user.barber? %>
+  <div class="schedule-appointment-reviews-services">
+    <div class="part1 d-flex">
+      <div class="schedule active" id="schedule3">
+        <p>Schedule</p>
+        </div>
+      <div class="appointments" id="appointments3">
+        <p>Appointments</p>
+      </div>
+      <div class="reviews" id="reviews3">
+        <p>Reviews</p>
+      </div>
+      <div class="services" id="services3">
+        <p>Services</p>
+      </div>
+    </div>
+    <div class="part2">
+      <div class="schedule_section appear" id="spot1">
+        <!-- original appointment file -->
+        <div class="info">
+          <div class="message">
+            <h2><MESSAGES></MESSAGES></h2>
+          </div>
+          <div class="d-flex flexor">
+            <div class="owner-section">
+              <p>Your Appointment(s)</p>
+              <%= @current_user.barber? ? "Your appointments:" : "Your next appointment:" %>
+              <% @my_appointments.each do |appointment| %>
+                <% other_user = appointment.other_user(current_user) %>
+                <li>With:<%= other_user.full_name() %></li>
+                On <%= appointment.day %>
+                This service will take <%= appointment.durations %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <!-- end original appointment -->
+      </div>
+      <div class="appointment_section change" id="spot2">
+        <p>These are my appointments</p>
+      </div>
+      <div class="reviews_section change" id="spot3">
+        <p>These are my clients' reviews</p>
+      </div>
+      <div class="services_section change" id="spot4">
+        <p>These are the services I offer</p>
+      </div>
+    </div>
+  </div>
+<!-- end of user AS A BARBER -->
+
+<!-- user AS A CLIENT -->
+<% else %>
+  <div class="appointments-reviews-favourites"  id="appointments-reviews-favourites">
+    <div class="part1 d-flex">
+      <div class="appointments active" id="appointments2">
+        <p>My Appointments</p>
+      </div>
+      <div class="reviews" id="reviews2">
+        <p>My Reviews</p>
+      </div>
+      <div class="favourites" id="favourites2">
+        <p>My Favourites</p>
+      </div>
+    </div>
+    <div class="part2">
+      <div class="appointments_section appear" id="spot5">
+      <!-- ---original appointment file -->
+      <div class="info">
+        <div class="message">
+          <h2><MESSAGES></MESSAGES></h2>
+        </div>
+        <div class="d-flex flexor">
+          <div class="owner-section">
+            <h2>Your Appointment(s)</h2>
+            <%= @current_user.barber? ? "Your appointments:" : "Your next appointment:" %>
+              <% @my_appointments.each do |appointment| %>
+                <% other_user = appointment.other_user(current_user) %>
+                <li>With:<%= other_user.full_name() %></li>
+                On <%= appointment.day %>
+                This service will take <%= appointment.durations %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <!-- end original appointments file  -->
+      </div>
+      <div class="reviews_section change" id="spot6">
+        <p>This is my reviews section you can see how picky I am</p>
+      </div>
+      <div class="favourites_section change" id="spot7">
+        <p>These are my favourite barbers</p>
+      </div>
+    </div>
+  </div>
+<!-- end of user AS A CLIENT -->
+<% end %>

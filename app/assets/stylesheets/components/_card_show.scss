@@ -1,0 +1,62 @@
+.barber-card {
+  overflow: hidden;
+  height: 120px;
+  background: #e7e7e7;
+  display: flex;
+  border-radius: 4px;
+  box-shadow: 4px 4px 16px $black-primary;
+  margin-bottom: 16px;
+}
+
+.barber-avatar img {
+  object-fit: cover;
+  height: 100%;
+  width: 120px;
+  opacity: 50%;
+}
+
+.barber-infos {
+  width: 61%;
+  padding: 0px 8px;
+}
+
+.barber-infos p {
+  color: $black-primary;
+  text-align: left;
+  overflow: scroll;
+}
+
+.barber-card h3 a {
+  font-size: 16px;
+  font-weight: bold;
+  color: $black-primary;
+}
+
+.barber-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.description1{
+  font-size: 32px;
+  font-weight: bold;
+  width: 70%;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.description{
+  display: scroll;
+  width: 50%;
+  height: 100px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.icons {
+  display: grid;
+  align-content: space-evenly;
+  justify-items: center;
+}

@@ -27,8 +27,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import{ tabs } from '../components/tabs.js'
+// import{ initMapbox } from '../components/map.js'
 
 document.addEventListener('turbolinks:load', () => {
+  tabs();
+  // initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
 });

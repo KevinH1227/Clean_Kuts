@@ -1,6 +1,28 @@
+
+
+.navbar {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100vw;
+  z-index: 1000;
+  margin-top: -72px;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: #D7D7D7;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +30,39 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-align: right;
+  font-family: 'Dosis';
+  color: $basic-white;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  margin-bottom: 0;
+  list-style: none;
+  align-items: end;
+  width: fit-content;
+  float: right;
+}
+
+.dropdown {
+  text-align: right;
+  position: fixed;
+}
+
+.navbar-nav .dropdown-menu {
+  position: static;
+  float: none;
+  text-align: center;
+}
+
+.navbar-collapse {
+  flex-basis: 0;
 }

@@ -1,14 +1,22 @@
-<div class="info">
-<div class="message">
-    <h2><MESSAGES></MESSAGES></h2>
-</div>
+<!-- APPOINTMENTS#INDEX -->
+<!-- This goes in the CLIENT DASHBOARD -->
 
-    <div class="d-flex flexor">
-    <div class="owner-section">
-        <h2>Your Appointment(s)</h2>
-        <%= @my_client_appointments.count %>
-        <% @my_client_appointments.each do |appointment| %>
-        <li>With:<%= appointment.barber.full_name %></li>
-        From: <%= appointment.start_time %> to: <%= appointment.end_time %>
-        <% end %>
-</div>
+<!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation"> -->
+ <!-- so the client can go to the barber's schedule and book if he likes it or go somewhere else for another barber need a link to booking -->
+<!--     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Appointments</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Reviews</button>
+  </li>
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Favourite</button>
+  </li>
+</ul> -->
+<!-- <div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div> -->
+
+<%= render 'shared/appointment' %>

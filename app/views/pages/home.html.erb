@@ -1,5 +1,48 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- Top Banner Titles -->
+<div class="banner-title">
+  <h1>Clean Kut's</h1>
+  <p>Your barber around the corner</p>
+</div>
 
-<%# if user is current user and the role is client, then show all the barber(users.barber.all) %>
-<%# else redirect to user's dashboard %>
+
+<!-- Search bar -->
+<div class="search-container">
+  <input type="text" placeholder="Enter your postal code">
+  <div class="search"></div>
+</div>
+
+
+<!-- Barber section -->
+<div class="barbers-container">
+  <h2>Top 5 barbers near you</h2>
+  <div class="barber-cards">
+    <% @barbers.first(5).each do |barber| %>
+      <div class="barber-card">
+        <div class="barber-avatar">
+          <% if barber.photo.attached? %>
+            <%= cl_image_tag barber.photo.key %>
+          <% else %>
+            <%= image_tag "missing.png" %>
+          <% end %>
+        </div>
+        <div class="barber-infos">
+          <h3><%= link_to barber.full_name, barber %></h3>
+          <p>About the barber: <%= barber.description %></p>
+        </div>
+        <div class="icons">
+          <i class="fas fa-heart"></i>
+          <i class="far fa-comment"></i>
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<!-- Map section -->
+<div id="map"
+  style="margin-left: 25%; margin-right: 25%; margin-top: 10%; width: 50%; height: 100px; border-radius: 8px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
