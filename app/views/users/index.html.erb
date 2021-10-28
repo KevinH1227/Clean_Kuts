@@ -1,10 +1,12 @@
 <div class="container" style="text-align: center;">
   <h1>Barbers</h1>
 
-  <% @barbers.each do |barber|%>
-    <% if barber.photo.attached? %>
-  <%= cl_image_tag barber.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="barber-cards">
+    <% @barbers.each do |barber|%>
+      <% if barber.photo.attached? %>
+        <%= cl_image_tag barber.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <li><%= link_to barber.full_name, barber %></li>
     <% end %>
-    <li><%= link_to barber.full_name, barber %></li>
-  <% end %>
+  </div>
 </div>
