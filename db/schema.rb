@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_010459) do
+ActiveRecord::Schema.define(version: 2021_10_28_012233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_010459) do
     t.bigint "barber_id", null: false
     t.bigint "service_id", null: false
     t.boolean "status", default: true
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "time_slot_id", null: false
@@ -68,12 +68,14 @@ ActiveRecord::Schema.define(version: 2021_10_28_010459) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.bigint "chatroom_id", null: false
     t.bigint "sender_id", null: false
+    t.bigint "recipient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["recipient_id"], name: "index_messages_on_recipient_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
@@ -102,8 +104,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_010459) do
 
   create_table "time_slots", force: :cascade do |t|
     t.bigint "barber_id", null: false
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["barber_id"], name: "index_time_slots_on_barber_id"
@@ -139,6 +141,7 @@ ActiveRecord::Schema.define(version: 2021_10_28_010459) do
   add_foreign_key "favorites", "users", column: "barber_id"
   add_foreign_key "favorites", "users", column: "client_id"
   add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users", column: "recipient_id"
   add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "reviews", "users", column: "barber_id"
   add_foreign_key "reviews", "users", column: "client_id"

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/my_appointments', to: 'appointments#index', as: :my_appointments
   get '/my_services/:barber_id', to: 'services#index', as: :my_services
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show, :create] do
     resources :messages, only: :create
   end
 end

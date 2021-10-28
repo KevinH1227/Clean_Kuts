@@ -18,6 +18,14 @@
   <div class="email"><i class="fab fa-instagram"></i>
     <%= @barber.email %>
   </div>
+  <%# TEMP LINK TO CREATE CHATROOM %>
+  <div class="create-chatroom">
+    <% if @previous_chat %>
+      <%= link_to "Keep chatting", chatroom_path(@chatroom) %>
+    <% else %>
+      <%= link_to "Chat with #{@barber.first_name.capitalize}", chatrooms_path, method: :post %>
+    <% end %>
+  </div>
   <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
   <div class="description1">
     About me:
@@ -27,9 +35,3 @@
   </div>
     <%= render 'shared/tabs_barber_profile' %>
 </div>
-
-
-
-
-
-

@@ -9,11 +9,15 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     # only current users
     @message.sender = current_user
-
+    @message.recipient = User.find(params[:id])
     # if it works save it and show it on the page (redirect to the same page)
     # otherwise render the error on the same pag
     if @message.save
-      redirect_to chatroom_path(@chatroom, anchor: "message -#{@message.id}")
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
+      # redirect_to chatroom_path(@chatroom, anchor: "message -#{@message.id}")
     else
       render "chatroom/show"
     end
