@@ -1,12 +1,37 @@
+<!-- Top Banner Titles -->
+<div class="banner-title">
+  <h1>Clean Kut's</h1>
+  <p>Your barber around the corner</p>
+</div>
+
+<!-- Search bar -->
+<%= render 'shared/searchbar' %>
+
+
+<!-- Barber section -->
 <div class="barbers-container">
-  <h1>Barbers</h1>
+  <h2>We found <%= User.barber.count %> barbers</h2>
 
   <div class="barber-cards">
     <% @barbers.each do |barber|%>
-      <% if barber.photo.attached? %>
-        <%= cl_image_tag barber.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <li><%= link_to barber.full_name, barber %></li>
+    <div class="barber-card">
+        <div class="barber-avatar">
+          <% if barber.photo.attached? %>
+            <%= cl_image_tag barber.photo.key %>
+          <% else %>
+            <%= image_tag "missing.png" %>
+          <% end %>
+        </div>
+        <div class="barber-infos">
+          <h3><%= link_to barber.full_name, barber %></h3>
+          <p>About the barber: <%= barber.description %></p>
+        </div>
+        <div class="icons">
+          <i class="fas fa-heart"></i>
+          <i class="far fa-comment"></i>
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
