@@ -30,7 +30,6 @@ import "bootstrap";
 
 import{ tabs } from '../components/tabs.js'
 import{ window } from '../components/popup.js'
-=======
 import{ tabs } from '../components/tabs.js';
 import{ initChatroomCable } from '../channels/chatroom_channel.js';
 
