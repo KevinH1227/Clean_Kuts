@@ -17,18 +17,14 @@
         <% @barber.services.each do |service| %>
           <div class="cut-type services-card">
             <p><%= service.cut_type %></p>
-          </div>
-          <div class="price services-card">
             <p>$<%= service.price %>.00</p>
-          </div>
-          <div class="duration services-card">
             <p><%= service.duration/60 %> minutes</p>
-          </div>
-          <div class="extra services-card">
-            <!-- <p><%= service.duration/60 %> minutes</p> -->
+            <!-- <p><%= @barber.services.duration/60 %> minutes</p> -->
           </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+m4a1
+mp5
