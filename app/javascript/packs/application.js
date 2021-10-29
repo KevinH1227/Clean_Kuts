@@ -27,13 +27,21 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+import{ tabs } from '../components/tabs.js'
+import{ window } from '../components/popup.js'
+=======
 import{ tabs } from '../components/tabs.js';
 import{ initChatroomCable } from '../channels/chatroom_channel.js';
-// import{ initMapbox } from '../components/map.js'
+
 
 document.addEventListener('turbolinks:load', () => {
   tabs();
+
+  window();
+
   initChatroomCable();
+
   // initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
