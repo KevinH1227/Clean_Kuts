@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @barber = User.find(params[:id])
+    @previous_chat = previous_chat?
+    @chatroom = set_chatroom if @previous_chat
   end
 
   def edit
@@ -35,6 +37,19 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def previous_chat?
+    @messages = Message.where(
+      "(sender_id = ? AND recipient_id = ?)
+      OR (sender_id = ? AND recipient_id = ?)",
+      current_user.id, @barber.id, @barber.id, current_user.id
+    )
+    @messages.any?
+  end
+
+  def set_chatroom
+    @messages.first.chatroom
+  end
 
   def user_params
     params.require(:user).permit(
