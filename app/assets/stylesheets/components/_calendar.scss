@@ -9,10 +9,11 @@
 
   .meeting {
     color: white;
-    padding: 8px 24px;
+    padding: 4px 10px;
     border-radius: 4px;
     background: #1EDD88;
     transition: background 0.3s ease;
+    height: 160px;
   }
   
   .meeting:hover {
@@ -21,6 +22,27 @@
   }
 }
 
-  .calendar-day{
-    border: 5px solid green;
+  .calendar-day {
+    // border: 5px solid green;
+    // font-size: 12px;
+    padding: 0px;
+  }
+
+  .calendar-container {
+    overflow-x: scroll;
+    background: white;
+    padding-top: 50px;
+  }
+
+  .fix-table-header {
+    position: absolute;
+    background-color: white;
+    top: 120px;
+    padding: 8px;
+  }
+
+  .calendar-header {
+    min-width: 33vw;
+    max-width: 33vw !important;
+
   }
