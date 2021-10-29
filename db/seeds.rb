@@ -135,7 +135,25 @@ custom_users = [
         month: 11,
         start_time: "8:00",
         end_time: "15:00",
-      }
+      },
+      {
+        day: 3,
+        month: 11,
+        start_time: "8:00",
+        end_time: "15:00",
+      },
+      {
+        day: 4,
+        month: 11,
+        start_time: "12:00",
+        end_time: "19:00",
+      },
+      {
+        day: 5,
+        month: 11,
+        start_time: "8:00",
+        end_time: "15:00",
+      },
     ]
   },
   {
