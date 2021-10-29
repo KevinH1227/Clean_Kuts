@@ -23,15 +23,15 @@ def create_services(barber)
 end
 
 
-def create_time_slot(barber, day=1, month=11, start_time="9:00", end_time="17:00")
-  # puts "   Available:"
+def create_time_slot(barber, day=1, month=11, year=2021, start_time="9:00", end_time="17:00")
+
   start_hours, start_minutes = start_time.split(':')
   end_hours, end_minutes = end_time.split(':')
 
   time_slot = TimeSlot.create!(
     barber: barber,
-    start_time: Time.utc(2021, month, day, start_hours, start_minutes, 0),
-    end_time: Time.utc(2021, month, day, end_hours, end_minutes, 0),
+    start_time: Time.utc(year, month, day, start_hours, start_minutes, 0),
+    end_time: Time.utc(year, month, day, end_hours, end_minutes, 0),
   )
   puts "   -#{time_slot.start_time.strftime("%A")} from #{time_slot.start_time.strftime('%H:%M')} to #{time_slot.end_time.strftime('%H:%M')}"
 end
@@ -74,7 +74,7 @@ def create_random_barber
     barber = create_user("barber")
 
     create_services(barber)
-
+    puts "   Available:"
     5.times do |i|
       create_time_slot(barber, 1 + i)
     end
@@ -102,25 +102,44 @@ class Integer
   end
 end
 
+
+start_date = Date.new(2021, 11, 9)
+end_date = Date.new(2022, 11, 9)
+
+my_days = [2, 3, 4, 5, 6] # day of the week in 0-6. Sunday is 0, Saturday is 6.
+my_dates = (start_date..end_date).to_a.select {|k| my_days.include?(k.wday)}
+
+TuesdayToSaturday10amTo5pm = my_dates.map do |date|
+  {
+    day: date.mday,
+    month: date.mon,
+    year: date.year,
+    start_time: "10:00",
+    end_time: "17:00",
+  }
+end
+
 custom_users = [
   {
     role: "barber",
-    first_name: "John",
-    last_name: "Smith",
-    email: "johnsmith@email.com",
+    first_name: "Edward",
+    last_name: "Scissorhands",
+    email: "scissors@hotmail.com",
     password: 123456,
     address: "5050 Av Decelles, Montreal",
     postal_code: "H3T 1VR",
     phone_number: "514 346-1552",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467140/Clean%20Kut%27s/edward_scssorhands_cmtqn7.jpg",
+
     services: [
       {
         cut_type: "haircut",
-        price: 25,
+        price: 20,
         duration: 20.minutes(),
       },
       {
         cut_type: "beard",
-        price: 15,
+        price: 12,
         duration: 15.minutes(),
       },
       {
@@ -129,14 +148,7 @@ custom_users = [
         duration: 35.minutes(),
       }
     ],
-    time_slots: [
-      {
-        day: 1,
-        month: 11,
-        start_time: "8:00",
-        end_time: "15:00",
-      }
-    ]
+    time_slots: TuesdayToSaturday10amTo5pm,
   },
   {
     role: "barber",
@@ -147,6 +159,7 @@ custom_users = [
     address: "5050 Av Decelles, Montreal",
     postal_code: "H3T 1VR",
     phone_number: "514 346-1552",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
     services: [
       {
         cut_type: "haircut",
@@ -154,14 +167,7 @@ custom_users = [
         duration: 20.minutes(),
       },
     ],
-    time_slots: [
-      {
-        day: 1,
-        month: 11,
-        start_time: "8:00",
-        end_time: "15:00",
-      }
-    ]
+    time_slots: TuesdayToSaturday10amTo5pm,
   },
   {
     role: "client",
@@ -172,6 +178,7 @@ custom_users = [
     address: "5050 Av Decelles, Montreal",
     postal_code: "H3T 1VR",
     phone_number: "514 346-1552",
+    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
   },
 ]
 
@@ -184,7 +191,10 @@ custom_users.each do |user|
     password: user[:password],
     address: user[:address],
     phone_number: user[:phone_number],
+    description: "I like cookies and milk!!",
   )
+  new_user.photo.attach(io: URI.open(user[:photo]), filename: "#{user[:email]}.png")
+
 
   if new_user.barber?
     user[:services].each do |service|
@@ -196,8 +206,9 @@ custom_users.each do |user|
       )
       puts "   #{new_user.first_name} can give a #{service[:cut_type]} for #{service[:price]}$"      
     end
+    puts "   Available:"
     user[:time_slots].each do |time_slot|
-      create_time_slot(new_user, time_slot[:day], time_slot[:month], time_slot[:start_time], time_slot[:end_time])      
+      create_time_slot(new_user, time_slot[:day], time_slot[:month], time_slot[:year], time_slot[:start_time], time_slot[:end_time])    
     end
   end
 end
