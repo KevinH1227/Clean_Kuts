@@ -8,15 +8,15 @@
 <!-- Search bar -->
 <div class="search-container">
   <%# <input type="text" placeholder="Enter your postal code"> %>
+  <%= form_tag users_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      id: "search_form",
+      # class: "input",
+      placeholder: "Enter your postal code"
+      %>
+  <% end %>
   <div class="search">
-    <%= form_tag users_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        id: "search_form",
-        class: "input",
-        placeholder: "Enter your postal code"
-        %>
-    <% end %>
   </div>
 </div>
 

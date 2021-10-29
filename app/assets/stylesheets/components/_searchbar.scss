@@ -52,14 +52,14 @@
       transition: all .5s;
     }
   }
-  input {
+  form > input {
     font-family: 'Dosis';
     position: absolute;
     margin: auto;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: -110px;
     width: 50px;
     height: 50px;
     outline: none;
