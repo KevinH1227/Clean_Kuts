@@ -30,9 +30,9 @@ import "bootstrap";
 import{ tabs } from '../components/tabs.js'
 // import{ initMapbox } from '../components/map.js'
 
-document.addEventListener('turbolinks:load', () => {
-  tabs();
+// document.addEventListener('turbolinks:load', () => {
+//   tabs();
   // initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
-});
+// });
