@@ -46,7 +46,20 @@
   <div class="email"><i class="fab fa-instagram"></i>
     <%= @barber.email %>
   </div>
+
   <!-- if I am the profile owner I can edit my info -->
+
+
+  <%# TEMP LINK TO CREATE or REJOIN CHATROOM - STEPH %>
+  <div class="create-chatroom">
+    <% if @previous_chat %>
+      <%= link_to "Keep chatting", chatroom_path(@chatroom, recipient_id: @barber.id) %>
+    <% else %>
+      <%= link_to "Chat with #{@barber.first_name.capitalize}", new_chatroom_path(recipient_id: @barber.id) %>
+    <% end %>
+  </div>
+
+
   <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
   <div class="description1">
     About me:
@@ -63,9 +76,3 @@
   <!-- tab with reviews and services -->
     <%= render 'shared/tabs_barber_profile' %>
 </div>
-
-
-
-
-
-
