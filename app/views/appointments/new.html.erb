@@ -7,7 +7,7 @@
         <div class="calendar-day">
             <%# <%= date %>
             <% time_slots.each do |time_slot| %>
-                <div class="meeting">
+                <div class="meeting" id="booking-button">
                     <p>Open</p>
                     <small><%= time_slot.time unless time_slot.multi_days? %></small>
                 </div>
@@ -16,15 +16,15 @@
     <% end %>
 </div>
 
-<div class="bg-white p-3">
-
-    <h1>Booking your appointment with: <%= @barber.full_name %> </h1>
-
-    <%= simple_form_for ([@user, @appointment]) do |f| %>
-        <%= f.hidden_field :barber_id,  value: @barber.id %>
-        <%= f.association :service, collection: @services %>
-        <%= f.input :start_time, html5: true %>
-        <%= f.submit "Confirm" %>
-    <% end %>
-<%# <%= link_to "Cancel", user_path %>
+<div class="window-popup change" id="window-popup">
+    <div class="window-content">
+            <h1>Booking your appointment with: <%= @barber.full_name %> </h1>
+                <%= simple_form_for ([@user, @appointment]) do |f| %>
+                <%= f.hidden_field :barber_id,  value: @barber.id %>
+                <%= f.association :service, collection: @services %>
+                <%= f.input :start_time, html5: true %>
+                <%= f.submit "Confirm" %>
+                <%= link_to "Cancel", new_appointment_path(@barber) %>
+            <% end %>
+    </div>
 </div>

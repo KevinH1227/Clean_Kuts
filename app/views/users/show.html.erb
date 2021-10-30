@@ -1,6 +1,7 @@
 <!-- test only  -->
   <!-- <div class="window-popup appear" id="window-popup"> -->
   <!-- real div to put -->
+
 <div class="window-popup change" id="window-popup">
     <div class="window-content">
       <div class="header container">
@@ -66,9 +67,11 @@
   </div>
 </div>
   <!-- button to book an appointment -->
-<div class="booking-button" id="booking-button">
-  <%= link_to "Book Now", "#", class: "btn btn-gradient booking-button" %> <i class="fas fa-calendar-alt"></i>
-</div>
+
+  <div class="booking-button">
+    <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient booking-button" %> <i class="fas fa-calendar-alt"></i>
+  </div>
+
 
 
 <!-- tab with reviews and services -->
