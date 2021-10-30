@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 @viewport {
-  width: device-width ;
-  zoom: 1.0 ;
+  width: device-width;
+  zoom: 1.0;
 }
 
 // background image with filter
@@ -21,21 +21,25 @@
 
 
 // banner title styling
-.banner-title h1, p{
+.banner-title h1,
+p {
   color: #e7e7e7;
-  text-shadow: 4px 4px 16px rgba(0,0,0,0.2);
+  text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
   margin: 0;
 }
+
 .banner-title h1 {
   font-family: 'Pacifico', cursive;
   padding-top: 100px;
   font-size: 64px;
   margin-top: 80px;
 }
+
 .banner-title p {
   padding-bottom: 100px;
   font-family: 'Dosis';
+  font-size: 1.4rem;
 }
 
 
@@ -53,7 +57,8 @@
   margin-bottom: 12px;
 }
 
-.nav1, .location{
+.nav1,
+.location {
   background-color: $button-primary;
   color: $basic-white;
   width: 100%;
@@ -68,9 +73,9 @@
     margin-top: 10%;
     margin-bottom: 10%;
   }
+
   .search {
     font-weight: bold;
   }
 }
-
 

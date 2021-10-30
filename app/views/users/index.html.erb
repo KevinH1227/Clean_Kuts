@@ -10,7 +10,7 @@
 
 <!-- Barber section -->
 <div class="barbers-container">
-  <h2>We found <%= User.barber.count %> barbers</h2>
+  <h2>We found <%=@barbers.count %> barbers</h2>
 
   <div class="barber-cards">
     <% @barbers.each do |barber|%>

@@ -1,4 +1,5 @@
-  <div class="simple-calendar">
+  
+<div class="simple-calendar">
   <div class="d-flex align-items-center justify-content-between">
     <div class="calendar-heading my-2">
       <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
@@ -7,7 +8,6 @@
     </div>
     <%= link_to 'Book Appointment', my_appointments_url, class: 'btn btn-outline-warning' %>
   </div>
-
   <table class="table table-striped">
     <thead>
       <tr>
@@ -16,7 +16,6 @@
         <% end %>
       </tr>
     </thead>
-
     <tbody>
       <% date_range.each_slice(7) do |week| %>
         <tr>
