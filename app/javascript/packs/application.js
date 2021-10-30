@@ -30,6 +30,7 @@ import{ window } from '../components/popup.js'
 import{ tabs } from '../components/tabs.js';
 import{ initChatroomCable } from '../channels/chatroom_channel.js';
 import { openSearchInput } from "../components/search"
+import{ initMapbox } from '../components/map.js'
 
 document.addEventListener("turbolinks:load", () => {
   tabs();
@@ -37,8 +38,7 @@ document.addEventListener("turbolinks:load", () => {
   window();
   initChatroomCable();
   openSearchInput();
-
-  // initMapbox();
+  initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
   });

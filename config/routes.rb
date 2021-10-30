@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :index, :show, :edit, :update] do
     resources :services
     resources :appointments, only: [ :create ]
+    resources :reviews, [ :index, :show, :new, :edit, :create, :destroy ]
   end
   get '/appointments/:barber_id/new', to: 'appointments#new', as: :new_appointment
   get '/my_appointments', to: 'appointments#index', as: :my_appointments

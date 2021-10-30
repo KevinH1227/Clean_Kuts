@@ -63,16 +63,24 @@ def create_user(role, f_name=Faker::Name.unique.male_first_name, l_name=Faker::N
     address: Faker::Address.full_address,
     post_code: "",
     description: "",
-    # photo: "",
     phone_number: Faker::PhoneNumber.cell_phone,
   )
   puts "Added #{user.first_name} the #{user.role}"
   return user
 end
 
+def create_review(client:, barber:, comment:, rating:)
+  Review.create(
+    client: client,
+    barber: barber,
+    comment: comment,
+    rating: rating,
+  )
+  puts "   -#{client.first_name} reviwed #{barber.first_name} #{rating} stars"
+end
+
 def create_random_barber
     barber = create_user("barber")
-
     create_services(barber)
     puts "   Available:"
     5.times do |i|
@@ -93,15 +101,11 @@ end
     create_random_client
 end
 
-
-# john_barber = create_user('barber', 'john', 'barber')
-# bob_client = create_user('client', 'bob', 'client')
 class Integer
   def minutes()
     self * 60
   end
 end
-
 
 start_date = Date.new(2021, 11, 9)
 end_date = Date.new(2022, 11, 9)
@@ -149,33 +153,6 @@ custom_users = [
       }
     ],
 
-    # time_slots: [
-    #   {
-    #     day: 1,
-    #     month: 11,
-    #     start_time: "8:00",
-    #     end_time: "15:00",
-    #   },
-    #   {
-    #     day: 3,
-    #     month: 11,
-    #     start_time: "8:00",
-    #     end_time: "15:00",
-    #   },
-    #   {
-    #     day: 4,
-    #     month: 11,
-    #     start_time: "12:00",
-    #     end_time: "19:00",
-    #   },
-    #   {
-    #     day: 5,
-    #     month: 11,
-    #     start_time: "8:00",
-    #     end_time: "15:00",
-    #   },
-    # ]
-    
     time_slots: TuesdayToSaturday10amTo5pm,
 
   },
@@ -209,6 +186,17 @@ custom_users = [
     phone_number: "514 346-1552",
     photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
   },
+  {
+    role: "client",
+    first_name: "Fran",
+    last_name: "Perr",
+    email: "fran@email.com",
+    password: 123456,
+    address: "4200 Av Mont-Royal, Montreal",
+    postal_code: "H3T 1VR",
+    phone_number: "514 346-1552",
+    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+  },
 ]
 
 custom_users.each do |user|
@@ -226,6 +214,7 @@ custom_users.each do |user|
 
 
   if new_user.barber?
+    create_review(client: User.client.first, barber: new_user, comment: "Great job!", rating: 5)
     user[:services].each do |service|
       new_service = Service.create!(
         barber: new_user,

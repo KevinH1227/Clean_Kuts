@@ -5,7 +5,7 @@
   object-fit: cover;
   margin: 8px 0px;
   margin-top: -24px;
-  box-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
 }
 .avatar-large {
   width: 56px;
@@ -29,5 +29,15 @@
   border-radius: 50%;
   object-fit: cover;
   margin: 8px 0px;
-  box-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  opacity: 75%;
+}
+
+.barber-avatar-lg img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  position: center;
+  border-radius: 16px;
+  box-shadow: 4px 4px 16px rgba(0,0,0,0.2);
 }
