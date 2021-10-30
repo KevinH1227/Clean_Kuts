@@ -29,12 +29,14 @@ import { changeOpacityOnNavbar } from "../components/nav.js";
 import{ window } from '../components/popup.js'
 import{ tabs } from '../components/tabs.js';
 import{ initChatroomCable } from '../channels/chatroom_channel.js';
+import { openSearchInput } from "../components/search"
 
 document.addEventListener("turbolinks:load", () => {
   tabs();
   changeOpacityOnNavbar();
   window();
   initChatroomCable();
+  openSearchInput();
 
   // initMapbox();
   // Call your functions here, e.g:
