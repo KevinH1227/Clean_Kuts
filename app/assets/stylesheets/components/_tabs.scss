@@ -8,98 +8,99 @@
   p {
     color:black;
   }
-.info{
-  margin-top:0px;
+  .info{
+  margin-top: 0px;
 }
+
   .active {
-    background-color:$light-gray;
-    box-shadow: 4px 0 4px -2px $black-primary;
+    background-color: $light-gray;
+    // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
   }
 
   .passive {
-    background-color:transparent;
+    background-color: transparent;
   }
 
-
-    .schedule {
-    display:block;
-    width:25%;
-    height:100px;
-    padding:8px;
-    border-radius:4px;
+  .schedule {
+    display: block;
+    width: 25%;
+    height: 100px;
+    padding: 8px;
+    border-radius: 4px;
   }
 
-      .appointments {
-    display:block;
-    width:25%;
-    height:100px;
-    padding:8px;
-    border-radius:4px;
+  .appointments {
+    display: block;
+    width: 25%;
+    height: 100px;
+    padding: 8px;
+    border-radius: 4px;
   }
-      .reviews {
-    display:block;
-    width:25%;
-    height:100px;
-    padding:8px;
-    border-radius:4px;
+
+  .reviews {
+    display: block;
+    width: 25%;
+    height: 100px;
+    padding: 8px;
+    border-radius: 4px;
   }
-      .services {
-    display:block;
-    width:25%;
-    height:100px;
-    padding:8px;
-    border-radius:4px;
+  .services {
+    display: block;
+    width: 25%;
+    height: 100px;
+    padding: 8px;
+    border-radius: 4px;
   }
 
   .change {
-    display:none;
+    display: none;
   }
 
   .appear {
     display: block;
-    width:100%;
-    box-shadow: 4px 0 4px -2px $black-primary;
-    background-color:$light-gray;
+    width: 100%;
+    // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    background-color: $light-gray;
   }
 
-  .schedule_section{
-      width:100%;
-      height:100px;
-      background-color:$light-gray;
-    }
-
-  .appointment_section{
-
-      width:100%;
-      height:100px;
+  .schedule_section {
+    width: 100%;
+    height: 100px;
+    background-color: $light-gray;
   }
-  .reviews_section{
 
-      width:100%;
-      height:100px;
+  .appointment_section {
+    width: 100%;
+    height: 100px;
   }
+
+  .reviews_section {
+    width: 100%;
+    height: 100px;
+  }
+
   .services_section{
-
-      width:100%;
-      height:100px;
+    width: 100%;
+    height: 100px;
   }
 }
+
 // start of client profile css
 .appointments-reviews-favourites {
-  cursor:pointer;
-  display:flexbox;
+  cursor: pointer;
+  display: flexbox;
 
   p {
-    color:black;
+    color: black;
   }
 
   .active {
-    background-color:$light-gray;
-    box-shadow: 4px 0 4px -2px $black-primary;
+    background-color: $light-gray;
+    // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
   }
 
   .passive {
-    background-color:transparent;
+    background-color: transparent;
   }
 
  .change {
@@ -108,43 +109,43 @@
 
   .appear {
     display: block;
-    width:100%;
-    box-shadow: 4px 0 4px -2px $black-primary;
-    background-color:$light-gray;
+    width: 100%;
+    // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    background-color: $light-gray;
   }
 // ----
     .reviews {
-    display:block;
-    width:50%;
-    padding:8px;
-    border-radius:4px;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
   }
 
   .services {
-    display:block;
-    width:50%;
-    padding:8px;
-    border-radius:4px;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
   }
 
   .services_section {
     display: none;
-    width:100%;
-    height:100px;
+    width: 100%;
+    height: 100px;
   }
 
   .appear {
     display: block;
-    width:100%;
-    height:100px;
-    box-shadow: 4px 0 4px -2px $black-primary;
-    background-color:$light-gray;
+    width: 100%;
+    height: 180px;
+    // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    background-color: $light-gray;
   }
 
   .reviews_section {
-    width:100%;
-    height:100px;
-    background-color:$light-gray;
+    width: 100%;
+    height: 100px;
+    background-color: $light-gray;
   }
   // -----
 }
@@ -158,57 +159,63 @@
 // <!-- Name the class of those sections class="reviews_section", class="services_section"-->
 
 .reviews-services {
-  cursor:pointer;
-  display:flexbox;
+  cursor: pointer;
+  display: flexbox;
 
   p {
-    color:black;
+    color: black;
   }
 
   .active {
-    background-color:$light-gray;
-    box-shadow: 4px 0 4px -2px $black-primary;
+    background-color: $light-gray;
+    // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
   }
 
   .passive {
-    background-color:transparent;
+    background-color: transparent;
   }
 
 
   .change {
-    display:none;
+    display: none;
   }
 
   .reviews {
-    display:block;
-    width:50%;
-    padding:8px;
-    border-radius:4px;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
   }
 
   .services {
-    display:block;
-    width:50%;
-    padding:8px;
-    border-radius:4px;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    overflow: scroll;
   }
 
   .services_section {
     display: none;
-    width:100%;
-    height:100px;
+    width: 100%;
+    height: 188px;
+    overflow: scroll;
   }
 
   .appear {
     display: block;
-    width:100%;
-    box-shadow: 4px 0 4px -2px $black-primary;
-    background-color:$light-gray;
+    width: 100%;
+    // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    background-color: $light-gray;
+    border-radius: 4px;
+    overflow: scroll;
   }
 
   .reviews_section {
     width:100%;
-    height:100px;
-    background-color:$light-gray;
+    height: 188px;
+    background-color: $light-gray;
+    border-radius: 4px;
+    overflow: scroll;
   }
 }

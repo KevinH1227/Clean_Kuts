@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :services
     resources :appointments, only: [ :create ]
     resources :pages
+    resources :reviews
+
   end
   get '/appointments/:barber_id/new', to: 'appointments#new', as: :new_appointment
   get '/my_appointments', to: 'appointments#index', as: :my_appointments

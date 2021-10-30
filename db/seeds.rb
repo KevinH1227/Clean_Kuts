@@ -1,14 +1,17 @@
 require 'faker'
 
-puts "Destroying Users"
-
+puts "Destroying A"
 Appointment.destroy_all
+puts "Destroying T"
 TimeSlot.destroy_all
+puts "Destroying S"
 Service.destroy_all
+puts "Destroying R"
+Review.destroy_all
+puts "Destroying Users"
 User.destroy_all
 
 puts "Creating new Clients and Barbers"
-
 
 def create_services(barber)
   Service.cut_types.each do |service_type|
@@ -63,16 +66,24 @@ def create_user(role, f_name=Faker::Name.unique.male_first_name, l_name=Faker::N
     address: Faker::Address.full_address,
     post_code: "",
     description: "",
-    # photo: "",
     phone_number: Faker::PhoneNumber.cell_phone,
   )
   puts "Added #{user.first_name} the #{user.role}"
   return user
 end
 
+def create_review(client:, barber:, comment:, rating:)
+  Review.create(
+    client: client,
+    barber: barber,
+    comment: comment,
+    rating: rating,
+  )
+  puts "   -#{client.first_name} reviwed #{barber.first_name} #{rating} stars"
+end
+
 def create_random_barber
     barber = create_user("barber")
-
     create_services(barber)
     puts "   Available:"
     5.times do |i|
@@ -98,7 +109,6 @@ class Integer
     self * 60
   end
 end
-
 
 start_date = Date.new(2021, 11, 9)
 end_date = Date.new(2022, 11, 9)
@@ -207,6 +217,7 @@ custom_users.each do |user|
 
 
   if new_user.barber?
+    create_review(client: User.client.first, barber: new_user, comment: "Great job!", rating: 5)
     user[:services].each do |service|
       new_service = Service.create!(
         barber: new_user,
