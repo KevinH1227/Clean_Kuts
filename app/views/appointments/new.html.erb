@@ -1,5 +1,5 @@
 <div class="bg-white p-3">
-    <h1><%= @barber.full_name %>'s Schedule </h1>
+    <h1><%= @barber.full_name %>'s <br> Schedule </h1>
 </div>
 
 <div class="calendar-container">
@@ -7,10 +7,10 @@
         <div class="calendar-day">
             <%# <%= date %>
             <% time_slots.each do |time_slot| %>
-                <div class="meeting booking-button" 
-                data-start-datetime="<%= time_slot.start_time.strftime("%Y-%m-%dT%H:%M") %>:00" 
+                <div class="meeting booking-button"
+                data-start-datetime="<%= time_slot.start_time.strftime("%Y-%m-%dT%H:%M") %>:00"
                 data-end-datetime="<%= time_slot.end_time.strftime("%Y-%m-%dT%H:%M") %>:00"
-                data-start-date="<%= time_slot.start_time.strftime("%Y-%m-%d") %>" 
+                data-start-date="<%= time_slot.start_time.strftime("%Y-%m-%d") %>"
                 data-end-date="<%= time_slot.end_time.strftime("%Y-%m-%d") %>"
                 >
                     <p>Open</p>
@@ -34,4 +34,3 @@
             <% end %>
     </div>
 </div>
-
