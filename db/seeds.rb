@@ -5,8 +5,8 @@ puts "Destroying Users"
 Appointment.destroy_all
 TimeSlot.destroy_all
 Service.destroy_all
-User.destroy_all
 Review.destroy_all
+User.destroy_all
 
 
 
