@@ -30,8 +30,10 @@
 <!-- Barber dashboard -->
 <div class="barber-dashboard">
   <div class="barber-profile-card">
-    <h2><%= @barber.full_name %></h2>
-    <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
+    <div class="barber-name">
+      <h2><%= @barber.full_name %></h2>
+      <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
+    </div>
     <div class="top-barber-card-info">
       <div class="profile-info">
         <div class="phone"><i class="fas fa-phone-alt"></i>
@@ -40,12 +42,11 @@
         <div class="address"><i class="fas fa-city"></i>
           <%= @barber.address %>
         </div>
-        <div class="email"><i class="fab fa-instagram"></i>
+        <div class="email"><i class="far fa-envelope"></i>
           <%= @barber.email %>
         </div>
-
-        <h3>About me:</h3>
         <div class="description">
+          <h4>About me:</h4>
           <%= @barber.description %>
         </div>
       </div>
@@ -66,8 +67,8 @@
     </div>
   </div>
 </div>
-  <!-- button to book an appointment -->
 
+  <!-- button to book an appointment -->
   <div class="booking-button">
     <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient booking-button" %> <i class="fas fa-calendar-alt"></i>
   </div>
