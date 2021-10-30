@@ -1,10 +1,18 @@
 class UsersController < ApplicationController
   def index
-    @barbers = User.where(role: "barber")
+    # @barbers = User.where(role: "barber")
+    if params[:query].present?
+      sql_query = "first_name @@ :query OR last_name @@ :query OR address @@ :query OR post_code @@ :query"
+      @barbers = User.barber.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @barbers = User.where(role: "barber")
+    end
   end
 
   def show
     @barber = User.find(params[:id])
+    @previous_chat = previous_chat?
+    @chatroom = set_chatroom if @previous_chat
   end
 
   def edit
@@ -35,6 +43,19 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def previous_chat?
+    @messages = Message.where(
+      "(sender_id = ? AND recipient_id = ?)
+      OR (sender_id = ? AND recipient_id = ?)",
+      current_user.id, @barber.id, @barber.id, current_user.id
+    )
+    @messages.any?
+  end
+
+  def set_chatroom
+    @messages.first.chatroom
+  end
 
   def user_params
     params.require(:user).permit(
