@@ -101,9 +101,6 @@ end
     create_random_client
 end
 
-
-# john_barber = create_user('barber', 'john', 'barber')
-# bob_client = create_user('client', 'bob', 'client')
 class Integer
   def minutes()
     self * 60
@@ -156,33 +153,6 @@ custom_users = [
       }
     ],
 
-    # time_slots: [
-    #   {
-    #     day: 1,
-    #     month: 11,
-    #     start_time: "8:00",
-    #     end_time: "15:00",
-    #   },
-    #   {
-    #     day: 3,
-    #     month: 11,
-    #     start_time: "8:00",
-    #     end_time: "15:00",
-    #   },
-    #   {
-    #     day: 4,
-    #     month: 11,
-    #     start_time: "12:00",
-    #     end_time: "19:00",
-    #   },
-    #   {
-    #     day: 5,
-    #     month: 11,
-    #     start_time: "8:00",
-    #     end_time: "15:00",
-    #   },
-    # ]
-    
     time_slots: TuesdayToSaturday10amTo5pm,
 
   },
@@ -212,6 +182,17 @@ custom_users = [
     email: "bill@email.com",
     password: 123456,
     address: "5050 Av Decelles, Montreal",
+    postal_code: "H3T 1VR",
+    phone_number: "514 346-1552",
+    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+  },
+  {
+    role: "client",
+    first_name: "Fran",
+    last_name: "Perr",
+    email: "fran@email.com",
+    password: 123456,
+    address: "4200 Av Mont-Royal, Montreal",
     postal_code: "H3T 1VR",
     phone_number: "514 346-1552",
     photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
