@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_012233) do
     t.bigint "barber_id", null: false
     t.bigint "service_id", null: false
     t.boolean "status", default: true
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time "start_time"
+    t.time "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "time_slot_id", null: false
@@ -104,8 +104,8 @@ ActiveRecord::Schema.define(version: 2021_10_28_012233) do
 
   create_table "time_slots", force: :cascade do |t|
     t.bigint "barber_id", null: false
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.time "start_time"
+    t.time "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["barber_id"], name: "index_time_slots_on_barber_id"
