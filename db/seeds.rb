@@ -6,6 +6,9 @@ Appointment.destroy_all
 TimeSlot.destroy_all
 Service.destroy_all
 User.destroy_all
+Review.destroy_all
+
+
 
 puts "Creating new Clients and Barbers"
 
