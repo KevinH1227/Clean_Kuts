@@ -5,12 +5,12 @@ class PagesController < ApplicationController
     @users = User.all
     @barbers = User.where(role: "barber")
 
-    # @markers = @barbers.geocoded.map do |barber|
-    #   {
-    #     lat: barber.latitude,
-    #     lng: barber.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: { barber: barber })
-    #   }
-    # end
+    @markers = @users.geocoded.map do |barber|
+      {
+        lat: barber.latitude,
+        lng: barber.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: { barber: barber })
+      }
+    end
   end
 end

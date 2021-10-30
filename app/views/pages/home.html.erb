@@ -35,10 +35,8 @@
     <% end %>
   </div>
 </div>
-
-
 <!-- Map section -->
-<div id="map"
+<div id="map" class="map"
   style="margin-left: 25%; margin-right: 25%; margin-top: 10%; width: 50%; height: 100px; border-radius: 8px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
