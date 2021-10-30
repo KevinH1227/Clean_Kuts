@@ -14,9 +14,18 @@
     <div class="services_section" id="spot-service">
       <div class="container">
         <% @barber.services.each do |service| %>
-          <p><%= service.cut_type %></p>
-          <p>$<%= service.price %>.00</p>
-          <p><%= service.duration/60 %> minutes</p>
+          <div class="cut-type services-card">
+            <p><%= service.cut_type %></p>
+          </div>
+          <div class="price services-card">
+            <p>$<%= service.price %>.00</p>
+          </div>
+          <div class="duration services-card">
+            <p><%= service.duration/60 %> minutes</p>
+          </div>
+          <div class="extra services-card">
+            <!-- <p><%= service.duration/60 %> minutes</p> -->
+          </div>
         <% end %>
       </div>
     </div>

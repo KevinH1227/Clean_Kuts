@@ -1,3 +1,31 @@
+<!-- test only  -->
+  <!-- <div class="window-popup appear" id="window-popup"> -->
+  <!-- real div to put -->
+  <div class="window-popup change" id="window-popup">
+    <div class="window-content">
+      <div class="header container">
+        <h1>BOOKING</h1>
+      </div>
+      <p>Day: whenever</p>
+      <p>Time: same shit here</p>
+      <div class="window-in"><p>Kut Beard Both RipMEfACE</p>
+        <div class="row">
+          <div class="col-6">
+            <div class="confirm">
+            <%= link_to "Confirm", class:"booking-button"%>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="cancel">
+              <%= link_to "Cancel" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <!-- This is the BARBER PROFILE -->
 <div class="card">
   <%# <div class="container d-flex" id="barber-signup">
@@ -18,6 +46,9 @@
     <%= @barber.email %>
   </div>
 
+  <!-- if I am the profile owner I can edit my info -->
+
+
   <%# TEMP LINK TO CREATE or REJOIN CHATROOM - STEPH %>
   <div class="create-chatroom">
     <% if @previous_chat %>
@@ -27,6 +58,7 @@
     <% end %>
   </div>
 
+
   <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
   <div class="description1">
     About me:
@@ -34,5 +66,12 @@
   <div class="description">
     <%= @barber.description %>
   </div>
-  <%= render 'shared/tabs_barber_profile' %>
+  <!-- button to book an appointment -->
+  <div class="booking-button" id="booking-button">
+    <%= link_to "Book Now", "#", class: "btn btn-gradient booking-button" %> <i class="fas fa-calendar-alt"></i>
+  </div>
+
+
+  <!-- tab with reviews and services -->
+    <%= render 'shared/tabs_barber_profile' %>
 </div>

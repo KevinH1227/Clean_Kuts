@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   def index
-    @barbers = User.where(role: "barber")
+    # @barbers = User.where(role: "barber")
+    if params[:query].present?
+      sql_query = "first_name @@ :query OR last_name @@ :query OR address @@ :query OR post_code @@ :query"
+      @barbers = User.barber.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @barbers = User.where(role: "barber")
+    end
   end
 
   def show

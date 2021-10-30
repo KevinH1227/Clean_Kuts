@@ -1,13 +1,30 @@
+<div class="bg-white p-3">
+    <h1><%= @barber.full_name %>'s Schedule </h1>
+</div>
+
 <div class="calendar-container">
-  <%= month_calendar(events: @appointments, end_attribute: :end_time) do |date, appointments| %>
-    <div class="calendar-day">
-      <%= date %>
-      <% appointments.each do |appointment| %>
-        <div class="meeting">
-          <p>Unavailable</p>
-          <small><%= appointment.time unless appointment.multi_days? %></small>
+    <%= week_calendar(events: @time_slots, end_attribute: :end_time) do |date, time_slots| %>
+        <div class="calendar-day">
+            <%# <%= date %>
+            <% time_slots.each do |time_slot| %>
+                <div class="meeting">
+                    <p>Open</p>
+                    <small><%= time_slot.time unless time_slot.multi_days? %></small>
+                </div>
+            <% end %>
         </div>
-      <% end %>
-    </div>
-  <% end %>
+    <% end %>
+</div>
+
+<div class="bg-white p-3">
+
+    <h1>Booking your appointment with: <%= @barber.full_name %> </h1>
+
+    <%= simple_form_for ([@user, @appointment]) do |f| %>
+        <%= f.hidden_field :barber_id,  value: @barber.id %>
+        <%= f.association :service, collection: @services %>
+        <%= f.input :start_time, html5: true %>
+        <%= f.submit "Confirm" %>
+    <% end %>
+<%# <%= link_to "Cancel", user_path %>
 </div>
