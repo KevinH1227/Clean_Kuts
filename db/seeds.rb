@@ -178,6 +178,107 @@ custom_users = [
     ],
     time_slots: TuesdayToSaturday10amTo5pm,
   },
+
+    {
+    role: "barber",
+    first_name: "Sabi",
+    last_name: "Barbier",
+    email: "frankdoe@email.com",
+    password: 123456,
+    address: " 3485 Rue Ontario E, Montreal",
+    postal_code: "H1W 1R4",
+    phone_number: "514 596-4779",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Sabi",
+    last_name: "Barbier",
+    email: "frankdoe@email.com",
+    password: 123456,
+    address: " 3485 Rue Ontario E, Montreal",
+    postal_code: "H1W 1R4",
+    phone_number: "514 596-4779",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Sabi",
+    last_name: "Barbier",
+    email: "frankdoe@email.com",
+    password: 123456,
+    address: "1284 Av. Bernard, Outremont",
+    postal_code: "H2V 1V9",
+    phone_number: "514 596-4779",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Sabi",
+    last_name: "Barbier",
+    email: "frankdoe@email.com",
+    password: 123456,
+    address: " 3485 Rue Ontario E, Montreal",
+    postal_code: "H1W 1R4",
+    phone_number: "514 596-4779",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Sabi",
+    last_name: "Barbier",
+    email: "frankdoe@email.com",
+    password: 123456,
+     address: "4484 Bd Pie-IX, Montreal",
+    postal_code: "H1X 2B3",
+    phone_number: "514 596-4779",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
   {
     role: "client",
     first_name: "Monsieur",
