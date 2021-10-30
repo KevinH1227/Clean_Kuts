@@ -8,14 +8,20 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @barber = User.find(params[:user_id])
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
-    @review.user = current_user
+    @barber = User.find(params[:user_id])
+    @review = Review.new(
+      barber_id: params[:user_id],
+      client: current_user,
+      comment: review_params[:comment],
+      rating: review_params[:rating],
+    )
     if @review.save
-      redirect_to new_review_path
+      redirect_to user_path(@barber)
     else
       flash[:alert] = "Something went wrong."
       render :new
@@ -43,5 +49,5 @@ end
 private
 
 def review_params
-  params.require(:review).permit(:client_id, :title, :comment, :rating)
+  params.require(:review).permit(:user_id, :comment, :rating)
 end

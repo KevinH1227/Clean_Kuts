@@ -3,6 +3,7 @@
   <div class="part1 d-flex">
     <div class="reviews active" id="reviews">
       <p>reviews</p>
+      <%= @barber.reviews.map { |r| r.comment r.rating} %>
     </div>
     <div class="services" id="services">
       <p>services</p>
