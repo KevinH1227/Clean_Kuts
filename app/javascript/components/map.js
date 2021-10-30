@@ -26,14 +26,13 @@ const initMapbox = () => {
       markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
 
-        new mapboxgl.Marker({ "color": "BF9DCF" })
+        new mapboxgl.Marker({ "color": "242466" })
           .setLngLat([ marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(map);
       })
     fitMapToMarkers(map, markers);}
   };
-
 }
 
 
