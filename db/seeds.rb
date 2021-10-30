@@ -1,11 +1,15 @@
 require 'faker'
 
-puts "Destroying Users"
+puts "Destroying A"
 
 Appointment.destroy_all
+puts "Destroying T"
 TimeSlot.destroy_all
+puts "Destroying S"
 Service.destroy_all
+puts "Destroying R"
 Review.destroy_all
+puts "Destroying Users"
 User.destroy_all
 
 
