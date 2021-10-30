@@ -1,4 +1,4 @@
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const initMapbox = () => {
@@ -20,13 +20,14 @@ const initMapbox = () => {
     });
 
     // markers
-
+    console.log(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
     if(markers.length > 0) {
       markers.forEach((marker) => {
+        console.log(marker)
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
 
-        new mapboxgl.Marker({ "color": "242466" })
+        new mapboxgl.Marker({ "color": "#A0A0ED" })
           .setLngLat([ marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(map);

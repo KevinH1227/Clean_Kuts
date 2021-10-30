@@ -184,7 +184,7 @@ custom_users = [
     last_name: "Gates",
     email: "bill@email.com",
     password: 123456,
-    address: "5050 Av Decelles, Montreal",
+    address: "5030 Av Decelles, Montreal",
     postal_code: "H3T 1VR",
     phone_number: "514 346-1552",
     photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
