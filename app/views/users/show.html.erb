@@ -2,31 +2,6 @@
   <!-- <div class="window-popup appear" id="window-popup"> -->
   <!-- real div to put -->
 
-<div class="window-popup change" id="window-popup">
-    <div class="window-content">
-      <div class="header container">
-        <h1>BOOKING</h1>
-      </div>
-      <p>Day: whenever</p>
-      <p>Time: same shit here</p>
-      <div class="window-in"><p>Kut Beard Both RipMEfACE</p>
-        <div class="row">
-          <div class="col-6">
-            <div class="confirm">
-            <%= link_to "Confirm", class:"booking-button"%>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="cancel">
-              <%= link_to "Cancel" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-
 <!-- Barber dashboard -->
 <div class="barber-dashboard">
   <div class="barber-profile-card">
@@ -70,8 +45,8 @@
 </div>
 
   <!-- button to book an appointment -->
-  <div class="booking-button">
-    <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient booking-button" %> <i class="fas fa-calendar-alt"></i>
+  <div class="book-now">
+    <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient" %> <i class="fas fa-calendar-alt"></i>
   </div>
 
 

@@ -1,15 +1,13 @@
 <!-- This is where I can look at appointments if I am a client and or if I am a barber -->
 <!-- create the dashboard profile with appointment section as the core of the page  -->
 <!-- appointment section -->
-
-
 <!-- user AS A BARBER -->
 <% if current_user.barber? %>
   <div class="schedule-appointment-reviews-services">
     <div class="part1 d-flex">
       <div class="schedule active" id="schedule3">
         <p>Schedule</p>
-        </div>
+      </div>
       <div class="appointments" id="appointments3">
         <p>Appointments</p>
       </div>
@@ -40,7 +38,7 @@
             </div>
           </div>
         </div>
-      <!-- end original appointment -->
+        <!-- end original appointment -->
       </div>
       <div class="appointment_section change" id="spot2">
         <p>These are my appointments</p>
@@ -53,9 +51,8 @@
       </div>
     </div>
   </div>
-<!-- end of user AS A BARBER -->
-
-<!-- user AS A CLIENT -->
+  <!-- end of user AS A BARBER -->
+  <!-- user AS A CLIENT -->
 <% else %>
   <div class="appointments-reviews-favourites"  id="appointments-reviews-favourites">
     <div class="part1 d-flex">
@@ -71,15 +68,15 @@
     </div>
     <div class="part2">
       <div class="appointments_section appear" id="spot5">
-      <!-- ---original appointment file -->
-      <div class="info">
-        <div class="message">
-          <h2><MESSAGES></MESSAGES></h2>
-        </div>
-        <div class="d-flex flexor">
-          <div class="owner-section">
-            <h2>Your Appointment(s)</h2>
-            <%= @current_user.barber? ? "Your appointments:" : "Your next appointment:" %>
+        <!-- ---original appointment file -->
+        <div class="info">
+          <div class="message">
+            <h2><MESSAGES></MESSAGES></h2>
+          </div>
+          <div class="d-flex flexor">
+            <div class="owner-section">
+              <h2>Your Appointment(s)</h2>
+              <%= @current_user.barber? ? "Your appointments:" : "Your next appointment:" %>
               <% @my_appointments.each do |appointment| %>
                 <% other_user = appointment.other_user(current_user) %>
                 <li>With:<%= other_user.full_name() %></li>
@@ -89,7 +86,7 @@
             </div>
           </div>
         </div>
-      <!-- end original appointments file  -->
+        <!-- end original appointments file  -->
       </div>
       <div class="reviews_section change" id="spot6">
         <p>This is my reviews section you can see how picky I am</p>
@@ -99,5 +96,5 @@
       </div>
     </div>
   </div>
-<!-- end of user AS A CLIENT -->
+  <!-- end of user AS A CLIENT -->
 <% end %>

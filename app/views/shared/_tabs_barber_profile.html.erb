@@ -1,12 +1,12 @@
-
 <div class="reviews-services" id="reviews-services">
   <div class="part1 d-flex">
     <div class="reviews active" id="reviews">
       <p>reviews</p>
       <%= @barber.reviews.map { |r| r.comment r.rating} %>
+      <p>Reviews</p>
     </div>
     <div class="services" id="services">
-      <p>services</p>
+      <p>Services</p>
     </div>
   </div>
   <div class="part2">
@@ -14,7 +14,7 @@
       <p>These are my clients' reviews</p>
     </div>
     <div class="services_section" id="spot-service">
-      <div class="container">
+      <div class="services-container">
         <% @barber.services.each do |service| %>
           <div class="cut-type services-card">
             <p><%= service.cut_type %></p>
