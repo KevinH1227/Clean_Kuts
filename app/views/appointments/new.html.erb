@@ -7,7 +7,12 @@
         <div class="calendar-day">
             <%# <%= date %>
             <% time_slots.each do |time_slot| %>
-                <div class="meeting" id="booking-button">
+                <div class="meeting booking-button" 
+                data-start-datetime="<%= time_slot.start_time.strftime("%Y-%m-%dT%H:%M") %>:00" 
+                data-end-datetime="<%= time_slot.end_time.strftime("%Y-%m-%dT%H:%M") %>:00"
+                data-start-date="<%= time_slot.start_time.strftime("%Y-%m-%d") %>" 
+                data-end-date="<%= time_slot.end_time.strftime("%Y-%m-%d") %>"
+                >
                     <p>Open</p>
                     <small><%= time_slot.time unless time_slot.multi_days? %></small>
                 </div>
@@ -22,9 +27,11 @@
                 <%= simple_form_for ([@user, @appointment]) do |f| %>
                 <%= f.hidden_field :barber_id,  value: @barber.id %>
                 <%= f.association :service, collection: @services %>
-                <%= f.input :start_time, html5: true %>
+                <%= f.date_field :start_time, html5: true, id:"date-picker", min: DateTime.now %>
+                <%= f.time_field :start_time, html5: true, id:"time-picker", min: "02:00", max: "05:00"  %>
                 <%= f.submit "Confirm" %>
                 <%= link_to "Cancel", new_appointment_path(@barber) %>
             <% end %>
     </div>
 </div>
+
