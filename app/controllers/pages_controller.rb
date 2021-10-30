@@ -3,7 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @users = User.all
-    @barbers = User.where(role: "barber")
+    @address = current_user.nil? ? "Montreal" : current_user.address
+    @barbers = User.near(@address, 500).where(role: User.roles[:barber])
+    # .first(5)
+    # @barbers = User.where(role: "barber")
     # @barber = User.find(params[:id])
 
     @markers = @barbers.geocoded.map do |barber|
@@ -13,5 +16,8 @@ class PagesController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { barber: barber })
       }
     end
+
   end
+
 end
+

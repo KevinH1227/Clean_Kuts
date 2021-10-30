@@ -174,7 +174,7 @@ custom_users = [
     last_name: "Gates",
     email: "bill@email.com",
     password: 123456,
-    address: "5050 Av Decelles, Montreal",
+    address: "5030 Av Decelles, Montreal",
     postal_code: "H3T 1VR",
     phone_number: "514 346-1552",
     photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
@@ -214,11 +214,11 @@ custom_users.each do |user|
         price: service[:price],
         duration: service[:duration],
       )
-      puts "   #{new_user.first_name} can give a #{service[:cut_type]} for #{service[:price]}$"      
+      puts "   #{new_user.first_name} can give a #{service[:cut_type]} for #{service[:price]}$"
     end
     puts "   Available:"
     user[:time_slots].each do |time_slot|
-      create_time_slot(new_user, time_slot[:day], time_slot[:month], time_slot[:year], time_slot[:start_time], time_slot[:end_time])    
+      create_time_slot(new_user, time_slot[:day], time_slot[:month], time_slot[:year], time_slot[:start_time], time_slot[:end_time])
     end
   end
 end
