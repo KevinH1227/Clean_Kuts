@@ -1,4 +1,4 @@
-.booking-button{
+.booking-button {
   background-color:$button-primary;
   border-radius: 4px;
   // width:20%;
@@ -61,4 +61,15 @@
 
 .appear{
   display: block;
+}
+
+.book-now {
+  background-color:$button-primary;
+  border-radius: 4px;
+  text-align: center;
+  padding: 4px;
+  margin:8px;
+  a, i{
+    color: $basic-white;
+  }
 }

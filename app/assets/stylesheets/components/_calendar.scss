@@ -15,7 +15,7 @@
     transition: background 0.3s ease;
     height: 160px;
   }
-  
+
   .meeting:hover {
     background: #1BCB7F;
     color: white;
@@ -37,7 +37,7 @@
   .fix-table-header {
     position: absolute;
     background-color: white;
-    top: 170px;
+    top: 190px;
     padding: 8px;
     width: 100%;
   }
@@ -45,5 +45,7 @@
   .calendar-header {
     min-width: 33vw;
     max-width: 33vw !important;
-
+  }
+  .bg-white {
+    margin-top: 80px;
   }
