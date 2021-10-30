@@ -10,4 +10,5 @@ class TimeSlot < ApplicationRecord
   def time
     "#{start_time.strftime('%I:%M %p')} - #{end_time.strftime('%I:%M %p')}"
   end
+  #2021-10-30T00:00:00
 end
