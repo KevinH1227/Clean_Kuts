@@ -137,7 +137,7 @@ custom_users = [
     address: "56 Rue Jean-Talon Ouest, Montreal",
     postal_code: "H4V 1N5",
     phone_number: "514-346-1552",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/George_nmjsk0.jpg",
+        photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Ed_zyofcy.jpg",
     services: [
       {
         cut_type: "haircut",
@@ -163,7 +163,7 @@ custom_users = [
     role: "barber",
     first_name: "George",
     last_name: "Stefanopoulos",
-    email: "georgestef@videtron.com",
+    email: "georgestef@videotron.com",
     password: 123456,
     address: "5020 Av du Parc, Montreal",
     postal_code: "H2V 4E8",
@@ -271,11 +271,11 @@ custom_users = [
 
 {
     role: "barber",
-    first_name: "Jeremy",
-    last_name: "Boxerman",
-    email: "boxerman@bellinet.com",
+    first_name: "Jo",
+    last_name: "Arsenault",
+    email: "arsenaultj@bellnet.com",
     password: 123456,
-    address: "5595 Boul. Saint-Laurent, Montreal",
+    address: "5335 Av. Casgrain, Montreal",
     postal_code: "H2T 1S8",
     phone_number: "514-925-4079",
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",
@@ -325,7 +325,7 @@ custom_users = [
     last_name: "Hookumchand",
     email: "kman@gmail.com",
     password: 123456,
-    address: "5333 Av. Casgrain Suite 102, Montreal",
+    address: "5333 Av. Casgrain, Montreal",
     postal_code: "H2T 1X3",
     phone_number: "514-360-0417",
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643842/Clean%20Kut%27s/le_Wagon_2_mb0igi.jpg",
