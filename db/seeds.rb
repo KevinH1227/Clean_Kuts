@@ -61,7 +61,7 @@ def create_user(role, f_name=Faker::Name.unique.male_first_name, l_name=Faker::N
     role: role,
     first_name: f_name,
     last_name: l_name,
-    email: "#{f_name.to_s.gsub(/\s+/, "")}@email.com",
+    email: "#{f_name.to_s.gsub(/\s+/, "")}@nonomail.com",
     password: 123456,
     address: Faker::Address.full_address,
     post_code: "",
@@ -127,17 +127,17 @@ TuesdayToSaturday10amTo5pm = my_dates.map do |date|
 end
 
 custom_users = [
-  {
-    role: "barber",
-    first_name: "Edward",
-    last_name: "Nigma",
-    email: "ed@hotmail.com",
-    password: 123456,
-    address: "56 Rue Jean-Talon O, Montreal",
-    postal_code: "H2R 2W7",
-    phone_number: "514-346-1552",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Ed_zyofcy.jpg",
 
+{
+    role: "barber",
+    first_name: "Eedward",
+    last_name: "Niigma",
+    email: "eddie@hotmail.com",
+    password: 123456,
+    address: "56 Rue Jean-Talon Ouest, Montreal",
+    postal_code: "H4V 1N5",
+    phone_number: "514-346-1552",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/George_nmjsk0.jpg",
     services: [
       {
         cut_type: "haircut",
@@ -155,10 +155,10 @@ custom_users = [
         duration: 35.minutes(),
       }
     ],
-
     time_slots: TuesdayToSaturday10amTo5pm,
-
   },
+
+
   {
     role: "barber",
     first_name: "George",
@@ -215,7 +215,7 @@ custom_users = [
     last_name: "Angel",
     email: "angel@yahoo.com",
     password: 123456,
-    address: "2305 Chem. Rockland, Montreal",
+    address: "2305 Chemin Rockland, Montreal",
     postal_code: "H3P 3E9",
     phone_number: "514-369-1478",
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Charlie_rt2kzi.jpg",
@@ -269,14 +269,44 @@ custom_users = [
     time_slots: TuesdayToSaturday10amTo5pm,
   },
 
+{
+    role: "barber",
+    first_name: "Jeremy",
+    last_name: "Boxerman",
+    email: "boxerman@bellinet.com",
+    password: 123456,
+    address: "5595 Boul. Saint-Laurent, Montreal",
+    postal_code: "H2T 1S8",
+    phone_number: "514-925-4079",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
+        duration: 20.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 12,
+        duration: 15.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 35,
+        duration: 35.minutes(),
+      }
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
     {
     role: "barber",
     first_name: "Michel",
     last_name: "Tremblay",
     email: "m.tremblay@videotron.ca",
     password: 123456,
-    address: "56 Rue Beaubien E, Montreal",
-    postal_code: "H2S 1P9",
+    address: "56 Rue Beaubien Est, Montreal",
+    postal_code: "H4V 1N5",
     phone_number: "514-232-5627",
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Michel_qdc9ia.png",
     services: [
