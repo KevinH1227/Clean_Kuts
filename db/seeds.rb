@@ -278,7 +278,7 @@ custom_users = [
     address: "5335 Av. Casgrain, Montreal",
     postal_code: "H2T 1S8",
     phone_number: "514-925-4079",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635699773/Clean%20Kut%27s/Jo_qhgp6a.jpg",
     services: [
       {
         cut_type: "haircut",
