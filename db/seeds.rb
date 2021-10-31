@@ -61,7 +61,7 @@ def create_user(role, f_name=Faker::Name.unique.male_first_name, l_name=Faker::N
     role: role,
     first_name: f_name,
     last_name: l_name,
-    email: "#{f_name.to_s.gsub(/\s+/, "")}@email.com",
+    email: "#{f_name.to_s.gsub(/\s+/, "")}@nonomail.com",
     password: 123456,
     address: Faker::Address.full_address,
     post_code: "",
@@ -246,6 +246,36 @@ custom_users = [
     email: "barberman@bellnet.com",
     password: 123456,
     address: "5594 Boul. Saint-Laurent, Montreal",
+    postal_code: "H2T 1S8",
+    phone_number: "514-925-4079",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
+        duration: 20.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 12,
+        duration: 15.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 35,
+        duration: 35.minutes(),
+      }
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+{
+    role: "barber",
+    first_name: "Jeremy",
+    last_name: "Boxerman",
+    email: "boxerman@bellinet.com",
+    password: 123456,
+    address: "5595 Boul. Saint-Laurent, Montreal",
     postal_code: "H2T 1S8",
     phone_number: "514-925-4079",
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",

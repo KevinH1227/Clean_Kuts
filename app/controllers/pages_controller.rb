@@ -3,8 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @users = User.all
-    @address = current_user.address.nil? ? "Montreal" : current_user.address
-    @barbers = User.where(role:'barber').near(@address, 100)
+    @address = current_user.nil? ? "Montreal" : current_user.address
+    @barbers = User.where(role:'barber').near(@address, 10)
     @markers = @barbers.geocoded.map do |barber|
       {
         lat: barber.latitude,
