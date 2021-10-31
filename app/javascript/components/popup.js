@@ -4,10 +4,6 @@ function window() {
   const windowPopUp = document.getElementById('window-popup')
   const datePicker = document.getElementById('date-picker')
   const selectedDate = document.getElementById('selected-date')
-
-  const timePicker = document.getElementById('time-picker')
-  console.log(document.querySelector('.window-content'))
-  console.log(timePicker)
   buttons.forEach((button) => {
     button?.addEventListener('click', (event) => {
       event.preventDefault()
