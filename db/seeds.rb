@@ -99,10 +99,10 @@ def create_random_client
 end
 
 
-1.times do
-    create_random_barber
-    create_random_client
-end
+# 1.times do
+#     create_random_barber
+#     create_random_client
+# end
 
 class Integer
   def minutes()
