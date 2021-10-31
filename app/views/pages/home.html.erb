@@ -11,7 +11,7 @@
 <div class="barbers-container">
   <h2>Top 5 barbers near you</h2>
   <div class="barber-cards">
-    <% @barbers.first(10).each do |barber| %>
+    <% @barbers.first(5).each do |barber| %>
       <div class="barber-card">
         <div class="barber-avatar">
           <% if barber.photo.attached? %>
