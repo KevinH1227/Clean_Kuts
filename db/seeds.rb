@@ -26,7 +26,7 @@ def create_services(barber)
 end
 
 
-def create_time_slot(barber, day=1, month=11, year=2021, start_time="9:00", end_time="17:00")
+def create_time_slot(barber, day=0, month=10, year=2021, start_time="9:00", end_time="17:00")
 
   start_hours, start_minutes = start_time.split(':')
   end_hours, end_minutes = end_time.split(':')
@@ -110,10 +110,10 @@ class Integer
   end
 end
 
-start_date = Date.new(2021, 11, 9)
-end_date = Date.new(2022, 11, 9)
+start_date = Date.new(2021, 11, 1)
+end_date = Date.new(2022, 11, 15)
 
-my_days = [2, 3, 4, 5, 6] # day of the week in 0-6. Sunday is 0, Saturday is 6.
+my_days = [1, 2, 4, 5] # day of the week in 0-6. Sunday is 0, Saturday is 6.
 my_dates = (start_date..end_date).to_a.select {|k| my_days.include?(k.wday)}
 
 TuesdayToSaturday10amTo5pm = my_dates.map do |date|
