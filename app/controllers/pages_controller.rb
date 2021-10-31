@@ -4,14 +4,7 @@ class PagesController < ApplicationController
   def home
     @users = User.all
     @address = current_user.address.nil? ? "Montreal" : current_user.address
-    # if User.barber.size > 4
-    #   @barbers = User.near(@address, 1000).where(role: User.roles[:barber]).first(5)
-      @barbers = User.where(role:'barber').near(@address, 100)
-    # else
-    #   @barbers = User.where(role: "barber")
-    # end
-    # @barbers = User.where(role: "barber")
-    # @barber = User.find(params[:id])
+    @barbers = User.where(role:'barber').near(@address, 100)
     @markers = @barbers.geocoded.map do |barber|
       {
         lat: barber.latitude,
