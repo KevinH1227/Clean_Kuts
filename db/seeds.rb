@@ -130,18 +130,129 @@ custom_users = [
   {
     role: "barber",
     first_name: "Edward",
-    last_name: "Scissorhands",
-    email: "scissors@hotmail.com",
+    last_name: "Nigma",
+    email: "ed@hotmail.com",
     password: 123456,
-    address: "5050 Av Decelles, Montreal",
-    postal_code: "H3T 1VR",
-    phone_number: "514 346-1552",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467140/Clean%20Kut%27s/edward_scssorhands_cmtqn7.jpg",
+    address: "56 Rue Jean-Talon O, Montreal",
+    postal_code: "H2R 2W7",
+    phone_number: "514-346-1552",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Ed_zyofcy.jpg",
 
     services: [
       {
         cut_type: "haircut",
         price: 20,
+        duration: 20.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 15,
+        duration: 15.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 30,
+        duration: 35.minutes(),
+      }
+    ],
+
+    time_slots: TuesdayToSaturday10amTo5pm,
+
+  },
+  {
+    role: "barber",
+    first_name: "George",
+    last_name: "Stefanopoulos",
+    email: "georgestef@videtron.com",
+    password: 123456,
+    address: "5020 Av du Parc, Montreal, QC",
+    postal_code: "H2V 4E8",
+    phone_number: "514-596-4779",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/George_nmjsk0.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 12,
+        duration: 10.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 10,
+        duration: 10.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 20,
+        duration: 15.minutes(),
+      }
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Aziz",
+    last_name: "El-Khoury",
+    email: "aziz@bell.com",
+    password: 123456,
+    address: "6684 Av Fielding, Montreal",
+    postal_code: "H4V 1N5",
+    phone_number: "514-458-4129",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Aziz_uycnpt.jpg",
+    services: [
+      {
+        cut_type: "beard",
+        price: 35,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Charlie",
+    last_name: "Angel",
+    email: "angel@yahoo.com",
+    password: 123456,
+    address: "2305 Chem. Rockland, Montreal",
+    postal_code: "H3P 3E9",
+    phone_number: "514-369-1478",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Charlie_rt2kzi.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 30,
+        duration: 20.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 14,
+        duration: 15.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 40,
+        duration: 40.minutes(),
+      }
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Jeremy",
+    last_name: "Barberman",
+    email: "barberman@bellnet.com",
+    password: 123456,
+    address: "5594 Boul. Saint-Laurent, Montreal",
+    postal_code: "H2T 1S8",
+    phone_number: "514-925-4079",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
         duration: 20.minutes(),
       },
       {
@@ -155,124 +266,23 @@ custom_users = [
         duration: 35.minutes(),
       }
     ],
-
-    time_slots: TuesdayToSaturday10amTo5pm,
-
-  },
-  {
-    role: "barber",
-    first_name: "Sabi",
-    last_name: "Barbier",
-    email: "frankdoe@email.com",
-    password: 123456,
-    address: " 3485 Rue Ontario E, Montreal",
-    postal_code: "H1W 1R4",
-    phone_number: "514 596-4779",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
-    services: [
-      {
-        cut_type: "haircut",
-        price: 25,
-        duration: 20.minutes(),
-      },
-    ],
     time_slots: TuesdayToSaturday10amTo5pm,
   },
 
     {
     role: "barber",
-    first_name: "Sabi",
-    last_name: "Barbier",
-    email: "frankdoe@email.com",
+    first_name: "Michel",
+    last_name: "Tremblay",
+    email: "m.tremblay@videotron.ca",
     password: 123456,
-    address: " 3485 Rue Ontario E, Montreal",
-    postal_code: "H1W 1R4",
-    phone_number: "514 596-4779",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
+    address: "56 Rue Beaubien E, Montreal",
+    postal_code: "H2S 1P9",
+    phone_number: "514-232-5627",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Michel_qdc9ia.png",
     services: [
       {
         cut_type: "haircut",
-        price: 25,
-        duration: 20.minutes(),
-      },
-    ],
-    time_slots: TuesdayToSaturday10amTo5pm,
-  },
-
-    {
-    role: "barber",
-    first_name: "Sabi",
-    last_name: "Barbier",
-    email: "frankdoe@email.com",
-    password: 123456,
-    address: " 3485 Rue Ontario E, Montreal",
-    postal_code: "H1W 1R4",
-    phone_number: "514 596-4779",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
-    services: [
-      {
-        cut_type: "haircut",
-        price: 25,
-        duration: 20.minutes(),
-      },
-    ],
-    time_slots: TuesdayToSaturday10amTo5pm,
-  },
-
-    {
-    role: "barber",
-    first_name: "Sabi",
-    last_name: "Barbier",
-    email: "frankdoe@email.com",
-    password: 123456,
-    address: "1284 Av. Bernard, Outremont",
-    postal_code: "H2V 1V9",
-    phone_number: "514 596-4779",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
-    services: [
-      {
-        cut_type: "haircut",
-        price: 25,
-        duration: 20.minutes(),
-      },
-    ],
-    time_slots: TuesdayToSaturday10amTo5pm,
-  },
-
-    {
-    role: "barber",
-    first_name: "Sabi",
-    last_name: "Barbier",
-    email: "frankdoe@email.com",
-    password: 123456,
-    address: " 3485 Rue Ontario E, Montreal",
-    postal_code: "H1W 1R4",
-    phone_number: "514 596-4779",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
-    services: [
-      {
-        cut_type: "haircut",
-        price: 25,
-        duration: 20.minutes(),
-      },
-    ],
-    time_slots: TuesdayToSaturday10amTo5pm,
-  },
-
-    {
-    role: "barber",
-    first_name: "Sabi",
-    last_name: "Barbier",
-    email: "frankdoe@email.com",
-    password: 123456,
-     address: "4484 Bd Pie-IX, Montreal",
-    postal_code: "H1X 2B3",
-    phone_number: "514 596-4779",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
-    services: [
-      {
-        cut_type: "haircut",
-        price: 25,
+        price: 22,
         duration: 20.minutes(),
       },
     ],
@@ -281,14 +291,14 @@ custom_users = [
 
   {
     role: "client",
-    first_name: "Monsieur",
-    last_name: "Esquire",
-    email: "bill@email.com",
+    first_name: "Kevin",
+    last_name: "Hookumchand",
+    email: "kman@gmail.com",
     password: 123456,
-    address: "1284 Av. Bernard, Outremont",
-    postal_code: "H2V 1V9",
-    phone_number: "514 360-0417",
-    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+    address: "5333 Av. Casgrain Suite 102, Montreal",
+    postal_code: "H2T 1X3",
+    phone_number: "514-360-0417",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643842/Clean%20Kut%27s/le_Wagon_2_mb0igi.jpg",
   },
   {
     role: "client",
@@ -298,8 +308,8 @@ custom_users = [
     password: 123456,
     address: "4484 Bd Pie-IX, Montreal",
     postal_code: "H1X 2B3",
-    phone_number: "514 523-0858",
-    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+    phone_number: "514-523-0858",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467141/Clean%20Kut%27s/chang_rwowqj.jpg",
   },
 ]
 
