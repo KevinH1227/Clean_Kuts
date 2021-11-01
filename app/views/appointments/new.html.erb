@@ -1,36 +1,39 @@
 <div class="bg-white p-3">
-    <h1><%= @barber.full_name %>'s <br> Schedule </h1>
+  <h1><%= @barber.full_name %>'s <br>
+    Schedule </h1>
 </div>
-
 <div class="calendar-container">
-    <%= week_calendar(events: @time_slots, end_attribute: :end_time) do |date, time_slots| %>
-        <div class="calendar-day">
-            <%# <%= date %>
-            <% time_slots.each do |time_slot| %>
-                <div class="meeting booking-button"
+  <%= week_calendar(events: @time_slots, end_attribute: :end_time) do |date, time_slots| %>
+    <div class="calendar-day">
+      <%# <%= date %>
+      <% time_slots.each do |time_slot| %>
+        <div class="meeting booking-button"
                 data-start-datetime="<%= time_slot.start_time.strftime("%Y-%m-%dT%H:%M") %>:00"
                 data-end-datetime="<%= time_slot.end_time.strftime("%Y-%m-%dT%H:%M") %>:00"
                 data-start-date="<%= time_slot.start_time.strftime("%Y-%m-%d") %>"
                 data-end-date="<%= time_slot.end_time.strftime("%Y-%m-%d") %>"
                 >
-                    <p>Open</p>
-                    <small><%= time_slot.time unless time_slot.multi_days? %></small>
-                </div>
-            <% end %>
+          <p>Open</p>
+          <small><%= time_slot.time unless time_slot.multi_days? %></small>
         </div>
-    <% end %>
-</div>
-
-<div class="window-popup change" id="window-popup">
-    <div class="window-content">
-            <h1>Booking your appointment with: <%= @barber.full_name %> </h1>
-                <%= simple_form_for ([@user, @appointment]) do |f| %>
-                <%= f.hidden_field :barber_id,  value: @barber.id %>
-                <%= f.association :service, collection: @services %>
-                <%= f.date_field :start_time, html5: true, id:"date-picker", min: DateTime.now %>
-                <%= f.time_field :start_time, html5: true, id:"time-picker", min: "02:00", max: "05:00"  %>
-                <%= f.submit "Confirm" %>
-                <%= link_to "Cancel", new_appointment_path(@barber) %>
-            <% end %>
+      <% end %>
     </div>
+  <% end %>
+</div>
+<div class="window-popup change" id="window-popup">
+  <div class="window-content">
+    <h1>Book your appointment with <b><%= @barber.full_name %></b></h1>
+    <%= simple_form_for ([@user, @appointment]) do |f| %>
+      <%= f.hidden_field :barber_id,  value: @barber.id %>
+      <%= f.association :service, collection: @services %>
+      <div class="mb-1">
+        Date: <span id="selected-date" class="font-weight-bold"></span>
+        <%= f.date_field :start_time, html5: true, id: "date-picker", min: DateTime.now, hidden: true %></div>
+      Time: <%= f.time_select :start_time, html5: true, id: "time-picker", start_hour: 10, end_hour: 16, minute_step: 15  %>
+      <div class="mt-3 d-flex align-items-center">
+        <%= f.submit "Confirm", class: "mr-1 btn btn-success" %>
+        <%= link_to "Cancel", new_appointment_path(@barber), class: "btn btn-light border" %>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -1,14 +1,14 @@
 require 'faker'
 
-puts "Destroying A"
+puts "Destroying appointments..."
 Appointment.destroy_all
-puts "Destroying T"
+puts "Destroying time slots..."
 TimeSlot.destroy_all
-puts "Destroying S"
+puts "Destroying services..."
 Service.destroy_all
-puts "Destroying R"
+puts "Destroying reviews..."
 Review.destroy_all
-puts "Destroying Users"
+puts "Destroying users..."
 User.destroy_all
 
 puts "Creating new Clients and Barbers"
@@ -26,7 +26,7 @@ def create_services(barber)
 end
 
 
-def create_time_slot(barber, day=1, month=11, year=2021, start_time="9:00", end_time="17:00")
+def create_time_slot(barber, day=0, month=10, year=2021, start_time="9:00", end_time="17:00")
 
   start_hours, start_minutes = start_time.split(':')
   end_hours, end_minutes = end_time.split(':')
@@ -110,10 +110,10 @@ class Integer
   end
 end
 
-start_date = Date.new(2021, 11, 9)
-end_date = Date.new(2022, 11, 9)
+start_date = Date.new(2021, 11, 1)
+end_date = Date.new(2022, 11, 15)
 
-my_days = [2, 3, 4, 5, 6] # day of the week in 0-6. Sunday is 0, Saturday is 6.
+my_days = [1, 2, 4, 5] # day of the week in 0-6. Sunday is 0, Saturday is 6.
 my_dates = (start_date..end_date).to_a.select {|k| my_days.include?(k.wday)}
 
 TuesdayToSaturday10amTo5pm = my_dates.map do |date|
@@ -340,6 +340,17 @@ custom_users = [
     postal_code: "H1X 2B3",
     phone_number: "514-523-0858",
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467141/Clean%20Kut%27s/chang_rwowqj.jpg",
+  },
+  {
+    role: "client",
+    first_name: "Nicolas",
+    last_name: "Fraisse",
+    email: "nicolas@email.com",
+    password: 123123,
+    address: "7012 avenue de Chateaubriand",
+    postal_code: "H2S 2P1",
+    phone_number: "514-345-3828",
+    photo: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cheatsheet.com%2Fgear-style%2Fthings-you-need-to-remember-when-you-visit-a-barbershop.html%2F&psig=AOvVaw2ug_7LftFL-rQp41NCtkvS&ust=1635799759508000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCID_t5DD9fMCFQAAAAAdAAAAABAD",
   },
 ]
 
