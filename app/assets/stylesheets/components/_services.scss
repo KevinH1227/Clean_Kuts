@@ -1,9 +1,9 @@
 .services-card{
   background: #FFC79E;
   width: 80%;
-  height: 100px;
-  margin: auto;
-  padding: auto;
-  box-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+  // height: 100px;
+  margin: 24px auto;
+  box-shadow: $secondary-box-shadow;
   border-radius: 4px;
+  padding: 0.2em;
 }
