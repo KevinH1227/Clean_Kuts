@@ -1,11 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for [@barber, @review] do |f| %>
-        <%= f.input :comment %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.submit "Send your review" %>
-      <% end %>
+<div class="p-3 w-75 mx-auto mt-5 rounded shadow bg-white-transparent">
+<h3>CREATE A REVIEW</h3>
+  <%= simple_form_for [@barber, @review] do |f| %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Overall rating" %>
+    <label>Describe your barber experience!</label>
+    <%= f.text_area :comment, class: "w-100 border" %>
+    <div class="d-flex justify-content-center">
+      <%= f.submit "Post", class: "booking-button" %>
+      <button class="booking-button"><%= link_to "Cancel", @barber %></button>
     </div>
-  </div>
+  <% end %>
 </div>
+
