@@ -23,9 +23,11 @@
         <div class="barber-infos">
           <h3><%= link_to barber.full_name, barber %></h3>
           <p>About the barber: <%= barber.description %></p>
+          <% barber.review.to_i.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
         </div>
         <div class="icons">
-          <i class="fas fa-heart"></i>
           <i class="far fa-comment"></i>
           <i class="fas fa-map-marker-alt"></i>
         </div>
