@@ -1,28 +1,22 @@
-<!-- test only  -->
-  <!-- <div class="window-popup appear" id="window-popup"> -->
-  <!-- real div to put -->
-
 <!-- Barber dashboard -->
 <div class="barber-dashboard">
   <div class="barber-profile-card">
-    <div class="barber-name">
-      <h2><%= @barber.full_name %></h2>
-      <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
-    </div>
     <div class="top-barber-card-info">
-      <div class="profile-info">
-        <div class="phone"><i class="fas fa-phone-alt"></i>
-          <%= @barber.phone_number %>
+      <div>
+        <div class="barber-name">
+          <h2><%= @barber.full_name %></h2>
+          <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
         </div>
-        <div class="address"><i class="fas fa-city"></i>
-          <%= @barber.address %>
-        </div>
-        <div class="email"><i class="far fa-envelope"></i>
-          <%= @barber.email %>
-        </div>
-        <div class="description">
-          <h4>About me:</h4>
-          <%= @barber.description %>
+        <div class="profile-info">
+          <div class="phone"><i class="fas fa-phone-alt"></i>
+            <%= @barber.phone_number %>
+          </div>
+          <div class="address"><i class="fas fa-city"></i>
+            <%= @barber.address %>
+          </div>
+          <div class="email"><i class="far fa-envelope"></i>
+            <%= @barber.email %>
+          </div>
         </div>
             <div class="icon">
           <h4><%= link_to "Review me", new_user_review_path(@barber) %></h4>
@@ -35,12 +29,18 @@
       </div>
       <div class="barber-avatar-lg">
         <% if @barber.photo.attached? %>
-          <div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
+          <div><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
         <% end %>
       </div>
     </div>
-  </div>
+    <div class="description">
+      <h4>About me:</h4>
+      <div>
+        "<%= @barber.description %>"
+      </div>
+    </div>
     <%# TEMP LINK TO CREATE or REJOIN CHATROOM - STEPH %>
+<<<<<<< HEAD
   <% if @barber.barber?  %>
     <div class="create-chatroom">
       <% if @previous_chat %>
@@ -48,9 +48,24 @@
       <% else %>
         <%= link_to "Chat with #{@barber.first_name.capitalize}", new_chatroom_path(recipient_id: @barber.id) %>
       <% end %>
+=======
+    <div class="d-flex justify-content-between barber-actions">
+      <div class="create-chatroom d-flex align-items-center">
+        <i class="far fa-comment"></i>
+        <% if @previous_chat %>
+          <%= link_to "Keep chatting", chatroom_path(@chatroom, recipient_id: @barber.id) %>
+        <% else %>
+          <%= link_to "Chat with #{@barber.first_name.capitalize}", new_chatroom_path(recipient_id: @barber.id) %>
+        <% end %>
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-edit"></i><%= link_to "Write a review", new_user_review_path(@barber) %>
+      </div>
+>>>>>>> d6fa6ffec35f777b802e75f0f54266fc0c77bc33
     </div>
   <% end %>
   </div>
+<<<<<<< HEAD
 </div>
 <% if @barber.barber?  %>
   <div class="book-now">
@@ -72,3 +87,12 @@
 
 <!-- tab with reviews and services -->
 
+=======
+  <!-- button to book an appointment -->
+  <div class="book-now">
+    <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient" %> <i class="fas fa-calendar-alt"></i>
+  </div>
+  <!-- tab with reviews and services -->
+  <%= render 'shared/tabs_barber_profile' %>
+</div>
+>>>>>>> d6fa6ffec35f777b802e75f0f54266fc0c77bc33
