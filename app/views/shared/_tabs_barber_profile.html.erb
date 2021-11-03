@@ -11,7 +11,8 @@
     <div class="reviews_section appear" id="spot">
       <% @barber.reviews.each do |r| %>
         <div class="review-card">
-          <p><%= r.comment%></p>
+          <p><%= r.comment %></p>
+          <p><%= r.rating %></p>
         </div>
       <% end %>
     </div>
