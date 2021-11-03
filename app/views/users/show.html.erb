@@ -56,10 +56,13 @@
     <% end %>
   </div>
   <!-- button to book an appointment -->
-  <div class="book-now">
-    <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient" %> <i class="fas fa-calendar-alt"></i>
-  </div>
-  <!-- tab with reviews and services -->
-  <%= render 'shared/tabs_barber_profile' %>
+  <% if @barber.barber? %>
+    <div class="book-now">
+      <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient" %> <i class="fas fa-calendar-alt"></i>
+    </div>
+    <!-- tab with reviews and services -->
+    <%= render 'shared/tabs_barber_profile' %>
+  <% elsif @barber.client?  %>
+    <%= render :partial => "shared/tabs_client_profile" %>
+  <% end %>
 </div>
->>>>>>> d6fa6ffec35f777b802e75f0f54266fc0c77bc33
