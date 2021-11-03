@@ -1,14 +1,14 @@
 require 'faker'
 
-puts "Destroying A"
+puts "Destroying appointments..."
 Appointment.destroy_all
-puts "Destroying T"
+puts "Destroying time slots..."
 TimeSlot.destroy_all
-puts "Destroying S"
+puts "Destroying services..."
 Service.destroy_all
-puts "Destroying R"
+puts "Destroying reviews..."
 Review.destroy_all
-puts "Destroying Users"
+puts "Destroying users..."
 User.destroy_all
 
 puts "Creating new Clients and Barbers"
@@ -26,7 +26,7 @@ def create_services(barber)
 end
 
 
-def create_time_slot(barber, day=1, month=11, year=2021, start_time="9:00", end_time="17:00")
+def create_time_slot(barber, day=0, month=10, year=2021, start_time="9:00", end_time="17:00")
 
   start_hours, start_minutes = start_time.split(':')
   end_hours, end_minutes = end_time.split(':')
@@ -61,7 +61,7 @@ def create_user(role, f_name=Faker::Name.unique.male_first_name, l_name=Faker::N
     role: role,
     first_name: f_name,
     last_name: l_name,
-    email: "#{f_name.to_s.gsub(/\s+/, "")}@email.com",
+    email: "#{f_name.to_s.gsub(/\s+/, "")}@nonomail.com",
     password: 123456,
     address: Faker::Address.full_address,
     post_code: "",
@@ -110,10 +110,10 @@ class Integer
   end
 end
 
-start_date = Date.new(2021, 11, 9)
-end_date = Date.new(2022, 11, 9)
+start_date = Date.new(2021, 11, 1)
+end_date = Date.new(2022, 11, 15)
 
-my_days = [2, 3, 4, 5, 6] # day of the week in 0-6. Sunday is 0, Saturday is 6.
+my_days = [1, 2, 4, 5] # day of the week in 0-6. Sunday is 0, Saturday is 6.
 my_dates = (start_date..end_date).to_a.select {|k| my_days.include?(k.wday)}
 
 TuesdayToSaturday10amTo5pm = my_dates.map do |date|
@@ -127,21 +127,132 @@ TuesdayToSaturday10amTo5pm = my_dates.map do |date|
 end
 
 custom_users = [
-  {
-    role: "barber",
-    first_name: "Edward",
-    last_name: "Scissorhands",
-    email: "scissors@hotmail.com",
-    password: 123456,
-    address: "5050 Av Decelles, Montreal",
-    postal_code: "H3T 1VR",
-    phone_number: "514 346-1552",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467140/Clean%20Kut%27s/edward_scssorhands_cmtqn7.jpg",
 
+{
+    role: "barber",
+    first_name: "Eedward",
+    last_name: "Niigma",
+    email: "eddie@hotmail.com",
+    password: 123456,
+    address: "56 Rue Jean-Talon Ouest, Montreal",
+    postal_code: "H4V 1N5",
+    phone_number: "514-346-1552",
+        photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Ed_zyofcy.jpg",
     services: [
       {
         cut_type: "haircut",
         price: 20,
+        duration: 20.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 15,
+        duration: 15.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 30,
+        duration: 35.minutes(),
+      }
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+
+  {
+    role: "barber",
+    first_name: "George",
+    last_name: "Stefanopoulos",
+    email: "georgestef@videotron.com",
+    password: 123456,
+    address: "5020 Av du Parc, Montreal",
+    postal_code: "H2V 4E8",
+    phone_number: "514-596-4779",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/George_nmjsk0.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 12,
+        duration: 10.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 10,
+        duration: 10.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 20,
+        duration: 15.minutes(),
+      }
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Aziz",
+    last_name: "El-Khoury",
+    email: "aziz@bell.com",
+    password: 123456,
+    address: "6684 Av Fielding, Montreal",
+    postal_code: "H4V 1N5",
+    phone_number: "514-458-4129",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Aziz_uycnpt.jpg",
+    services: [
+      {
+        cut_type: "beard",
+        price: 35,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Charlie",
+    last_name: "Angel",
+    email: "angel@yahoo.com",
+    password: 123456,
+    address: "2305 Chemin Rockland, Montreal",
+    postal_code: "H3P 3E9",
+    phone_number: "514-369-1478",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Charlie_rt2kzi.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 30,
+        duration: 20.minutes(),
+      },
+      {
+        cut_type: "beard",
+        price: 14,
+        duration: 15.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 40,
+        duration: 40.minutes(),
+      }
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
+    {
+    role: "barber",
+    first_name: "Jeremy",
+    last_name: "Barberman",
+    email: "barberman@bellnet.com",
+    password: 123456,
+    address: "5594 Boul. Saint-Laurent, Montreal",
+    postal_code: "H2T 1S8",
+    phone_number: "514-925-4079",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 25,
         duration: 20.minutes(),
       },
       {
@@ -155,50 +266,91 @@ custom_users = [
         duration: 35.minutes(),
       }
     ],
-
     time_slots: TuesdayToSaturday10amTo5pm,
-
   },
-  {
+
+{
     role: "barber",
-    first_name: "Frank",
-    last_name: "Doe",
-    email: "frankdoe@email.com",
+    first_name: "Jo",
+    last_name: "Arsenault",
+    email: "arsenaultj@bellnet.com",
     password: 123456,
-    address: "5050 Av Decelles, Montreal",
-    postal_code: "H3T 1VR",
-    phone_number: "514 346-1552",
-    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467149/Clean%20Kut%27s/richieTheBarber_jhlpkz.jpg",
+    address: "5335 Av. Casgrain, Montreal",
+    postal_code: "H2T 1S8",
+    phone_number: "514-925-4079",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635699773/Clean%20Kut%27s/Jo_qhgp6a.jpg",
     services: [
       {
         cut_type: "haircut",
         price: 25,
         duration: 20.minutes(),
       },
+      {
+        cut_type: "beard",
+        price: 12,
+        duration: 15.minutes(),
+      },
+      {
+        cut_type: "both",
+        price: 35,
+        duration: 35.minutes(),
+      }
     ],
     time_slots: TuesdayToSaturday10amTo5pm,
   },
+
+    {
+    role: "barber",
+    first_name: "Michel",
+    last_name: "Tremblay",
+    email: "m.tremblay@videotron.ca",
+    password: 123456,
+    address: "56 Rue Beaubien Est, Montreal",
+    postal_code: "H4V 1N5",
+    phone_number: "514-232-5627",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Michel_qdc9ia.png",
+    services: [
+      {
+        cut_type: "haircut",
+        price: 22,
+        duration: 20.minutes(),
+      },
+    ],
+    time_slots: TuesdayToSaturday10amTo5pm,
+  },
+
   {
     role: "client",
-    first_name: "Bill",
-    last_name: "Gates",
-    email: "bill@email.com",
+    first_name: "Kevin",
+    last_name: "Hookumchand",
+    email: "kman@gmail.com",
     password: 123456,
-    address: "5030 Av Decelles, Montreal",
-    postal_code: "H3T 1VR",
-    phone_number: "514 346-1552",
-    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+    address: "5333 Av. Casgrain, Montreal",
+    postal_code: "H2T 1X3",
+    phone_number: "514-360-0417",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643842/Clean%20Kut%27s/le_Wagon_2_mb0igi.jpg",
   },
   {
     role: "client",
-    first_name: "Fran",
-    last_name: "Perr",
+    first_name: "senor",
+    last_name: "Chang",
     email: "fran@email.com",
     password: 123456,
-    address: "4200 Av Mont-Royal, Montreal",
-    postal_code: "H3T 1VR",
-    phone_number: "514 346-1552",
-    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60",
+    address: "4484 Bd Pie-IX, Montreal",
+    postal_code: "H1X 2B3",
+    phone_number: "514-523-0858",
+    photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467141/Clean%20Kut%27s/chang_rwowqj.jpg",
+  },
+  {
+    role: "client",
+    first_name: "Nicolas",
+    last_name: "Fraisse",
+    email: "nicolas@email.com",
+    password: 123123,
+    address: "7012 avenue de Chateaubriand",
+    postal_code: "H2S 2P1",
+    phone_number: "514-345-3828",
+    photo: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cheatsheet.com%2Fgear-style%2Fthings-you-need-to-remember-when-you-visit-a-barbershop.html%2F&psig=AOvVaw2ug_7LftFL-rQp41NCtkvS&ust=1635799759508000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCID_t5DD9fMCFQAAAAAdAAAAABAD",
   },
 ]
 

@@ -9,8 +9,9 @@ class PagesController < ApplicationController
     # else
     #   @barbers = User.near(@address, 500).where(role: User.roles[:barber])
     # end
-    @barbers = User.where(role: "barber")
+    # @barbers = User.where(role: "barber")
     # @barber = User.find(params[:id])
+    @barbers = User.where(role:'barber').near(@address, 10)
     @markers = @barbers.geocoded.map do |barber|
       {
         lat: barber.latitude,

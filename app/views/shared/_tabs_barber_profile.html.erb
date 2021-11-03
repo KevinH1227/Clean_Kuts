@@ -9,7 +9,7 @@
   </div>
   <div class="part2">
     <div class="reviews_section appear" id="spot">
-      <p>These are my clients' reviews</p>
+      <%= @barber.reviews.map { |r| r.comment } %>
     </div>
     <div class="services_section" id="spot-service">
       <div class="services-container">

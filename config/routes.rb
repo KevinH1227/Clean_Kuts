@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/appointments/:barber_id/new', to: 'appointments#new', as: :new_appointment
   get '/my_appointments', to: 'appointments#index', as: :my_appointments
   get '/my_services/:barber_id', to: 'services#index', as: :my_services
+  resources :reviews
 
   resources :chatrooms, only: [:show, :create, :new] do
     resources :messages, only: :create
