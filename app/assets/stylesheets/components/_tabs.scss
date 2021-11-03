@@ -2,15 +2,14 @@
 // <!-- Name the class of those tabs buttom class="reviews", class="services"-->
 // <!-- Name the class of those sections class="reviews_section", class="services_section"-->
 
-
 // start of barber dashboard css
 .schedule-appointment-reviews-services {
   p {
-    color:black;
+    color: black;
   }
-  .info{
-  margin-top: 0px;
-}
+  .info {
+    margin-top: 0px;
+  }
 
   .active {
     background-color: $light-gray;
@@ -26,7 +25,7 @@
     width: 25%;
     height: 100px;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   .appointments {
@@ -34,7 +33,7 @@
     width: 25%;
     height: 100px;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   .reviews {
@@ -42,14 +41,14 @@
     width: 25%;
     height: 100px;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
   }
   .services {
     display: block;
     width: 25%;
     height: 100px;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   .change {
@@ -79,7 +78,7 @@
     height: 100px;
   }
 
-  .services_section{
+  .services_section {
     width: 100%;
     height: 100px;
   }
@@ -103,8 +102,8 @@
     background-color: transparent;
   }
 
- .change {
-    display:none;
+  .change {
+    display: none;
   }
 
   .appear {
@@ -113,19 +112,19 @@
     // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
     background-color: $light-gray;
   }
-// ----
-    .reviews {
+  // ----
+  .reviews {
     display: block;
     width: 50%;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   .services {
     display: block;
     width: 50%;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   .services_section {
@@ -149,7 +148,6 @@
   }
   // -----
 }
-
 
 // end of client profile
 
@@ -175,7 +173,6 @@
     background-color: transparent;
   }
 
-
   .change {
     display: none;
   }
@@ -184,14 +181,14 @@
     display: block;
     width: 50%;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
   }
 
   .services {
     display: block;
     width: 50%;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
     overflow: scroll;
   }
 
@@ -207,15 +204,15 @@
     width: 100%;
     // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
     background-color: $light-gray;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
     overflow: scroll;
   }
 
   .reviews_section {
-    width:100%;
+    width: 100%;
     height: 188px;
     background-color: $light-gray;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
     overflow: scroll;
   }
 }

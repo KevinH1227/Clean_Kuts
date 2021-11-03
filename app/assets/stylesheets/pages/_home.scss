@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 @viewport {
   width: device-width;
-  zoom: 1.0;
+  zoom: 1;
 }
 
 // background image with filter
@@ -11,14 +11,12 @@
   position: fixed;
   top: 0;
   right: 0;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635626880/Clean%20Kut%27s/background_myw4wk.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635626880/Clean%20Kut%27s/background_myw4wk.jpg');
   background-position: center;
   background-size: cover;
   z-index: -1000;
 }
-
 
 // banner title styling
 .banner-title h1,
@@ -26,27 +24,22 @@ p {
   color: #e7e7e7;
   text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin: 0;
 }
 
 .banner-title h1 {
   font-family: 'Pacifico', cursive;
-  padding-top: 100px;
   font-size: 64px;
-  margin-top: 80px;
 }
 
 .banner-title p {
-  padding-bottom: 100px;
   font-family: 'Dosis';
   font-size: 1.4rem;
 }
 
-
 // Barber section
 .barbers-container {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .barbers-container h2 {

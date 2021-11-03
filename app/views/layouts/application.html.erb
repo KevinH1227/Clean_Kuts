@@ -9,7 +9,6 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <!-- for the map -->
     <%= stylesheet_pack_tag 'application' %>
-    
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <!-- forthe font-families -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +19,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class='mobile-container'>
+      <%= yield %>
+    </div>
     <div class="img-filter"></div>
     <%= render 'shared/footer' %>
   </body>
