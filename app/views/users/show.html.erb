@@ -24,8 +24,15 @@
           <h4>About me:</h4>
           <%= @barber.description %>
         </div>
+            <div class="icon">
+          <h4><%= link_to "Review me", new_user_review_path(@barber) %></h4>
+          <div class="barber">
+            <% @barber.review.to_i.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
       </div>
-      <%= link_to "Review me", new_user_review_path(@barber) %>
+      </div>
       <div class="barber-avatar-lg">
         <% if @barber.photo.attached? %>
           <div class="picture"><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
