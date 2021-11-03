@@ -99,7 +99,7 @@ def create_random_client
 end
 
 
-1.times do
+30.times do
     create_random_barber
     create_random_client
 end
@@ -137,7 +137,12 @@ custom_users = [
     address: "56 Rue Jean-Talon Ouest, Montreal",
     postal_code: "H4V 1N5",
     phone_number: "514-346-1552",
-    review: 3,
+    reviews: [
+      {
+        comment: "Medicore haircut, barber kept asking me to solve his riddles",
+        rating: 3
+      }
+    ],
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Ed_zyofcy.jpg",
     description: "Cutting-edge hair cuts in a classic barbershop setting that you can’t find anywhere else. Come experience it.",
     services: [
@@ -170,7 +175,12 @@ custom_users = [
     address: "5020 Av du Parc, Montreal",
     postal_code: "H2V 4E8",
     phone_number: "514-596-4779",
-    review: 4,
+    reviews: [
+      {
+        comment: "It depends on his mood how he wants to cut your hair. I had mixed experiences ",
+        rating: 2
+      }
+    ],
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/George_nmjsk0.jpg",
     description: "I’ve been a barber since I was in high school and have honed my craft over the years. Every haircut is a memory.",
     services: [
@@ -202,7 +212,12 @@ custom_users = [
     address: "6684 Av Fielding, Montreal",
     postal_code: "H4V 1N5",
     phone_number: "514-458-4129",
-    review: 4,
+    reviews: [
+      {
+        comment: "The best cut I've ever gotten. Quality barber, quality cuts, really friendly and the atmosphere is great.",
+        rating: 4
+      }
+    ],
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Aziz_uycnpt.jpg",
     description: "From designing and building my company to barbering clients every day, this is my everything. I’m constantly pushing myself to be the best I can be, and it’s all for the joy of creating something amazing.",
     services: [
@@ -224,7 +239,12 @@ custom_users = [
     address: "2305 Chemin Rockland, Montreal",
     postal_code: "H3P 3E9",
     phone_number: "514-369-1478",
-    review: 4,
+    reviews: [
+      {
+        comment: "Charlie is great. Great barbershop great barber. Nice shop great service. Got a razor shave and beard trim even asked if i was prone to razer bumbs.",
+        rating: 4
+      }
+    ],
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Charlie_rt2kzi.jpg",
     description: "No matter what haircut you go for, a great barber makes all the difference.",
     services: [
@@ -256,7 +276,12 @@ custom_users = [
     address: "5594 Boul. Saint-Laurent, Montreal",
     postal_code: "H2T 1S8",
     phone_number: "514-925-4079",
-    review: 5,
+    reviews: [
+      {
+        comment: "Great barber, played guitar for me after the cut and asked if I wanted to join his band with Stephane and Nicholas.",
+        rating: 5
+      }
+    ],
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635467146/Clean%20Kut%27s/jb_gn1uhk.jpg",
     description: "I have been cutting hair my entire life. When I first got into cutting hair I use to practice on my brother, now I get to share my craft with the world",
     services: [
@@ -288,7 +313,12 @@ custom_users = [
     address: "5335 Av. Casgrain, Montreal",
     postal_code: "H2T 1S8",
     phone_number: "514-925-4079",
-    review: 4,
+    reviews: [
+      {
+        comment: "Felt completely comfortable! Great haircut and conversation. Definitely my new barber. See you guys when I'm back from vacation.",
+        rating: 4
+      }
+    ],
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635699773/Clean%20Kut%27s/Jo_qhgp6a.jpg",
     description: "I’ve been a barber for over 30yrs, it’s not just my job… it’s my trade. This is the best feeling I get, knowing that I’m providing men with old school quality service.",
     services: [
@@ -320,7 +350,12 @@ custom_users = [
     address: "56 Rue Beaubien Est, Montreal",
     postal_code: "H4V 1N5",
     phone_number: "514-232-5627",
-    review: 4,
+    reviews: [
+      {
+        comment: "The haircut was quick and exactly what I asked for! It’s rare to find such a good barbershop for this price. I know I’ll be going back",
+        rating: 4
+      }
+    ],
     photo: "https://res.cloudinary.com/dlpzgkbtz/image/upload/v1635643721/Clean%20Kut%27s/Michel_qdc9ia.png",
     description: "Choosing a good hair stylist is like choosing your life partner.",
     services: [
@@ -398,6 +433,9 @@ custom_users.each do |user|
     puts "   Available:"
     user[:time_slots].each do |time_slot|
       create_time_slot(new_user, time_slot[:day], time_slot[:month], time_slot[:year], time_slot[:start_time], time_slot[:end_time])
+    end
+    user[:reviews].each do |review|
+      create_review(client: User.client.sample(1)[0], barber: new_user, comment: review[:comment], rating: review[:rating])
     end
   end
 end
