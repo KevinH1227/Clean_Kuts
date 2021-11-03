@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
         # @my_client_appointments = current_user.appointments
         # raise
-        if current_user.barber? 
+        if current_user.barber?
             @my_appointments =  Appointment.where(barber: current_user)
         else
             @my_appointments =  Appointment.where(client: current_user)
@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-    
+
     end
 
     def create
@@ -35,15 +35,15 @@ class AppointmentsController < ApplicationController
         #appointment.barber = set to barber in params user.find (use id we receive)
         #appointment.client = current_user
         #appointment.service = receiving in params
-        #"appointment"=><ActionController::Parameters {"barber_id"=>"1", "service_id"=>"1", "start_time"=>"2021-10-16T19:30"} 
+        #"appointment"=><ActionController::Parameters {"barber_id"=>"1", "service_id"=>"1", "start_time"=>"2021-10-16T19:30"}
         #permitted: false>, "commit"=>"Confirm", "controller"=>"appointments", "action"=>"create", "user_id"=>"23"} permitted: false>
         @appointment = Appointment.new(appointment_params)
         @barber = @appointment.barber
         @appointment.time_slot = @barber.time_slots.first
-        @appointment.end_time = @appointment.start_time + @appointment.service.duration       
+        @appointment.end_time = @appointment.start_time + @appointment.service.duration
         @appointment.client = current_user
         if @appointment.save
-            redirect_to my_appointments_path
+            redirect_to current_user
         else
             @barber = User.find(appointment_params[:barber_id])
             render :new
@@ -55,7 +55,7 @@ class AppointmentsController < ApplicationController
     def appointment_params
         params.require(:appointment).permit(:start_time, :barber_id, :service_id)
     end
-        
+
     def find_user
         @user = User.find(params[:user_id])
     end
