@@ -223,3 +223,15 @@
 .part1 {
   border-radius: 4px 4px 0 0;
 }
+
+.review-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #FFF0E5;
+  width: 80%;
+  margin: 24px auto;
+  box-shadow: $tertiary-box-shadow;
+  border-radius: 4px;
+  padding: 1.4em;
+}

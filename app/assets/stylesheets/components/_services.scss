@@ -1,9 +1,30 @@
 .services-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background: #FFC79E;
-  width: 80%;
-  // height: 100px;
+  width: calc(100% - 40px);
   margin: 24px auto;
   box-shadow: $secondary-box-shadow;
   border-radius: 4px;
-  padding: 0.2em;
+  padding: 0.4em;
+}
+
+.services-card img {
+  width: 20px;
+  height: auto;
+  margin-right: 0.5em;
+}
+
+.services-card div {
+  width: 100px;
+}
+
+.cut-type,.price,.duration {
+  display: flex;
+  align-items: center;
+}
+
+.services-card p {
+  text-align: left;
 }
