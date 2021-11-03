@@ -34,6 +34,7 @@
     </div>
   </div>
     <%# TEMP LINK TO CREATE or REJOIN CHATROOM - STEPH %>
+  <% if @barber.barber?  %>
     <div class="create-chatroom">
       <% if @previous_chat %>
         <%= link_to "Keep chatting", chatroom_path(@chatroom, recipient_id: @barber.id) %>
@@ -41,6 +42,7 @@
         <%= link_to "Chat with #{@barber.first_name.capitalize}", new_chatroom_path(recipient_id: @barber.id) %>
       <% end %>
     </div>
+  <% end %>
   </div>
 </div>
 <% if @barber.barber?  %>
