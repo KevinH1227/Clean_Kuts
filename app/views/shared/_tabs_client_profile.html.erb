@@ -13,7 +13,13 @@
   </div>
   <div class="part2">
     <div class="appointments_section appear" id="spot5">
-      <p>This is my appointment section I hope I won't be late</p>
+      <% if @appointments.empty?  %>
+        <p>you have no appointment</p>
+      <% else %>
+        <% @appointments.each do |appointment|%>
+        <p><%= appointment.barber.full_name %></p>
+        <% end %>
+      <% end %>
     </div>
     <div class="reviews_section change" id="spot6">
       <p>This is my reviews section you can see how picky I am</p>
@@ -24,3 +30,4 @@
     </div> -->
   </div>
 </div>
+

@@ -13,6 +13,11 @@ class UsersController < ApplicationController
     @barber = User.find(params[:id])
     @previous_chat = previous_chat?
     @chatroom = set_chatroom if @previous_chat
+
+    @appointments = @barber.barber? ?
+      Appointment.all.where(barber: @barber) :
+      Appointment.all.where(client: @barber)
+
   end
 
   def edit
