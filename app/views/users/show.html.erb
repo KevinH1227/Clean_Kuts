@@ -37,6 +37,7 @@
     </div>
   </div>
     <%# TEMP LINK TO CREATE or REJOIN CHATROOM - STEPH %>
+  <% if @barber.barber?  %>
     <div class="create-chatroom">
       <% if @previous_chat %>
         <%= link_to "Keep chatting", chatroom_path(@chatroom, recipient_id: @barber.id) %>
@@ -44,16 +45,26 @@
         <%= link_to "Chat with #{@barber.first_name.capitalize}", new_chatroom_path(recipient_id: @barber.id) %>
       <% end %>
     </div>
+  <% end %>
   </div>
 </div>
-
-  <!-- button to book an appointment -->
+<% if @barber.barber?  %>
   <div class="book-now">
     <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient" %> <i class="fas fa-calendar-alt"></i>
   </div>
+  <!-- button to book an appointment -->
+  <%= render :partial => "shared/tabs_barber_profile" %>
+
+<% else @barber.client?  %>
+  <%= render :partial => "shared/tabs_client_profile" %>
+
+<% end %>
+
+
+
+
 
 
 
 <!-- tab with reviews and services -->
-  <%= render 'shared/tabs_barber_profile' %>
-</div>
+
