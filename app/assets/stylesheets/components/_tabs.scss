@@ -219,12 +219,30 @@
 }
 .review-card {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
   background-color: #FFF0E5;
   width: 80%;
   margin: 24px auto;
   box-shadow: $tertiary-box-shadow;
   border-radius: 4px;
-  padding: 1.4em;
+  padding: 0.7em;
 }
+
+.review-card p {
+  text-align: left;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.review-card > p {
+  margin-right: 1em;
+}
+
+.review-card p span {
+  font-size: .5em;
+  opacity: .5em;
+  padding-left: 0.3em;
+}
+
+

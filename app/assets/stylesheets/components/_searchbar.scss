@@ -4,6 +4,7 @@
   height: 100px;
   position: relative;
   margin-bottom: 20px;
+  transition: all .3s ease-in-out;
   .search {
     position: absolute;
     margin: auto;
@@ -109,6 +110,6 @@
 
 .search-container .search.move-right {
   left: unset;
-  right: 20px;
+  right: 0px;
   z-index: 7;
 }
