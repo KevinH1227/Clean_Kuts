@@ -1,0 +1,5 @@
+meta_product_name: "Clean Kuts"
+meta_title: "Clean Kuts - Fresh Cuts for Everyone"
+meta_description: "An interactive app that shows the user near by barbershops with a viewable schedule for the barber you choose to book your own appointment"
+meta_image: "background.jpg" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
