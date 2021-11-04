@@ -29,4 +29,9 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def average_rating
+    return nil if self.reviews.count == 0 
+    return self.reviews.reduce(0) { |sum, review| sum + review.rating } / self.reviews.count
+  end
 end

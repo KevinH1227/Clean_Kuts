@@ -1,11 +1,14 @@
 .barber-card {
   overflow: hidden;
-  height: 120px;
+  // height: 180px;
   background: #e7e7e7;
   display: flex;
   border-radius: 4px;
   box-shadow: 4px 4px 16px $black-primary;
   margin-bottom: 16px;
+  .fa-star {
+    color: #efbf68;
+  }
 }
 
 .barber-avatar img {
@@ -41,7 +44,7 @@
 }
 
 .barber-card p {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
   opacity: 0.7;
   margin-bottom: 0;

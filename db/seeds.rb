@@ -340,8 +340,7 @@ custom_users = [
     ],
     time_slots: TuesdayToSaturday10amTo5pm,
   },
-
-    {
+  {
     role: "barber",
     first_name: "Michel",
     last_name: "Tremblay",
@@ -367,7 +366,6 @@ custom_users = [
     ],
     time_slots: TuesdayToSaturday10amTo5pm,
   },
-
   {
     role: "client",
     first_name: "Kevin",
