@@ -1,22 +1,28 @@
-.footer{
+.footer {
   background-color: $basic-white;
   position: fixed;
-  bottom: 0px;
+  bottom: 8px;
+  left: 8px;
   height: 50px;
-  padding: 8px 20px;
+  padding: 8px 16px;
   font-size: x-large;
-  box-shadow: -4px -4px 16px rgba(0,0,0,0.2);
+  box-shadow: -4px -4px 16px rgba(0, 0, 0, 0.2);
   z-index: 10;
-  width: 100vw;
+  width: 50px;
   display: grid;
   align-items: center;
+  border-radius: 50%;
 
-  .home{
+  .home {
     text-align: right;
     padding-right: 20px;
   }
-  .back{
+
+  .back {
     text-align: left;
-    padding-left: 20px;
+  }
+
+  .fas {
+    color: #242466;
   }
 }

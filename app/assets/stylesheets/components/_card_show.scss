@@ -1,24 +1,31 @@
 .barber-card {
   overflow: hidden;
-  height: 120px;
+  // height: 180px;
   background: #e7e7e7;
   display: flex;
   border-radius: 4px;
   box-shadow: 4px 4px 16px $black-primary;
   margin-bottom: 16px;
+  .fa-star {
+    color: #efbf68;
+  }
 }
 
 .barber-avatar img {
   object-fit: cover;
   height: 100%;
   width: 120px;
-  opacity: 80%;
-  box-shadow: 4px 4px 16px rgba(200, 200, 200, 80%);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
 .barber-infos {
   width: 60%;
-  padding: 0px 16px;
+  padding: 12px;
+  flex-grow: 1;
+  .comment-icon {
+    font-size: 20px;
+    color: rgb(40, 40, 40);
+  }
 }
 
 .barber-infos p {
@@ -27,25 +34,34 @@
   overflow: scroll;
 }
 
-.barber-card h3 a {
-  font-size: 16px;
+.barber-card h3 {
+  font-size: 18px;
   font-weight: bold;
-  color: $black-primary;
+  margin-bottom: 2px;
+  a {
+    color: $black-primary;
+  }
 }
 
 .barber-card p {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 0;
   margin-top: 8px;
 }
 
-.icons {
-  display: grid;
-  align-content: space-evenly;
-  justify-items: center;
-  padding: 8px;
+.barber-location {
+  color: rgb(90, 90, 90);
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 12px;
+  }
+  i {
+    margin-right: 6px;
+    font-size: 13px;
+  }
 }
 
 .icon {

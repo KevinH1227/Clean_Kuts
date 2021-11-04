@@ -8,6 +8,10 @@
     </div>
     <div class="reviews" id="reviews3">
       <p>Reviews</p>
+          <div class="barber">
+            <% @barber.comment.each do |comment| %>
+            <%= comment %>
+          <% end %>
     </div>
     <div class="services" id="services3">
       <p>Services</p>
