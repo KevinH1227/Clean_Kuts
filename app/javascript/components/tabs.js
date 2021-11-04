@@ -13,11 +13,11 @@ function tabs() {
     // tab title variables
   const appointments2 = document.getElementById("appointments2");
   const reviews2 = document.getElementById("reviews2");
-  const favourites2 = document.getElementById("favourites2");
+  // const favourites2 = document.getElementById("favourites2");
     // tabs section variables
   const spot5 = document.getElementById("spot5");
   const spot6 = document.getElementById("spot6");
-  const spot7 = document.getElementById("spot7");
+  // const spot7 = document.getElementById("spot7");
 
 // tabs_barber_dashboard aka 3 schedule appointments reviews services
     // tab title variables
@@ -86,8 +86,8 @@ function tabs() {
       reviews2.classList.remove("active");
       reviews2.classList.add("passive");
       // favourites title tabs
-      favourites2.classList.remove("active");
-      favourites2.classList.add("passive");
+      // favourites2.classList.remove("active");
+      // favourites2.classList.add("passive");
       // appointments tab section
       spot5.classList.add("appear")
       spot5.classList.remove("change")
@@ -95,8 +95,8 @@ function tabs() {
       spot6.classList.add("change")
       spot6.classList.remove("appear")
       // favourites tab section
-      spot7.classList.add("change")
-      spot7.classList.remove("appear")
+      // spot7.classList.add("change")
+      // spot7.classList.remove("appear")
     });
   };
   // ----
@@ -113,8 +113,8 @@ function tabs() {
       reviews2.classList.remove("passive");
 
       // favourites title tabs
-      favourites2.classList.remove("active");
-      favourites2.classList.add("passive");
+      // favourites2.classList.remove("active");
+      // favourites2.classList.add("passive");
 
       // appointments tab section
       spot5.classList.remove("appear")
@@ -123,38 +123,38 @@ function tabs() {
       spot6.classList.add("appear")
       spot6.classList.remove("change")
       // favourites tab section
-      spot7.classList.remove("appear")
-      spot7.classList.add("change")
+      // spot7.classList.remove("appear")
+      // spot7.classList.add("change")
     });
   };
   // ----
-  if(favourites2) {
-    favourites2.addEventListener("click", (event)=> {
-      // always needed no matter what
-      event.preventDefault();
-      console.log(event.currentTarget);
-      // appointments title tab
-      appointments2.classList.remove("active");
-      appointments2.classList.add("passive");
-      // reviews title tab
-      reviews2.classList.remove("active");
-      reviews2.classList.add("passive");
+  // if(favourites2) {
+  //   favourites2.addEventListener("click", (event)=> {
+  //     // always needed no matter what
+  //     event.preventDefault();
+  //     console.log(event.currentTarget);
+  //     // appointments title tab
+  //     appointments2.classList.remove("active");
+  //     appointments2.classList.add("passive");
+  //     // reviews title tab
+  //     reviews2.classList.remove("active");
+  //     reviews2.classList.add("passive");
 
-      // favourites title tabs
-      favourites2.classList.add("active");
-      favourites2.classList.remove("passive");
+  //     // favourites title tabs
+  //     favourites2.classList.add("active");
+  //     favourites2.classList.remove("passive");
 
-      // appointments tab section
-      spot5.classList.remove("appear")
-      spot5.classList.add("change")
-      // reviews tab section
-      spot6.classList.remove("appear")
-      spot6.classList.add("change")
-      // favourites tab section
-      spot7.classList.add("appear")
-      spot7.classList.remove("change")
-    });
-  };
+  //     // appointments tab section
+  //     spot5.classList.remove("appear")
+  //     spot5.classList.add("change")
+  //     // reviews tab section
+  //     spot6.classList.remove("appear")
+  //     spot6.classList.add("change")
+  //     // favourites tab section
+  //     spot7.classList.add("appear")
+  //     spot7.classList.remove("change")
+  //   });
+  // };
   // end of tabs_client_profile aka 2
   // tabs_barber_dashboard aka 3
   if(schedule3) {
