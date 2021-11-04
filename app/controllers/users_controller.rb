@@ -7,6 +7,13 @@ class UsersController < ApplicationController
     else
       @barbers = User.where(role: "barber")
     end
+    @markers = @barbers.geocoded.map do |barber|
+      {
+        lat: barber.latitude,
+        lng: barber.longitude,
+        info_window: render_to_string(partial: "info1_window", locals: { barber: barber })
+      }
+    end
   end
 
   def show
