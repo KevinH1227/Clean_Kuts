@@ -22,16 +22,13 @@
           <div class="d-flex justify-content-between border">
             <h3><%= link_to barber.full_name, barber %></h3>
 
-
-
-          <% if @chatroom.nil? %>
-              <%= link_to new_chatroom_path(recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
-            <% else %>
-              <%= link_to chatroom_path(@chatroom, recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
-          <% end %>
-
+            <!-- link to chatroom -->
+            <% if @chatroom.nil? %>
+                <%= link_to new_chatroom_path(recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
+              <% else %>
+                <%= link_to chatroom_path(@chatroom, recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
+            <% end %>
           </div>
-
 
           <div class="barber-location"><i class="fas fa-map-marker-alt"></i><span><%= barber.address %></span></div>
           <p><%= barber.description %></p>
