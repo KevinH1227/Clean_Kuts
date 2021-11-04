@@ -1,0 +1,13 @@
+
+<%= link_to barber do %>
+  <div class="barber-avatar">
+    <% if barber.photo.attached? %>
+      <%= cl_image_tag barber.photo.key %>
+    <% else %>
+      <%= image_tag "missing.png" %>
+    <% end %>
+  </div>
+  <div class= map_barber>
+    <h1> <%= barber.full_name %></h1>
+  </div>
+<% end %>
