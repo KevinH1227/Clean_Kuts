@@ -2,11 +2,11 @@
 <div class="barber-dashboard">
   <div class="barber-profile-card">
     <div class="top-barber-card-info">
-      <div>
-        <div class="barber-name">
-          <h2><%= @barber.full_name %></h2>
-          <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
-        </div>
+      <div class="barber-name">
+        <h2><%= @barber.full_name %></h2>
+        <%= link_to 'Edit Profile', edit_user_path if current_user == @barber %>
+      </div>
+      <div class="info-avatar-container">
         <div class="profile-info">
           <div class="phone"><i class="fas fa-phone-alt"></i>
             <%= @barber.phone_number %>
@@ -17,23 +17,23 @@
           <div class="email"><i class="far fa-envelope"></i>
             <%= @barber.email %>
           </div>
-        </div>
-        <div class="icon">
-          <div class="barber">
-            <% @barber.review.to_i.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
+          <div class="icon">
+            <div class="barber">
+              <% @barber.review.to_i.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="barber-avatar-lg">
-        <% if @barber.photo.attached? %>
-          <div><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
-        <% end %>
+        <div class="barber-avatar-lg">
+          <% if @barber.photo.attached? %>
+            <div><%= cl_image_tag @barber.photo.key, :class => "photo" %></div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="description">
-      <h4>About me:</h4>
+      <h4>About me</h4>
       <div>
         "<%= @barber.description %>"
       </div>

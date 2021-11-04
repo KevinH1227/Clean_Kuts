@@ -1,9 +1,31 @@
 .services-card{
-  background: #FFC79E;
-  width: 80%;
-  height: 100px;
-  margin: auto;
-  padding: auto;
-  box-shadow: 4px 4px 12px rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(255, 199, 158, 0.7);
+  width: calc(100% - 40px);
+  margin: 24px auto;
+  box-shadow: $secondary-box-shadow;
   border-radius: 4px;
+  padding: 0.8em;
+}
+
+.services-card img {
+  width: 20px;
+  height: auto;
+  margin-right: 0.5em;
+}
+
+.services-card div {
+  width: 100px;
+}
+
+.cut-type,.price,.duration {
+  display: flex;
+  align-items: center;
+}
+
+.services-card p {
+  text-align: left;
+  margin-bottom: 0;
 }

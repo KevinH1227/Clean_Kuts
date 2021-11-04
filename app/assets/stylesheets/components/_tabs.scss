@@ -195,7 +195,7 @@
   .services_section {
     display: none;
     width: 100%;
-    height: 188px;
+    height: 246px;
     overflow: scroll;
   }
 
@@ -204,15 +204,31 @@
     width: 100%;
     // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
     background-color: $light-gray;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 0px 0px 4px 4px;
     overflow: scroll;
   }
 
   .reviews_section {
     width: 100%;
-    height: 188px;
+    height: 246px;
     background-color: $light-gray;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 0px 0px 4px 4px;
     overflow: scroll;
   }
+}
+
+.part1 {
+  border-radius: 4px 4px 0 0;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #FFF0E5;
+  width: 80%;
+  margin: 24px auto;
+  box-shadow: $tertiary-box-shadow;
+  border-radius: 4px;
+  padding: 1.4em;
 }

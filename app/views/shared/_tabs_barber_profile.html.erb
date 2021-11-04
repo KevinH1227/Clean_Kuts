@@ -9,22 +9,35 @@
   </div>
   <div class="part2">
     <div class="reviews_section appear" id="spot">
-      <%= @barber.reviews.map { |r| r.comment } %>
+      <% @barber.reviews.each do |r| %>
+        <div class="review-card">
+          <p><%= r.comment %></p>
+          <p><%= r.rating %></p>
+        </div>
+      <% end %>
     </div>
     <div class="services_section" id="spot-service">
       <div class="services-container">
         <% @barber.services.each do |service| %>
-          <div class="cut-type services-card">
-            <p><%= service.cut_type %></p>
-          </div>
-          <div class="price services-card">
-            <p>$<%= service.price %>.00</p>
-          </div>
-          <div class="duration services-card">
-            <p><%= service.duration/60 %> minutes</p>
-          </div>
-          <div class="extra services-card">
-            <!-- <p><%= service.duration/60 %> minutes</p> -->
+          <div class="services-card">
+            <div class="cut-type">
+              <%= image_tag "Scissors.png" %>
+              <div>
+                <p><%= service.cut_type %></p>
+              </div>
+            </div>
+            <div class="price">
+              <%= image_tag "Payment.png" %>
+              <div>
+                <p>$<%= service.price %>.00</p>
+              </div>
+            </div>
+            <div class="duration">
+              <%= image_tag "Clock.png" %>
+              <div>
+                <p><%= service.duration/60 %> minutes</p>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
