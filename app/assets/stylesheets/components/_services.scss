@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #FFC79E;
+  background-color: rgba(255, 199, 158, 0.7);
   width: calc(100% - 40px);
   margin: 24px auto;
   box-shadow: $secondary-box-shadow;
   border-radius: 4px;
-  padding: 0.4em;
+  padding: 0.8em;
 }
 
 .services-card img {
@@ -27,4 +27,5 @@
 
 .services-card p {
   text-align: left;
+  margin-bottom: 0;
 }

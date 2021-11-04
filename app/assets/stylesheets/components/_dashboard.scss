@@ -21,10 +21,8 @@
 }
 
 .barber-name {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
+  margin: 0px 0px 0px 6px;
+  padding: 0px;
 }
 .barber-name h2 {
   padding: 0px;
@@ -32,11 +30,10 @@
 }
 .top-barber-card-info {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .profile-info {
   font-size: 0.8rem;
-  padding-right: 16px;
   i {
     width: 20px;
   }
@@ -59,11 +56,18 @@
   background-color: rgba(255, 255, 255, 0.75);
   padding: 16px;
   border-radius: 4px;
-  height: 254px;
+  height: 320px;
 }
 
 .tab {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
+}
+
+.info-avatar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 6px;
 }
