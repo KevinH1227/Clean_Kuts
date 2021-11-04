@@ -23,10 +23,12 @@
             <h3><%= link_to barber.full_name, barber %></h3>
             <i class="far fa-comment comment-icon"></i></div>
           <div class="barber-location"><i class="fas fa-map-marker-alt"></i><span><%= barber.address %></span></div>
-          <p>About the barber: <%= barber.description %></p>
-          <% barber.review.to_i.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
+          <p><%= barber.description %></p>
+          <div class="mt-1">
+            <% barber.average_rating.times do %>
+              <i class="fas fa-star "></i>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
