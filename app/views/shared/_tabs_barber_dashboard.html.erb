@@ -8,6 +8,7 @@
     </div>
     <div class="reviews" id="reviews3">
       <p>Reviews</p>
+        <%= @barber.average_rating %>
           <div class="barber">
             <% @barber.comment.each do |comment| %>
             <%= comment %>

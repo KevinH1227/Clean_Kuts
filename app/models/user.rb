@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def average_rating
+    self.reviews.reduce(0) {|total, review| total + review.rating} / self.reviews.count()
+  end
 end
