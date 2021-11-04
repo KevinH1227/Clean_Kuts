@@ -32,12 +32,14 @@
         </div>
       </div>
     </div>
-    <div class="description">
-      <h4>About me</h4>
-      <div>
-        "<%= @barber.description %>"
+    <% if @barber.barber? %>
+      <div class="description">
+        <h4>About me</h4>
+        <div>
+          "<%= @barber.description %>"
+        </div>
       </div>
-    </div>
+    <% end %>
     <%# TEMP LINK TO CREATE or REJOIN CHATROOM - STEPH %>
     <% if @barber.barber? %>
       <div class="d-flex justify-content-between barber-actions">
