@@ -9,5 +9,11 @@
   background-color: rgba(255, 255, 255, 0.75);
   padding: 24px;
   border-radius: 4px;
-  margin: 80px 16px 8px;
+  margin: 0px 16px 8px;
+}
+
+.new_message {
+  position: fixed;
+  width: 100%;
+  bottom: 50px;
 }
