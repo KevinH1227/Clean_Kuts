@@ -12,7 +12,7 @@
       <% @barber.reviews.each do |r| %>
         <div class="review-card">
           <p><%= r.comment %></p>
-          <p><%= r.rating %> <span>stars</span></p>
+          <p><%= r.rating.times do %><i class="fas fa-star"></i><% end %></p>
         </div>
       <% end %>
     </div>
