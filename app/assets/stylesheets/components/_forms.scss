@@ -18,11 +18,15 @@
   bottom: 50px;
 }
 
-// .chat-msg {
-//   text-align: left;
-//   padding: 6px 16px;
-//   background-color: white;
-//   border-radius: 6px;
-//   margin: 10px 0;
-//   display: inline-block;
-// }
+.message-container p {
+  text-align: left;
+  color: $black-primary;
+}
+
+.message-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 6px 16px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: $secondary-box-shadow;
+}
