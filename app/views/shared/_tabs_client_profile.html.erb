@@ -17,7 +17,7 @@
         <p>you have no appointment</p>
       <% else %>
         <% @appointments.each do |appointment|%>
-        <p>Here are your appointment information with <%= appointment.barber.full_name %>:
+        <p>Here are your appointment information with <%= link_to appointment.barber.full_name, appointment.barber %>:
           <%= appointment.start_time %>
         </p>
         <% end %>
