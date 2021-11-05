@@ -1,6 +1,6 @@
 // when I click on "booking-button" "window-popup" appears
 function window() {
-  const buttons = document.querySelectorAll('.booking-button')
+  const buttons = document.querySelectorAll('.confirm-btn')
   const windowPopUp = document.getElementById('window-popup')
   const datePicker = document.getElementById('date-picker')
   const selectedDate = document.getElementById('selected-date')

@@ -31,7 +31,7 @@ class User < ApplicationRecord
   end
 
   def average_rating
-    return nil if self.reviews.count == 0 
+    return nil if self.reviews.count == 0
     return self.reviews.reduce(0) { |sum, review| sum + review.rating } / self.reviews.count
   end
 end
