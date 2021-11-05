@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def index
     # @barbers = User.where(role: "barber")
-    @marker = current_user.geocoded.map({
-      lat: current_user.latitude,
-      lng: current_user.longitude
-    })
+    # @marker = current_user.geocoded.map({
+    #   lat: current_user.latitude,
+    #   lng: current_user.longitude
+    # })
     if params[:query].present?
       sql_query = "first_name @@ :query OR last_name @@ :query OR address @@ :query OR post_code @@ :query"
       @barbers = User.barber.where(sql_query, query: "%#{params[:query]}%")
