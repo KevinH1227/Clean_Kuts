@@ -1,28 +1,38 @@
-.services-card{
+.services-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(255, 199, 158, 0.7);
+  background-color: #fff0e5;
   margin: 24px auto;
-  box-shadow: $secondary-box-shadow;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 0.8em;
+  padding: 12px 6px;
+}
+
+.services-container {
+  padding: 0 12px;
 }
 
 .services-card img {
   width: 20px;
   height: auto;
-  margin-right: 0.5em;
+  margin-right: 6px;
 }
 
 .services-card div {
-  width: 100px;
-  margin-right: 0.2em;
+  width: 100%;
+  margin-right: 2px;
 }
 
-.cut-type,.price,.duration {
+.cut-type,
+.price,
+.duration {
   display: flex;
   align-items: center;
+}
+
+.duration {
+  font-size: 14px;
 }
 
 .services-card p {

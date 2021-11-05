@@ -1,7 +1,6 @@
 <% content_for :meta_title, "#{@barber.full_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @barber.description %>
 <% content_for :meta_image, cl_image_path("https://d15zsgzz0klz55.cloudfront.net/ca/business_placeholders/barbers-e758256ebf4d4360b3f1806d9a737219.barbers") %>
-
 <!-- Barber dashboard -->
 <div class="barber-dashboard">
   <div class="barber-profile-card">
@@ -64,7 +63,7 @@
   <!-- button to book an appointment -->
   <% if @barber.barber? %>
     <div class="book-now booking-button">
-      <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient" %> <i class="fas fa-calendar-alt"></i>
+      <%= link_to "Book Now", new_appointment_path(@barber), class: "btn btn-gradient font-weight-bold" %> <i class="fas fa-calendar-alt"></i>
     </div>
     <!-- tab with reviews and services -->
     <%= render 'shared/tabs_barber_profile' %>

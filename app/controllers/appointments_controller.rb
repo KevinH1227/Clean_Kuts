@@ -31,20 +31,12 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-        #i will need to find barber id appointment.new()
-        #appointment.barber = set to barber in params user.find (use id we receive)
-        #appointment.client = current_user
-        #appointment.service = receiving in params
-        #"appointment"=><ActionController::Parameters {"barber_id"=>"1", "service_id"=>"1", "start_time"=>"2021-10-16T19:30"}
-        #permitted: false>, "commit"=>"Confirm", "controller"=>"appointments", "action"=>"create", "user_id"=>"23"} permitted: false>
         @appointment = Appointment.new(appointment_params)
         @barber = @appointment.barber
         @appointment.time_slot = @barber.time_slots.first
         @appointment.end_time = @appointment.start_time + @appointment.service.duration
         @appointment.client = current_user
-        if @appointment.save
-            redirect_to current_user
-        else
+        unless @appointment.save
             @barber = User.find(appointment_params[:barber_id])
             render :new
         end

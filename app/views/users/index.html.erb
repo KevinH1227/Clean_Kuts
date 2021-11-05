@@ -19,17 +19,15 @@
           <% end %>
         </div>
         <div class="barber-infos">
-          <div class="d-flex justify-content-between border">
+          <div class="d-flex justify-content-between">
             <h3><%= link_to barber.full_name, barber %></h3>
-
-            <!-- link to chatroom -->
+                        <!-- link to chatroom -->
             <% if @chatroom.nil? %>
-                <%= link_to new_chatroom_path(recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
-              <% else %>
-                <%= link_to chatroom_path(@chatroom, recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
+              <%= link_to new_chatroom_path(recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
+            <% else %>
+              <%= link_to chatroom_path(@chatroom, recipient_id: barber.id) do %><i class="far fa-comment"></i><% end %>
             <% end %>
           </div>
-
           <div class="barber-location"><i class="fas fa-map-marker-alt"></i><span><%= barber.address %></span></div>
           <p><%= barber.description %></p>
           <div class="mt-1">
@@ -41,7 +39,6 @@
       </div>
     <% end %>
   </div>
-
   <div id="map" class="map"
     style="margin-top: 10%; width: 100%; height: 500px; border-radius: 8px; box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);"
     data-markers="<%= @markers.to_json %>"
