@@ -139,7 +139,7 @@ custom_users = [
     phone_number: "514-346-1552",
     reviews: [
       {
-        comment: "Medicore haircut, barber kept asking me to solve his riddles",
+        comment: "Mediocre haircut, barber kept asking me to solve his riddles",
         rating: 3
       }
     ],
