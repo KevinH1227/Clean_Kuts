@@ -82,8 +82,8 @@
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   p {
-    padding:0px;
-    margin:0px;
+    padding: 0px;
+    margin: 0px;
     color: black;
   }
   .active {
@@ -102,6 +102,15 @@
     // box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
     background-color: $light-gray;
     border-radius: 0px 0px 4px 4px;
+    padding: 4px;
+    overflow: scroll;
+    p {
+      background: rgba(255, 199, 158, 0.5);
+      padding: 16px;
+      margin: 16px;
+      border-radius: 4px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    }
   }
   // ----
   .reviews {
@@ -114,9 +123,10 @@
     display: block;
     width: 50%;
     padding: 16px;
-    align-content:center;
+    align-content: center;
     border-radius: 4px 4px 0px 0px;
   }
+
   // .services {
   //   display: block;
   //   width: 50%;
@@ -235,5 +245,3 @@
   opacity: .5em;
   padding-left: 0.3em;
 }
-
-
