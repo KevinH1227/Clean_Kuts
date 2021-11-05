@@ -31,14 +31,16 @@ import{ tabs } from '../components/tabs.js';
 import{ initChatroomCable } from '../channels/chatroom_channel.js';
 import { openSearchInput } from "../components/search"
 import{ initMapbox } from '../components/map.js'
+import{ thankYouPopUp } from '../components/thank_you_popup.js'
 
 document.addEventListener("turbolinks:load", () => {
   tabs();
   changeOpacityOnNavbar();
   window();
+  thankYouPopUp();
   initChatroomCable();
   openSearchInput();
   initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
-  });
+});
