@@ -7,7 +7,7 @@
     <div class="calendar-day">
       <%# <%= date %>
       <% time_slots.each do |time_slot| %>
-        <div class="meeting booking-button"
+        <div class="meeting confirm-btn"
                 data-start-datetime="<%= time_slot.start_time.strftime("%Y-%m-%dT%H:%M") %>:00"
                 data-end-datetime="<%= time_slot.end_time.strftime("%Y-%m-%dT%H:%M") %>:00"
                 data-start-date="<%= time_slot.start_time.strftime("%Y-%m-%d") %>"
@@ -31,7 +31,7 @@
         <%= f.date_field :start_time, html5: true, id: "date-picker", min: DateTime.now, hidden: true %></div>
       Time: <%= f.time_select :start_time, html5: true, id: "time-picker", start_hour: 10, end_hour: 16, minute_step: 15  %>
       <div class="mt-3 d-flex align-items-center">
-        <%= f.submit "Confirm", class: "mr-1 btn btn-success", id: "confirm-btn" %>
+        <%= f.submit "Confirm", class: "mr-1 btn btn-success confirm-btn" %>
         <%= link_to "Cancel", new_appointment_path(@barber), class: "btn btn-light border" %>
       </div>
     <% end %>
