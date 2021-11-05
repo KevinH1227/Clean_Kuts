@@ -8,6 +8,9 @@
   color: $basic-white;
   font-weight: bold;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   a,
   i {
     color: $basic-white;

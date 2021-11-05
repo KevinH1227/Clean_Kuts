@@ -16,15 +16,21 @@
       <% if @appointments.empty?  %>
         <p>you have no appointment</p>
       <% else %>
-        <% @appointments.each do |appointment|%>
-        <p>Here are your appointment information with <%= link_to appointment.barber.full_name, appointment.barber %>:
-          <%= appointment.start_time %>
-        </p>
+        <% @appointments.each_with_index do |appointment, i|%>
+          <div class="appointment-review-card">
+            Appointment with <%= link_to appointment.barber.full_name, appointment.barber %>
+            <div>
+              Date: <b><%= appointment.start_time.strftime("%y-%m-%d") %> at <%= appointment.start_time.strftime("%H:%M %p") %></b>
+            </div>
+            <div>
+              Service: <b><%= appointment.service.cut_type.capitalize %></b>
+            </div>
+          </div>
         <% end %>
       <% end %>
     </div>
     <div class="reviews_section change" id="spot6">
-      <p>This is my reviews section you can see how picky I am</p>
+      <div  class="appointment-review-card">This is my reviews section you can see how picky I am</div>
     </div>
     <!-- favourites on hold not a priority decided oct28th
     <!-- <div class="favourites_section change" id="spot7">
@@ -32,4 +38,3 @@
     </div> -->
   </div>
 </div>
-

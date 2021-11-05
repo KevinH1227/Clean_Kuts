@@ -12,8 +12,8 @@
   margin-bottom: 16px;
 }
 .fa-star {
-    color: #efbf68;
-  }
+  color: #efbf68;
+}
 
 .barber-avatar img {
   object-fit: cover;
@@ -35,7 +35,7 @@
 .barber-infos p {
   color: $black-primary;
   text-align: left;
-  overflow: scroll;
+  // overflow: scroll;
 }
 
 .barber-card h3 {

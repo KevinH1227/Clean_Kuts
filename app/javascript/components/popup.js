@@ -6,7 +6,7 @@ function window() {
   const selectedDate = document.getElementById('selected-date')
   buttons.forEach((button) => {
     button?.addEventListener('click', (event) => {
-      event.preventDefault()
+      // event.preventDefault()
       selectedDate.innerText = button.dataset.startDate
       datePicker.min = button.dataset.startDate
       datePicker.max = button.dataset.endDate
