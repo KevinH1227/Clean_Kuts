@@ -24,14 +24,14 @@
   <div class="window-content">
     <h1>Book your appointment with <b><%= @barber.full_name %></b></h1>
     <%= simple_form_for ([@user, @appointment]) do |f| %>
-      <%= f.hidden_field :barber_id,  value: @barber.id %>
+      <%= f.hidden_field :barber_id, value: @barber.id %>
       <%= f.association :service, collection: @services %>
       <div class="mb-1">
         Date: <span id="selected-date" class="font-weight-bold"></span>
         <%= f.date_field :start_time, html5: true, id: "date-picker", min: DateTime.now, hidden: true %></div>
       Time: <%= f.time_select :start_time, html5: true, id: "time-picker", start_hour: 10, end_hour: 16, minute_step: 15  %>
       <div class="mt-3 d-flex align-items-center">
-        <%= f.submit "Confirm", class: "mr-1 btn btn-success confirm-btn" %>
+        <%= f.submit "Confirm", class: "mr-1 btn btn-success confirm-btn", id: "confirm-btn" %>
         <%= link_to "Cancel", new_appointment_path(@barber), class: "btn btn-light border" %>
       </div>
     <% end %>
@@ -39,7 +39,9 @@
 </div>
 <div class="thank-you-popup change" id="thank-you-popup">
   <div class="thank-you">
-    <h1>Thank you for booking with <%= @barber.full_name %></h1>
-    <%= link_to "Ok", user_path(current_user), class: "btn btn-light border" %>
+    <div class="">
+      <h1><i class="fas fa-check-circle mr-2"></i>Thank you for booking with <%= @barber.full_name %></h1>
+    </div>
+    <%= link_to "View my appointments", user_path(current_user), class: "btn btn-light border mx-auto" %>
   </div>
 </div>
