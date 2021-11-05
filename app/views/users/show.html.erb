@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@barber.full_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @barber.description %>
+<% content_for :meta_image, cl_image_path("https://d15zsgzz0klz55.cloudfront.net/ca/business_placeholders/barbers-e758256ebf4d4360b3f1806d9a737219.barbers") %>
+
 <!-- Barber dashboard -->
 <div class="barber-dashboard">
   <div class="barber-profile-card">
