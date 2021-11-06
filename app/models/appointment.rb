@@ -1,10 +1,12 @@
 class Appointment < ApplicationRecord
+  attr_accessor :start_date
   belongs_to :client, foreign_key: :client_id, class_name: 'User'
   belongs_to :barber, foreign_key: :barber_id, class_name: 'User'
   belongs_to :service
   belongs_to :time_slot
 
   validates :start_time, :end_time, presence: true
+  validates :service, presence: true
 
   default_scope -> { order(:start_time) }  # Our meetings will be ordered by their start_time by default
 
