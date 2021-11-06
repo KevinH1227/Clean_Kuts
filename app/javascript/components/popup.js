@@ -20,18 +20,24 @@ function window() {
       // ...windowPopUp appears
       windowPopUp.classList.add('appear')
       windowPopUp.classList.remove('change')
-      const confirmBtn = document.getElementById('confirm-btn')
-      confirmBtn.disabled = true
-      const service = document.getElementById('appointment_service_id')
-      service.addEventListener("change", () => {
-        if (service.value !== "") {
-          confirmBtn.disabled = false
-        }
-      })
+      // const confirmBtn = document.getElementById('confirm-btn')
+      // confirmBtn.disabled = true
+      
       // console.log(service)
       // console.log(confirmBtn)
     })
   })
+  const service = document.getElementById('appointment_service_id')
+  if(service) {
+    const confirmBtn = document.getElementById('confirm-btn')
+    confirmBtn.disabled = true
+  
+    service.addEventListener("change", () => {
+      if (service.value !== "") {
+        confirmBtn.disabled = false
+      }
+    })
+  }
 }
 
 export { window }
