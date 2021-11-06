@@ -9,4 +9,8 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.create
     redirect_to chatroom_path(@chatroom, recipient_id: params[:recipient_id])
   end
+
+  def my_chatrooms
+    @chatrooms = current_user.received_messages.map(&:chatroom).uniq if current_user.barber?
+  end
 end
