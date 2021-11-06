@@ -32,11 +32,20 @@ class AppointmentsController < ApplicationController
 
     def create
         @appointment = Appointment.new(appointment_params)
+        @start_date = appointment_params[:start_date]
+        hours = appointment_params["start_time(4i)"]
+        minutes = appointment_params["start_time(5i)"]
+
+        year, month, day = appointment_params[:start_date].split("-")
+        
+        @appointment.start_time = Time.utc(year, month, day, hours, minutes, 0)
         @barber = @appointment.barber
         @appointment.time_slot = @barber.time_slots.first
         @appointment.end_time = @appointment.start_time + @appointment.service.duration
         @appointment.client = current_user
-        unless @appointment.save
+        if @appointment.save
+            redirect_to current_user
+        else
             @barber = User.find(appointment_params[:barber_id])
             render :new
         end
@@ -45,7 +54,7 @@ class AppointmentsController < ApplicationController
 
     private
     def appointment_params
-        params.require(:appointment).permit(:start_time, :barber_id, :service_id)
+        params.require(:appointment).permit(:start_date, :start_time, :barber_id, :service_id)
         
     end
 
