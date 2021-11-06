@@ -48,11 +48,18 @@
       <div class="d-flex justify-content-between barber-actions">
         <div class="create-chatroom d-flex align-items-center">
           <i class="far fa-comment"></i>
-          <% if @previous_chat %>
-            <%= link_to "Keep chatting", chatroom_path(@chatroom, recipient_id: @barber.id) %>
+
+          <% if current_user.barber? %>
+            <%= link_to 'My Chats', my_chatrooms_path %>
           <% else %>
-            <%= link_to "Chat with #{@barber.first_name.capitalize}", new_chatroom_path(recipient_id: @barber.id) %>
+            <% if @previous_chat %>
+              <%= link_to "Keep chatting", chatroom_path(@chatroom, recipient_id: @barber.id) %>
+            <% else %>
+              <%= link_to "Chat with #{@barber.first_name.capitalize}", new_chatroom_path(recipient_id: @barber.id) %>
+            <% end %>
           <% end %>
+
+
         </div>
         <div class="d-flex align-items-center">
           <i class="fas fa-edit"></i><%= link_to "Write a review", new_user_review_path(@barber) %>

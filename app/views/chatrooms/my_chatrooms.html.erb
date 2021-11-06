@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="chatroom-container">
+  <h1>My chatrooms</h1>
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <li>
+          <p><%= chatroom.messages.first.sender.full_name %>'s</p>
+          <%= link_to 'Chatroom', chatroom_path(chatroom, recipient_id: chatroom.messages.first.sender.id) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
