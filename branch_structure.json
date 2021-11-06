@@ -1,0 +1,33 @@
+{
+  "default_branch": "master",
+  "branches": [
+    "appointment-showing",
+    "chat-fix",
+    "chatbox-styling",
+    "fix-calendar",
+    "master",
+    "meta-description",
+    "origin",
+    "review-sorting"
+  ],
+  "parent": {
+    "appointment-showing": "master",
+    "chat-fix": "master",
+    "chatbox-styling": "master",
+    "fix-calendar": "master",
+    "master": null,
+    "meta-description": "master",
+    "origin": "master",
+    "review-sorting": "master"
+  },
+  "order": [
+    "master",
+    "appointment-showing",
+    "chat-fix",
+    "chatbox-styling",
+    "fix-calendar",
+    "meta-description",
+    "origin",
+    "review-sorting"
+  ]
+}

@@ -9,7 +9,7 @@
   </div>
   <div class="part2">
     <div class="reviews_section appear" id="spot">
-      <% @barber.reviews.each do |r| %>
+      <% @barber.reviews.order('created_at DESC').each do |r| %>
         <div class="review-card">
           <div class="review-info">
             <p><%= r.client.full_name %></p>
