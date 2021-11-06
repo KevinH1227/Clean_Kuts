@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :sent_messages, foreign_key: :sender_id, class_name: "Message", dependent: :destroy
   has_many :received_messages, foreign_key: :recipient_id, class_name: "Message", dependent: :destroy
 
+  # has_many :chatrooms, through: :received_messages, foreign_key: :recipient_id, class_name: "Message"
+
   has_many :appointments, foreign_key: :client_id, class_name: "Appointment", dependent: :destroy
   has_many :appointments, foreign_key: :barber_id, class_name: "Appointment", dependent: :destroy
 

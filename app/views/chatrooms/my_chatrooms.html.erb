@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="sign-up-form">
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <li>
+          <%= link_to 'chatroom', chatroom_path(chatroom, recipient_id: chatroom.messages.first.sender.id) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

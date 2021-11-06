@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:show, :create, :new] do
     resources :messages, only: :create
   end
+  get '/my_chatrooms', to: 'chatrooms#my_chatrooms', as: :my_chatrooms
 end
