@@ -221,29 +221,31 @@
   border-radius: 4px 4px 0 0;
 }
 .review-card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   background-color: #fff0e5;
   width: 80%;
   margin: 24px auto;
   border-radius: 4px;
-  padding: 0.7em;
+  padding: 1em;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
-}
-
-.review-card p {
-  text-align: left;
-  display: inline-flex;
-  align-items: baseline;
-}
-
-.review-card > p {
-  margin-right: 1em;
+  p {
+    font-style: italic;
+  }
 }
 
 .review-card p span {
   font-size: 0.5em;
   opacity: 0.5em;
   padding-left: 0.3em;
+  font-style: italic;
+}
+
+.review-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-info p {
+  font-size: 1.05em;
+  font-weight: bolder;
+  font-style: normal;
 }
